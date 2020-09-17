@@ -1,0 +1,26 @@
+\begin{thebibliography}{1}
+
+\bibitem{domoracki2005silniki}
+Arkadiusz Domoracki and Krzysztof Krykowski.
+\newblock Silniki bldc-klasyczne metody sterowania.
+\newblock {\em Zeszyty Problemowe--Maszyny Elektryczne}, 72, 2005.
+
+\bibitem{goryca2012metody}
+Zbigniew Goryca.
+\newblock Metody sterowania silnik{\'o}w bldc.
+\newblock {\em Prace Naukowe Instytutu Maszyn, Nap{\k{e}}d{\'o}w i Pomiar{\'o}w
+  Elektrycznych Politechniki Wroc{\l}awskiej}, (66):32--47, 2012.
+
+\bibitem{krykowski}
+Krzysztof Krykowski.
+\newblock {\em Silniki PM BLDC}.
+\newblock Wydawnictwo BTC, Legionowo, 2015.
+
+\bibitem{zajkowski2013sterowanie}
+Konrad Zajkowski and Stanis{\l}aw Duer.
+\newblock Sterowanie pr{\k{e}}dko{\'s}ci{\k{a}} obrotow{\k{a}} silnika
+  bezszczotkowego bldc.
+\newblock {\em Autobusy: technika, eksploatacja, systemy transportowe},
+  14:303--306, 2013.
+
+\end{thebibliography}

@@ -1,0 +1,9 @@
+\babel@toc {polish}{}
+\contentsline {section}{\numberline {1}Wst\k ep}{3}%
+\contentsline {section}{\numberline {2}Silnik BLDC}{4}%
+\contentsline {subsection}{\numberline {2.1}Budowa silnika BLDC}{4}%
+\contentsline {subsection}{\numberline {2.2}Zasada dzia\IeC {\l }ania sinika BLDC}{5}%
+\contentsline {subsection}{\numberline {2.3}Sposoby sterowania}{5}%
+\contentsline {subsection}{\numberline {2.4}Wady i zalety}{6}%
+\contentsline {section}{\numberline {3}Wnioski}{6}%
+\contentsline {section}{Wykaz ilustracji}{6}%

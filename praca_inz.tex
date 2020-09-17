@@ -1,0 +1,180 @@
+
+\documentclass[a4paper]{article}
+
+\usepackage[polish]{babel}
+\usepackage{lmodern} %Type1-font for non-english texts and characters
+\usepackage{amsmath}%
+\usepackage{amsfonts}%
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{polski}
+\usepackage[cp1250]{inputenc}
+\usepackage{svg}
+\usepackage{float}
+\usepackage{enumerate}
+\usepackage{indentfirst}
+
+
+%-------------------------------------------
+
+
+\setlength{\textwidth}{\paperwidth}
+\addtolength{\textwidth}{-5cm}
+\setlength{\textheight}{\paperheight}
+\addtolength{\textheight}{-5cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+\topmargin -1.25cm
+\footskip 1.4cm
+\graphicspath{ {./fig/} }
+
+
+
+\title{POLITECHNIKA POZNAÑSKA
+\vspace{0.2cm}
+
+\Large WYDZIA£ AUTOMATYKI, ROBOTYKI I ELEKTROTECHNIKI
+
+INSTYTUT ROBOTYKI I INTELIGENCJI MASZYNOWEJ
+
+ZAK£AD STEROWANIA I ELEKTRONIKI PRZEMYS£OWEJ
+\vspace{1cm}
+\begin{figure}[H]
+\centering
+\includegraphics{logo.png}   
+\end{figure} 
+\vspace{1cm}
+PRACA DYPLOMOWA 
+
+IN¯YNIERSKA
+\vspace{1cm}
+
+Mikroprocesorowy kaskadowy uk³ad regulacji pr¹du, prêdkoœci i po³o¿enia dla napêdu z silnikiem BLDC
+\vspace{2cm}
+\begin{flushleft}
+\normalsize
+
+\hspace{8cm}PROMOTOR:
+
+\hspace{8cm}DR IN¯. DOMINIK £UCZAK
+\vspace{0.2cm}
+
+\scriptsize \hspace{8cm}POTWIERDZAM PRZYJÊCIE PRACY
+\vspace{0.5cm}
+
+\hspace{8cm}...........................
+
+
+\scriptsize \hspace{8cm}DATA I PODPIS PROMOTORA
+\end{flushleft}
+\vspace{0.5cm}
+}
+
+\author{MATEUSZ SEMK£O}
+
+\date{2020-10-25}
+
+
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+
+\section{Wstêp}
+
+W ramach pracy in¿ynierskiej zosta³ zbudowany uk³ad napêdowy z regulacj¹ pr¹du, prêdkoœci i k¹ta obrotu wirnika dla silnika BLDC  (ang.\textit{ BrushLess Direct-Current motor}) . G³ównym za³o¿eniem jest pokazanie mo¿liwoœci wykorzystania mikroprocesora jako jednego ze sposobów na realizacje uk³adu sterowania.
+
+ Zbudowany prototyp wykorzystuje rdzeñ ARM Cortex-M4  jako g³ówn¹ jednostkê obliczeniow¹ i odpowiedzialny jest za proces regulacji. Procesor wbudowany  w p³ytê prototypow¹ B G431B-ESC1 firmy STMicroelectronics posiada wszystkie wymagane peryferia.  Sterownik B G431B ESC1 za pomoc¹ ³¹cza szeregowego UART sprzê¿ony zosta³  z mikrokontrolerem NUCLEO-F746ZG firmy STMicroelectronics  wyposa¿onym w rdzeñ ARM Cortex-M7. Odpowiedzialny  jest za komunikacje poprzez Ethernet i protokó³ TCP/IP z interfejsem u¿ytkownika oraz równolegle ze sterownikiem pobiera informacje z czujników. Rozwi¹zanie to umo¿liwia wykorzystanie mocy obliczeniowej tylko  do procesu regulacji. Silnik BLDC nale¿y do rodziny silników synchronicznych z magnesami trwa³ymi. W zwi¹zku z ich w³aœciwoœciami oraz coraz czêstszym wykorzystywaniu  w automatyce i robotyce sta³ siê obiektem, na podstawie którego przeprowadzono badania opisane w niniejszej pracy. Silnik  ze wzglêdu na konstrukcje wymaga bardziej z³o¿onego sposobu sterowania w porównaniu z silnikiem pr¹du sta³ego. FOC (ang. Field-orient control) jest jedn¹ z technik sterowania silnikiem trójfazowym. Pozwala ona sprowadziæ parametry silnika z  trójwymiarowego uk³ad wspó³rzêdnych do wiruj¹cego uk³adu o dwóch wspó³rzêdnych zgodnych z wektorem strumienia wirnika i sterowaæ trójfazowym silnikiem synchronicznym o magnesach trwa³ych  w taki sam sposób jak silnikiem pr¹du sta³ego.
+ 
+Kolejne rozdzia³y opisuj¹ sposób, schematy, etapy dzia³añ i wyniki obliczeñ  zbudowanego prototypu uk³adu napêdowego dla silnika BLDC. 
+
+\newpage
+
+
+\section{Silnik BLDC}
+\subsection{Budowa silnika BLDC}
+Bezszczotkowe silniki z magnesami trwa³ymi mo¿na podzieliæ na silniki pr¹du sta³ego BLDC (ang. BrushLess Direct-Current motor) oraz synchroniczne silniki pr¹du przemiennego PMSM (ang. Permanent Magnet Synchronous Motor). Ró¿ni¹ siê one kszta³tem przebiegu si³y elektromotorycznej. W silniku BLDC przyjmuje kszta³t trapezoidalny a silnik PMSM  sinusoidalny \cite{goryca2012metody}.
+
+\begin{figure}[H]
+\centering
+\includegraphics{przebieg_SEM.png} 
+
+\caption{Przebiegi si³y elektromotorycznej E, pr¹du I i momentu T dla jednej fazy dla:
+ a) silnika PMSM, b) silnika BLDC \cite{zajkowski2013sterowanie} }
+\label{fig:1}
+\end{figure} 
+
+Istnieje wiele odmian silników BLDC ró¿ni¹cych siê budow¹, konstrukcj¹ obwodów magnetycznych, rozk³adem indukcji i kszta³tem si³ elektromotorycznych. Uzwojenie  twornika jest zazwyczaj w stojanie i jest uzwojeniem trójfazowym. Kszta³t magnesów, trwa³e umieszczonych na wirniku zapewniaj¹ sta³¹ wartoœæ indukcji w szczelinie maszyny i trapezoidalny kszta³t si³y elektromotorycznej\cite{krykowski}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{stojan.png}   
+\caption{Stojan silnika BLDC \cite{goryca2012metody}}
+\label{fig:2}
+\end{figure} 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{wirnik.png}   
+\caption{Wirnik silnika BLDC \cite{goryca2012metody}}
+\label{fig:3}
+\end{figure} 
+
+\subsection{Zasada dzia³ania sinika BLDC}
+Silnik elektryczny przetwarza dostarczon¹ energiê elektryczn¹ w energiê mechaniczn¹. Ruch wirnika wystêpuje, gdy zasilaj¹c odpowiednie uzwojenia stojana nastêpuje pojawienie siê wiruj¹cego pola elektromagnetycznego, które oddzia³uje na pole magnetyczne wirnika i wprawia go w ruch. Strumienie magnetyczne wirnika i stojana powinny byæ wzglêdem siebie nieruchome. W klasycznym silniku pr¹du sta³ego powy¿szy warunek jest spe³niony przez odpowiednie umiejscowienie szczotek komutatora.
+Z powodu braku klasycznego komutatora w silniku BLDC zapewnienie wirowania strumienia stojana synchronicznie z wirnikiem jest realizowane przez odpowiednie prze³¹czanie uzwojeñ. W tym celu 
+wykorzystuje siê przetwornik energoelektroniczny, którego zadaniem jest odpowiednie usytuowanie strumieni wzglêdem siebie, poprzez prze³¹czanie tranzystorami mocy. Aby to zrealizowaæ potrzebna jest wiedza o aktualnym po³o¿eniu k¹ta obrotu wirnika, wykorzystuj¹c czujniki Halla lub przetworniki obrotowo-impulsowe\cite{krykowski}.
+
+Na rysunku \ref{fig:4} pokazano uproszczony schemat uk³adu sterowania i zasilania silnika BLDC.
+ 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{sterowanie_BLDC.png}   
+\caption{uproszczony schemat uk³adu sterowania i zasilania silnika BLDC \cite{domoracki2005silniki}}
+\label{fig:4}
+\end{figure} 
+
+\subsection{Sposoby sterowania}
+
+Silnik bezszczotkowy  posiada komutator elektroniczny, wiêc stale nale¿y kontrolowaæ po³o¿enie wirnika oraz zastosowaæ odpowiedni sposób za³¹czania uzwojeñ. Istniej¹ trzy podstawowe strategie komutacji:[2]
+\begin{itemize}
+\item komutacja trapezoidalna – prze³¹czanie uzwojeñ odbywa siê w sposób dyskretny wiêc nie jest potrzebny ci¹g³y pomiar k¹ta obrotu wa³u. Najczêœciej wykorzystujê siê czujniki Halla, które si¹ rozmieszczone w odstêpach 120 stopni. Zmiana stanu jednego z czujników inicjujê rozpoczêcie zmiany zasilania uzwojeñ stojana. Zasilane s¹ jednoczeœnie tylko dwa uzwojenia.[1]
+\item komutacja sinusoidalna – prze³¹czanie uzwojeñ odbywa siê w sposób quasi-ci¹g³y. Pr¹dy fazowe i si³y elektromotoryczne powinny byæ sinusoidalne. Przekszta³tnik energoelektroniczny pe³ni funkcje falownika. Zasilane s¹ jednoczeœnie  trzy  uzwojenia. [1]
+\item zastosowanie metody FOC (ang. Field Orient Control)[2]. Metoda ta zosta³a opisana w rozdziale ….
+\end{itemize}
+
+\subsection{Wady i zalety}
+
+
+
+
+  
+  
+
+
+
+
+
+\section{Wnioski}
+
+
+
+%% The List of Figures
+
+\addcontentsline{toc}{section}{Wykaz ilustracji}
+\listoffigures
+
+\bibliographystyle{plain} %Style of Bibliography: plain / apalike / amsalpha / ...
+\bibliography{bibl} %You need a~file 'literature.bib' for this.
+
+\end{document}
+
+
+
+
+
+
