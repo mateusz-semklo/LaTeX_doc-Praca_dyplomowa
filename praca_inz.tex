@@ -15,6 +15,7 @@
 \usepackage{indentfirst}
 
 
+
 %-------------------------------------------
 
 
@@ -87,7 +88,7 @@ Mikroprocesorowy kaskadowy uk³ad regulacji pr¹du, prêdkoœci i po³o¿enia dla napê
 
 W ramach pracy in¿ynierskiej zosta³ zbudowany uk³ad napêdowy z regulacj¹ pr¹du, prêdkoœci i k¹ta obrotu wirnika dla silnika BLDC  (ang.\textit{ BrushLess Direct-Current motor}) . G³ównym za³o¿eniem jest pokazanie mo¿liwoœci wykorzystania mikroprocesora jako jednego ze sposobów na realizacje uk³adu sterowania.
 
- Zbudowany prototyp wykorzystuje rdzeñ ARM Cortex-M4  jako g³ówn¹ jednostkê obliczeniow¹ i odpowiedzialny jest za proces regulacji. Procesor wbudowany  w p³ytê prototypow¹ B G431B-ESC1 firmy STMicroelectronics posiada wszystkie wymagane peryferia.  Sterownik B G431B ESC1 za pomoc¹ ³¹cza szeregowego UART sprzê¿ony zosta³  z mikrokontrolerem NUCLEO-F746ZG firmy STMicroelectronics  wyposa¿onym w rdzeñ ARM Cortex-M7. Odpowiedzialny  jest za komunikacje poprzez Ethernet i protokó³ TCP/IP z interfejsem u¿ytkownika oraz równolegle ze sterownikiem pobiera informacje z czujników. Rozwi¹zanie to umo¿liwia wykorzystanie mocy obliczeniowej tylko  do procesu regulacji. Silnik BLDC nale¿y do rodziny silników synchronicznych z magnesami trwa³ymi. W zwi¹zku z ich w³aœciwoœciami oraz coraz czêstszym wykorzystywaniu  w automatyce i robotyce sta³ siê obiektem, na podstawie którego przeprowadzono badania opisane w niniejszej pracy. Silnik  ze wzglêdu na konstrukcje wymaga bardziej z³o¿onego sposobu sterowania w porównaniu z silnikiem pr¹du sta³ego. FOC (ang. Field-orient control) jest jedn¹ z technik sterowania silnikiem trójfazowym. Pozwala ona sprowadziæ parametry silnika z  trójwymiarowego uk³ad wspó³rzêdnych do wiruj¹cego uk³adu o dwóch wspó³rzêdnych zgodnych z wektorem strumienia wirnika i sterowaæ trójfazowym silnikiem synchronicznym o magnesach trwa³ych  w taki sam sposób jak silnikiem pr¹du sta³ego.
+ Zbudowany prototyp wykorzystuje rdzeñ ARM Cortex-M4  jako g³ówn¹ jednostkê obliczeniow¹ i odpowiedzialny jest za proces regulacji. Procesor wbudowany  w p³ytê prototypow¹ B G431B-ESC1 firmy STMicroelectronics posiada wszystkie wymagane peryferia.  Sterownik B G431B ESC1 za pomoc¹ ³¹cza szeregowego UART sprzê¿ony zosta³  z mikrokontrolerem NUCLEO-F746ZG firmy STMicroelectronics  wyposa¿onym w rdzeñ ARM Cortex-M7. Odpowiedzialny  jest za komunikacje poprzez Ethernet i protokó³ TCP/IP z interfejsem u¿ytkownika oraz równolegle ze sterownikiem pobiera informacje z czujników. Rozwi¹zanie to umo¿liwia wykorzystanie mocy obliczeniowej tylko  do procesu regulacji. Silnik BLDC nale¿y do rodziny silników synchronicznych z magnesami trwa³ymi. W zwi¹zku z ich w³aœciwoœciami oraz coraz czêstszym wykorzystywaniu  w automatyce i robotyce sta³ siê obiektem, na podstawie którego przeprowadzono badania opisane w niniejszej pracy. Silnik  ze wzglêdu na konstrukcje wymaga bardziej z³o¿onego sposobu sterowania w porównaniu z silnikiem pr¹du sta³ego. FOC (ang. Field-orient control) jest jedn¹ z technik sterowania silnikiem trójfazowym. Pozwala ona sprowadziæ parametry silnika z   trójwymiarowego uk³ad wspó³rzêdnych do wiruj¹cego uk³adu o dwóch wspó³rzêdnych zgodnych z wektorem strumienia wirnika i sterowaæ trójfazowym silnikiem synchronicznym o magnesach trwa³ych  w taki sam sposób jak silnikiem pr¹du sta³ego.
  
 Kolejne rozdzia³y opisuj¹ sposób, schematy, etapy dzia³añ i wyniki obliczeñ  zbudowanego prototypu uk³adu napêdowego dla silnika BLDC. 
 
@@ -124,7 +125,7 @@ Istnieje wiele odmian silników BLDC ró¿ni¹cych siê budow¹, konstrukcj¹ obwodów m
 \end{figure} 
 
 \subsection{Zasada dzia³ania sinika BLDC}
-Silnik elektryczny przetwarza dostarczon¹ energiê elektryczn¹ w energiê mechaniczn¹. Ruch wirnika wystêpuje, gdy zasilaj¹c odpowiednie uzwojenia stojana nastêpuje pojawienie siê wiruj¹cego pola elektromagnetycznego, które oddzia³uje na pole magnetyczne wirnika i wprawia go w ruch. Strumienie magnetyczne wirnika i stojana powinny byæ wzglêdem siebie nieruchome. W klasycznym silniku pr¹du sta³ego powy¿szy warunek jest spe³niony przez odpowiednie umiejscowienie szczotek komutatora.
+Silnik elektryczny przetwarza dostarczon¹ energiê elektryczn¹ w energiê mechaniczn¹. Ruch wirnika wystêpuje, gdy zasilaj¹c odpowiednie uzwojenia stojana nastêpuje pojawienie siê wiruj¹cego pola elektromagnetycznego, które oddzia³uje na pole magnetyczne wirnika i wprawia go w ruch. Strumienie magnetyczne wirnika i stojana powinny byæ wzglêdem siebie nieruchome. W klasycznym silniku pr¹du sta³ego powy¿szy warunek jest spe³niony przez odpowiednie umiejscowienie szczotek komutatora wzglêdem pola stojana.
 Z powodu braku klasycznego komutatora w silniku BLDC zapewnienie wirowania strumienia stojana synchronicznie z wirnikiem jest realizowane przez odpowiednie prze³¹czanie uzwojeñ. W tym celu 
 wykorzystuje siê przetwornik energoelektroniczny, którego zadaniem jest odpowiednie usytuowanie strumieni wzglêdem siebie, poprzez prze³¹czanie tranzystorami mocy. Aby to zrealizowaæ potrzebna jest wiedza o aktualnym po³o¿eniu k¹ta obrotu wirnika, wykorzystuj¹c czujniki Halla lub przetworniki obrotowo-impulsowe\cite{krykowski}.
 
@@ -140,21 +141,199 @@ Na rysunku \ref{fig:4} pokazano uproszczony schemat uk³adu sterowania i zasilani
 \label{fig:4}
 \end{figure} 
 
+
 \subsection{Sposoby sterowania}
 
-Silnik bezszczotkowy  posiada komutator elektroniczny, wiêc stale nale¿y kontrolowaæ po³o¿enie wirnika oraz zastosowaæ odpowiedni sposób za³¹czania uzwojeñ. Istniej¹ trzy podstawowe strategie komutacji:[2]
+Silnik bezszczotkowy  nie posiada konwencjonalnego komutatora , wiêc stale nale¿y kontrolowaæ po³o¿enie wirnika oraz zastosowaæ odpowiedni sposób za³¹czania uzwojeñ. Istniej¹ trzy podstawowe strategie komutacji:[2]
 \begin{itemize}
-\item komutacja trapezoidalna – prze³¹czanie uzwojeñ odbywa siê w sposób dyskretny wiêc nie jest potrzebny ci¹g³y pomiar k¹ta obrotu wa³u. Najczêœciej wykorzystujê siê czujniki Halla, które si¹ rozmieszczone w odstêpach 120 stopni. Zmiana stanu jednego z czujników inicjujê rozpoczêcie zmiany zasilania uzwojeñ stojana. Zasilane s¹ jednoczeœnie tylko dwa uzwojenia.[1]
-\item komutacja sinusoidalna – prze³¹czanie uzwojeñ odbywa siê w sposób quasi-ci¹g³y. Pr¹dy fazowe i si³y elektromotoryczne powinny byæ sinusoidalne. Przekszta³tnik energoelektroniczny pe³ni funkcje falownika. Zasilane s¹ jednoczeœnie  trzy  uzwojenia. [1]
-\item zastosowanie metody FOC (ang. Field Orient Control)[2]. Metoda ta zosta³a opisana w rozdziale ….
+\item komutacja trapezoidalna – prze³¹czanie uzwojeñ odbywa siê w sposób dyskretny wiêc nie jest potrzebny ci¹g³y pomiar k¹ta obrotu wa³u. Najczêœciej wykorzystujê siê czujniki Halla, które s¹ rozmieszczone w odstêpach 120 stopni lub bezczujnikowe obliczanie po³o¿enia wirnika. Zmiana stanu jednego z czujników inicjujê rozpoczêcie zmiany zasilania uzwojeñ stojana. Zasilane s¹ jednoczeœnie tylko dwa uzwojenia.[1]
+\item komutacja sinusoidalna – prze³¹czanie uzwojeñ odbywa siê w sposób quasi-ci¹g³y. Pr¹dy fazowe i si³y elektromotoryczne powinny byæ sinusoidalne. Przekszta³tnik energoelektroniczny pe³ni funkcje falownika. Do pomiaru po³o¿enia wykorzystuje siê przetwornik impulsowo-obrotowy lub algorytm do bezczujnikowego obliczania k¹ta obrotu wirnika.  Zasilane s¹ jednoczeœnie  trzy  uzwojenia. [1]
+\item zastosowanie algorytmu FOC (ang. Field Orient Control).\\
+ Metoda ta zosta³a wykorzystana w niniejszej pracy i opisana w rozdziale \ref{chapter:1}.
 \end{itemize}
+
+
+\subsection{Model matematyczny}
+Wartoœæ momentu elektromagnetycznego wytworzonego dla p³askiego fragmentu si³y elektromotorycznej przez pr¹d p³yn¹cy w jednym uzwojeniu fazowym \cite{krykowski}:
+
+\begin{equation} \label{eqn:1}
+ Me=p \psi _{p} i 
+\end{equation}
+
+
+Me - moment elektromagnetyczny
+
+p - liczba par biegunów
+
+$\psi _{p}$ -strumieñ magnetyczny wytworzony przez wirnik a skojarzony z uzwojeniem stojana
+
+i - pr¹d uzwojenia stojana 
+\\
+
+Chwilowa wartoœæ strumienia skojarzonego z k-tym uzwojeniem zmieniaj¹ca siê w funkcji obrotu wirnika \cite{krykowski}:
+\begin{equation} \label{eqn:2}
+ \psi _{k}(\theta _{e})=\psi _{p}f(\theta _{e})
+\end{equation}
+
+$\theta _{e}$ - elektryczny k¹t po³o¿enia wirnika
+\\
+
+£¹cz¹c powy¿sze Wyra¿enia \ref{eqn:1} i \ref{eqn:2} uzyskujemy moment elektromagnetyczny dla k-tej fazy \cite{krykowski}:
+ 
+ 
+\begin{equation} \label{eqn:3}
+ M_{ek}=p \psi _{k}(\theta _{e}) i 
+\end{equation} 
+
+Moment oporowy na wale silnika jest równy sumie momentu obci¹¿enia i momentu strat mechanicznych 
+
+Wzór dla p³askiego odcinka si³y elektromotorycznej\cite{krykowski}:
+
+\begin{equation} \label{eqn:4}
+ E_{p}=p \psi _{p}\omega
+\end{equation} 
+
+$\omega$ - prêdkoœæ obrotowa wirnika 
+\\
+
+Wyra¿enie opisuj¹ce si³ê elektromotoryczn¹ indukowan¹ w k-tym uzwojeniu\cite{krykowski}:
+
+\begin{equation} \label{eqn:5}
+ E_{k}=p \psi _{k}(\theta _{e})\omega
+\end{equation} 
+\\
+
+Silnik BLDC mo¿na traktowaæ jako szczególny przypadek silnika synchronicznego.
+Schemat silnika trójfazowego z magnesami trwa³ymi przedstawiony na rysunku \ref{fig:5}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=9cm]{model_silnik.png}   
+\caption{Scheamt silnika synchronicznego z magnesami trwa³ymi}
+\label{fig:5}
+\end{figure} 
+
+
+\noindent M - indukcyjnoœæ wzajemna\\
+L - indukcyjnoœæ w³asna\\
+R - rezystancja uzwojeñ\\
+E - si³a elektromotoryczna
+\\
+
+Zak³adaj¹c, ¿e indukcyjnoœci w³asne i rezystancje s¹ równe:\\
+\begin{equation}
+ L=L_{A}=L_{B}=L_{C}
+ R=R_{A}=R_{B}=R_{C}
+\end{equation}
+
+
+oraz indukcyjnoœci wzajemne równie¿ to ca³kowita indukcyjnoœæ  jednej fazy jest równa:
+
+\begin{equation}
+ L_{S}=L-M
+\end{equation}
+
+Otrzymujemy wyra¿enie \cite{krykowski}:
+
+\begin{equation} \label{eqn:6}
+\begin{bmatrix}
+U_{A}  \\
+U_{B}  \\
+U_{C}  \\
+\end{bmatrix}
+= R
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+I_{A}  \\
+I_{B}  \\
+I_{C}  \\
+\end{bmatrix}
++L_{S}\frac{d}{dt}
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+I_{A}  \\
+I_{B}  \\
+I_{C}  \\
+\end{bmatrix}
++
+\begin{bmatrix}
+E_{A}  \\
+E_{B}  \\
+E_{C}  \\
+\end{bmatrix}
+\end{equation} 
+
+oraz
+
+\begin{equation} \label{eqn:7}
+\frac{d}{dt}
+\begin{bmatrix}
+I_{A}  \\
+I_{B}  \\
+I_{C}  \\
+\end{bmatrix}
+= - \frac{R}{L}
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+I_{A}  \\
+I_{B}  \\
+I_{C}  \\
+\end{bmatrix}
+-\frac{1}{L}
+\begin{bmatrix}
+E_{A}  \\
+E_{B}  \\
+E_{C}  \\
+\end{bmatrix}
++\frac{1}{L}
+\begin{bmatrix}
+U_{A}  \\
+U_{B}  \\
+U_{C}  \\
+\end{bmatrix}
+\end{equation}
+
+Wykorzystuj¹c równanie \ref{eqn:7} , \ref{eqn:5} , \ref{eqn:3} i zapis na w postaci równaæ stanu \ref{eqn:8} uzyska siê pe³en model idealnego silnika o trapeziodalnej sile elektromotorycznej \cite{krykowski}:
+
+\begin{equation} \label{eqn:8}
+ \hat{x}=Ax+Bu
+\end{equation} 
+
+gdzie
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsection{Wady i zalety}
 
 
 
 
-  
+\section{Field Orient Control}
+ \label{chapter:1}
   
 
 
