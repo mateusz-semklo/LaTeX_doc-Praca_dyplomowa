@@ -137,7 +137,7 @@ Na rysunku \ref{fig:4} pokazano uproszczony schemat uk³adu sterowania i zasilani
 \begin{figure}[H]
 \centering
 \includegraphics[width=8cm]{sterowanie_BLDC.png}   
-\caption{uproszczony schemat uk³adu sterowania i zasilania silnika BLDC \cite{domoracki2005silniki}}
+\caption{Uproszczony schemat uk³adu sterowania i zasilania silnika \cite{domoracki2005silniki}}
 \label{fig:4}
 \end{figure} 
 
@@ -185,7 +185,21 @@ $\theta _{e}$ - elektryczny k¹t po³o¿enia wirnika
  M_{ek}=p \psi _{k}(\theta _{e}) i 
 \end{equation} 
 
-Moment oporowy na wale silnika jest równy sumie momentu obci¹¿enia i momentu strat mechanicznych 
+Moment ca³kowity jest równy sumie momentów elektromagnetycznych\cite{krykowski}:
+
+\begin{equation} \label{eqn:9}
+ M_{e}=\sum_{k=1}^{3} M_{ek}
+\end{equation} 
+
+Równanie ruch ma postaæ:
+\begin{equation} \label{eqn:10}
+ M_{e}=J \frac{d\omega}{dt}+M
+\end{equation} 
+
+J - moment bezw³adnoœci
+
+M - moment oporowy
+\\
 
 Wzór dla p³askiego odcinka si³y elektromotorycznej\cite{krykowski}:
 
@@ -209,14 +223,17 @@ Schemat silnika trójfazowego z magnesami trwa³ymi przedstawiony na rysunku \ref{
 \begin{figure}[H]
 \centering
 \includegraphics[width=9cm]{model_silnik.png}   
-\caption{Scheamt silnika synchronicznego z magnesami trwa³ymi}
+\caption{Schemat silnika synchronicznego z magnesami trwa³ymi}
 \label{fig:5}
 \end{figure} 
 
 
-\noindent M - indukcyjnoœæ wzajemna\\
-L - indukcyjnoœæ w³asna\\
-R - rezystancja uzwojeñ\\
+M - indukcyjnoœæ wzajemna
+
+L - indukcyjnoœæ w³asna
+
+R - rezystancja uzwojeñ
+
 E - si³a elektromotoryczna
 \\
 
@@ -304,25 +321,52 @@ U_{B}  \\
 U_{C}  \\
 \end{bmatrix}
 \end{equation}
+\\
 
-Wykorzystuj¹c równanie \ref{eqn:7} , \ref{eqn:5} , \ref{eqn:3} i zapis na w postaci równaæ stanu \ref{eqn:8} uzyska siê pe³en model idealnego silnika o trapeziodalnej sile elektromotorycznej \cite{krykowski}:
+Wykorzystuj¹c równanie \ref{eqn:10},\ref{eqn:7} , \ref{eqn:5} , \ref{eqn:3} i zapis na w postaci równaæ stanu \ref{eqn:8} uzyska siê pe³en model idealnego silnika o trapeziodalnej sile elektromotorycznej \cite{krykowski}:
 
 \begin{equation} \label{eqn:8}
  \hat{x}=Ax+Bu
 \end{equation} 
 
-gdzie
+gdzie:
+
+\begin{equation} \label{eqn:11}
+ x=
+\begin{bmatrix}
+I_{A}  & I_{B}  & I_{C} & \omega & \theta
+\end{bmatrix}^{T}
+\end{equation} 
+
+\begin{equation} \label{eqn:12}
+ u=
+\begin{bmatrix}
+U_{A}  & U_{B}  & U_{C} & M
+\end{bmatrix}^{T}
+\end{equation} 
+
+\begin{equation} \label{eqn:13}
+ A=
+\begin{bmatrix}
+-\frac{R}{L}  & 0  & 0 & -p\psi_{A}(\theta_{e})/L & 0\\
+0  & -\frac{R}{L}  & 0 & -p\psi_{B}(\theta_{e})/L & 0\\
+0  & 0  & -\frac{R}{L} & -p\psi_{C}(\theta_{e})/L & 0\\
+-p\psi_{A}(\theta_{e})/J & -p\psi_{B}(\theta_{e})/J & -p\psi_{C}(\theta_{e})/J & -B/J & 0 \\
+0 & 0 & 0 & 1 & 0
+\end{bmatrix}
+\end{equation} 
 
 
-
-
-
-
-
-
-
-
-
+\begin{equation} \label{eqn:14}
+ B=
+\begin{bmatrix}
+1/L & 0 & 0 & 0 \\
+0 & 1/L & 0 & 0 \\
+0 & 0 & 1/L & 0 \\
+0 & 0 & 0 & 1/L \\
+0 & 0 & 0 & 0 \\
+\end{bmatrix}
+\end{equation} 
 
 
 
@@ -334,8 +378,93 @@ gdzie
 
 \section{Field Orient Control}
  \label{chapter:1}
-  
+ 
+ Algorytm wektorowy FOC (ang. Field Orient Control) przedstawiony schematycznie na rysunku \ref{fig:9} jest jedn¹ z powszechnie stosowanych metod sterowania silników trójfazowych. Polega na bezpoœrednim sterowaniu wiruj¹cym polem stojana\cite{Przepiorkowski2010FOC}.  Pozwala uzyskaæ dok³adn¹ i dynamiczn¹ regulacjê prêdkoœci i momentu w szerokim zakresie.
+ \\
+ 
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{diagramFOC.png}   
+\caption{Algorytm FOC \cite{Frick2018BLDC}}
+\label{fig:9}
+\end{figure} 
+ 
+Metoda FOC steruje pr¹dami fazowymi stojana reprezentowanymi w postaci wektora. Czujniki pr¹du dostarczaj¹ informacjê zwrotn¹ o aktualnych pr¹dach fazowych. Za pomoc¹ transformaty Clark’a, wyra¿ona za pomoc¹ wzoru   \ref{eqn:15} i pokazana na rysunku \ref{fig:6},   przekszta³ca siê trójwymiarowy uk³ad wspó³rzêdnych, w którym opisane s¹ pr¹dy fazowe Ia,Ib,Ic na uk³ad ograniczony tylko do dwóch wspó³rzêdnych otrzymuj¹c wiruj¹cy wektor na p³aszczyŸnie. Znaj¹c aktualne po³o¿enie wirnika i korzystaj¹c z transformaty Park’a, wyra¿ona we wzorze \ref{eqn:16} i pokazana na rysunku \ref{fig:7}, uzyskujemy wiruj¹cy uk³ad wspó³rzêdnych . Operacja ta pozwala to na przekszta³cenie wiruj¹cego wektora pr¹du na dwie sk³adowe sta³e Id, Iq. Id jest wielkoœci¹ odpowiadaj¹c¹ strumieniowi magnetycznemu a Iq momentowi obrotowemu silnika. Minimalizuj¹c wartoœæ Id zapewniamy k¹t prosty miêdzy polem magnetycznym stojana i wirnika oraz uzyskujemy najwiêksza sprawnoœæ silnika\cite{Przepiorkowski2010FOC}
+\cite{europe1998field}.
+\\
 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=7cm]{clark.png}   
+\caption{Transformata Clark'a \cite{europe1998field}}
+\label{fig:6}
+\end{figure} 
+
+\begin{equation} \label{eqn:15}
+\left\{ \begin{array}{ll}
+I_{\alpha}=I_{A}\\
+I_{\beta}=\frac{1}{\sqrt{3}}I_{A}+\frac{2}{\sqrt{3}}I_{B} \\
+\end{array} \right. 
+\end{equation} 
+\\
+
+
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{park.png}   
+\caption{Transformata Clark'a \cite{europe1998field}}
+\label{fig:7}
+\end{figure} 
+
+\begin{equation} \label{eqn:16}
+\left\{ \begin{array}{ll}
+I_{d}=I_{\alpha}cos(\theta)+I_{\beta}sin(\theta)\\
+I_{q}=I_{\alpha}sin(\theta)+I_{\beta}cos(\theta)
+\end{array} \right. 
+\end{equation} 
+\\
+
+ 
+Algorytm FOC pozwala uzyskaæ z trzech przebiegów pr¹dów przemiennych, dwie sk³adowe sta³opr¹dowe. Pozwala to na zastosowanie dwóch regulatorów PID dla sk³adowej Id oraz Iq uzyskuj¹c regulator pr¹du(momentu). Regulacje prêdkoœci obrotowej i po³o¿enia wirnika mo¿na zrealizowaæ przez dodanie kolejnych regulatorów PID do ga³êzi ze sta³¹ Iq. 
+ 
+
+Zastosowanie odwrotnych transformat pozwala na sprowadzenie sk³adowych sta³ych na trzy przebiegi  sinusoidalne i wprowadzenie tych wartoœci na kolejny blok algorytmu FOC zwany SVPWM (ang. Space Vector Pulse Width Mudulation) opisany w rozdziale \ref{chapter:2}. Blok ten steruje bramkami tranzystorów przetwornika, aby uzyskaæ w uzwojeniach takie przebiegi pr¹dów, które bêd¹ generowa³y odpowiedni¹ amplitudê i prêdkoœæ wirowania pola magnetycznego stojana wzglêdem pola wirnika.Rysunek \ref{fig:8} przedstawia kolejnoœæ dokonywanych transformacji.
+
+ \begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{transformacje.png}   
+\caption{Transformacje w algorytmie FOC \cite{Frick2018BLDC}}
+\label{fig:8}
+\end{figure}  
+
+\section{SVPWM}
+ \label{chapter:2}
+ 
+ Wydajnoœæ pr¹dowa mikrokontrolera jest niewystarczaj¹ca aby zasiliæ silnik, dlatego uzwojenia stojana s¹ bezpoœrednio pod³¹czone do przekszta³tnika energoelektronicznego. Na rysunku \ref{fig:4} przedstawiony jest uproszczony schemat.  Zasilany jest on napiêciem sta³ym. Elementami wykonawczymi s¹ tranzystory mocy. 
+ W przekszta³tniku trójfazowym jest grupa trzech zaworów dodatnich i ujemnych. W ka¿dej chwili aktywne s¹ trzy zawory. W ten sposób uzyskujemy osiem mo¿liwych kombinacji za³¹czeñ tranzystorów, które generuj¹ osiem wektorów i dziel¹ przestrzeñ na szeœæ sektorów.Schemat przedstawiony na \\ rysunku \ref{fig:9}
+
+ \begin{figure}[H]
+\centering
+\includegraphics[width=7cm]{hexagon.png}   
+\caption{Wektory w przestrzeni stanu i podzia³ na sektory \cite{Frick2018BLDC}}
+\label{fig:9}
+\end{figure} 
+ 
+Na przyk³adzie rysunku \ref{fig:10} zosta³ objaœniony sposób generowania dowolnego wektora wed³ug metody SVPWM.  Wektor Vx znajdujê siê w sektorze pierwszym i jest wynikiem dodania do siebie trzech wektorów Va, Vb, Vo, gdzie Vo jest wektorem zerowym.
+
+ \begin{figure}[H]
+\centering
+\includegraphics[width=7cm]{svpwm.png}   
+\caption{Generowanie wektora Vx \cite{mansour2015novel}}
+\label{fig:10}
+\end{figure} 
+
+Dla sektora pierwszego wektor Va jest zgodny z kierunkiem wektora V1 a wektor Vb z kierunkiem wektora V2. D³ugoœæ obu wektorów jest determinowana przez czas, w którym dana sekwencja zaworów (reprezentowana przez okreœlony wektor V1,…,V6) jest aktywna. Z wyra¿enia X mo¿na wyznaczyæ czasy, które s¹ potrzebne, aby wygenerowaæ dany wektor:
+
+Suma czasów potrzebnych do  wygenerowania wektorów Va, Vb i wektora zerowego jest równa okresowi  modulacji szerokoœci impulsów.
 
 
 

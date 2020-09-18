@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.9)  17 SEP 2020 21:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.9)  18 SEP 2020 21:28
 entering extended mode
 **./praca_inz.tex
 (praca_inz.tex
@@ -278,7 +278,11 @@ Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 )
 ("C:\Program Files\MiKTeX 2.9\tex/latex/tools\indentfirst.sty"
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
-) (praca_inz.aux)
+) (praca_inz.aux
+
+LaTeX Warning: Label `fig:9' multiply defined.
+
+)
 \openout1 = `praca_inz.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
@@ -295,7 +299,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
 LaTeX Font Info:    ... okay on input line 80.
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 80
 .
-("C:\Program Files\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 ("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
@@ -423,60 +427,126 @@ Underfull \hbox (badness 10000) in paragraph at lines 178--180
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--196
+Underfull \hbox (badness 10000) in paragraph at lines 201--203
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--203
+Underfull \hbox (badness 10000) in paragraph at lines 210--212
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--219
 
  []
 
 <./fig/model_silnik.png, id=34, 459.96844pt x 290.58563pt>
 File: ./fig/model_silnik.png Graphic file (type png)
 <use ./fig/model_silnik.png>
-Package pdftex.def Info: ./fig/model_silnik.png  used on input line 209.
+Package pdftex.def Info: ./fig/model_silnik.png  used on input line 225.
 (pdftex.def)             Requested size: 256.0748pt x 161.7824pt.
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 215--220
+Underfull \hbox (badness 10000) in paragraph at lines 237--239
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--222
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
 
  []
 
-(praca_inz.lof)
+
+Underfull \hbox (badness 10000) in paragraph at lines 323--325
+
+ []
+
+[7 <./fig/model_silnik.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 382--384
+
+ []
+
+<./fig/diagramFOC.png, id=49, 770.88pt x 322.95656pt>
+File: ./fig/diagramFOC.png Graphic file (type png)
+<use ./fig/diagramFOC.png>
+Package pdftex.def Info: ./fig/diagramFOC.png  used on input line 387.
+(pdftex.def)             Requested size: 398.33858pt x 166.87888pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--395
+
+ []
+
+<./fig/clark.png, id=50, 319.1925pt x 313.9228pt>
+File: ./fig/clark.png Graphic file (type png)
+<use ./fig/clark.png>
+Package pdftex.def Info: ./fig/clark.png  used on input line 399.
+(pdftex.def)             Requested size: 199.16928pt x 195.88033pt.
+[8 <./fig/diagramFOC.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 409--411
+
+ []
+
+<./fig/park.png, id=55, 311.66437pt x 188.20313pt>
+File: ./fig/park.png Graphic file (type png)
+<use ./fig/park.png>
+Package pdftex.def Info: ./fig/park.png  used on input line 417.
+(pdftex.def)             Requested size: 227.62204pt x 137.45604pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--429
+
+ []
+
+<./fig/transformacje.png, id=56, 859.71187pt x 296.60812pt>
+File: ./fig/transformacje.png Graphic file (type png)
+<use ./fig/transformacje.png>
+Package pdftex.def Info: ./fig/transformacje.png  used on input line 438.
+(pdftex.def)             Requested size: 398.33858pt x 137.43256pt.
+[9 <./fig/clark.png> <./fig/park.png>]
+<./fig/hexagon.png, id=63, 428.35031pt x 366.61969pt>
+File: ./fig/hexagon.png Graphic file (type png)
+<use ./fig/hexagon.png>
+Package pdftex.def Info: ./fig/hexagon.png  used on input line 451.
+(pdftex.def)             Requested size: 199.16928pt x 170.4652pt.
+<./fig/svpwm.png, id=64, 290.58563pt x 231.86626pt>
+File: ./fig/svpwm.png Graphic file (type png)
+<use ./fig/svpwm.png>
+Package pdftex.def Info: ./fig/svpwm.png  used on input line 460.
+(pdftex.def)             Requested size: 199.16928pt x 158.92294pt.
+ [10 <./fig/transformacje.png> <./fig/hexagon.png>] (praca_inz.lof)
 \tf@lof=\write4
 \openout4 = `praca_inz.lof'.
 
- (praca_inz.bbl [7 <./fig/model_silnik.png>]) [8] (praca_inz.aux) ) 
+ (praca_inz.bbl [11 <./fig/svpwm.png>]) [12]
+(praca_inz.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4581 strings out of 492483
- 64468 string characters out of 3131034
- 173749 words of memory out of 3000000
- 8783 multiletter control sequences out of 15000+200000
+ 4640 strings out of 492483
+ 65382 string characters out of 3131034
+ 176930 words of memory out of 3000000
+ 8836 multiletter control sequences out of 15000+200000
  56943 words of font info for 55 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,7n,44p,1437b,367s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program 
-Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Program Files/MiKTeX 2.9/
-fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/l
-m/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/P
-rogram Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
-blic/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/
-lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/lm/lmsy10.pfb>
-Output written on praca_inz.pdf (8 pages, 857540 bytes).
+ 32i,8n,44p,1437b,367s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Fil
+es/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Program Files/MiKTeX 2.9/fon
+ts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ma
+thit.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/lm/lmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr1
+7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/lm/lmsy7.pfb>
+Output written on praca_inz.pdf (12 pages, 998831 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
+ 122 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

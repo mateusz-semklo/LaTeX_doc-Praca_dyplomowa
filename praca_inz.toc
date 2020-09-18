@@ -5,7 +5,8 @@
 \contentsline {subsection}{\numberline {2.2}Zasada dzia\IeC {\l }ania sinika BLDC}{5}%
 \contentsline {subsection}{\numberline {2.3}Sposoby sterowania}{5}%
 \contentsline {subsection}{\numberline {2.4}Model matematyczny}{6}%
-\contentsline {subsection}{\numberline {2.5}Wady i zalety}{7}%
-\contentsline {section}{\numberline {3}Field Orient Control}{7}%
-\contentsline {section}{\numberline {4}Wnioski}{7}%
-\contentsline {section}{Wykaz ilustracji}{7}%
+\contentsline {subsection}{\numberline {2.5}Wady i zalety}{8}%
+\contentsline {section}{\numberline {3}Field Orient Control}{8}%
+\contentsline {section}{\numberline {4}SVPWM}{10}%
+\contentsline {section}{\numberline {5}Wnioski}{11}%
+\contentsline {section}{Wykaz ilustracji}{11}%

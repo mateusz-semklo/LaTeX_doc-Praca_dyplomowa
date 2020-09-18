@@ -5,6 +5,17 @@ Arkadiusz Domoracki and Krzysztof Krykowski.
 \newblock Silniki bldc-klasyczne metody sterowania.
 \newblock {\em Zeszyty Problemowe--Maszyny Elektryczne}, 72, 2005.
 
+\bibitem{europe1998field}
+Texas~Instruments Europe.
+\newblock Field orientated control of 3-phase ac-motors.
+\newblock {\em Literature Number: BPRA073}, 1998.
+
+\bibitem{Frick2018BLDC}
+Charles Frick.
+\newblock Brushless dc motors introduction for next-generation missile
+  actuation systems outline.
+\newblock {\em Analog Devices, Inc.}, 6, 2018.
+
 \bibitem{goryca2012metody}
 Zbigniew Goryca.
 \newblock Metody sterowania silnik{\'o}w bldc.
@@ -15,6 +26,18 @@ Zbigniew Goryca.
 Krzysztof Krykowski.
 \newblock {\em Silniki PM BLDC}.
 \newblock Wydawnictwo BTC, Legionowo, 2015.
+
+\bibitem{mansour2015novel}
+Ahmed~A Mansour.
+\newblock Novel svpwm based on first order equation.
+\newblock {\em Journal of Electrical Systems and Information Technology},
+  2(2):197--206, 2015.
+
+\bibitem{Przepiorkowski2010FOC}
+Jacek Przepiorkowski.
+\newblock Trojfazowy falownik wektorowy zestaw ewaluacyjny tms320f28035
+  podstawy teoretyczne.
+\newblock {\em SKLEP.AVT.PL ELEKTRONIKA PRAKTYCZNA}, 4, 2010.
 
 \bibitem{zajkowski2013sterowanie}
 Konrad Zajkowski and Stanis{\l}aw Duer.
