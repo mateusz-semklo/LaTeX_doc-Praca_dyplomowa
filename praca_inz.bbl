@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{domoracki2005silniki}
 Arkadiusz Domoracki and Krzysztof Krykowski.
@@ -38,6 +38,19 @@ Jacek Przepiorkowski.
 \newblock Trojfazowy falownik wektorowy zestaw ewaluacyjny tms320f28035
   podstawy teoretyczne.
 \newblock {\em SKLEP.AVT.PL ELEKTRONIKA PRAKTYCZNA}, 4, 2010.
+
+\bibitem{stm32f7}
+STMicroelectronics.
+\newblock {\em STM32F745xx, STM32F746xx}, 2016.
+
+\bibitem{nucleo}
+STMicroelectronics.
+\newblock {\em UM1974, User manual, STM32 Nucleo-144 boards}, 2017.
+
+\bibitem{B-G431}
+STMicroelectronics.
+\newblock {\em UM2516 User Manual, Electronic speed controller Discovery kit
+  for drones with STM32G431CB}, 2020.
 
 \bibitem{zajkowski2013sterowanie}
 Konrad Zajkowski and Stanis{\l}aw Duer.

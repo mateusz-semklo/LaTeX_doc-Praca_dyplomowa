@@ -10,3 +10,7 @@
 \contentsline {figure}{\numberline {9}{\ignorespaces Transformacje w algorytmie FOC \cite {Frick2018BLDC}}}{10}%
 \contentsline {figure}{\numberline {10}{\ignorespaces Wektory w przestrzeni stanu i podzia\IeC {\l } na sektory \cite {Frick2018BLDC}}}{10}%
 \contentsline {figure}{\numberline {11}{\ignorespaces Generowanie wektora Vx \cite {mansour2015novel}}}{11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Nap\k ed z silnikiem BLDC}}{11}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Silnik BLDC}}{12}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Silnik BLDC \cite {B-G431}}}{13}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Zestaw rozwojowy STM32 Nucleo F746ZG \cite {nucleo}}}{14}%

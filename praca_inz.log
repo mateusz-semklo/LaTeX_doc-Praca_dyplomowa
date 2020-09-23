@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.9)  18 SEP 2020 21:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.9)  23 SEP 2020 13:07
 entering extended mode
 **./praca_inz.tex
 (praca_inz.tex
@@ -278,11 +278,7 @@ Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 )
 ("C:\Program Files\MiKTeX 2.9\tex/latex/tools\indentfirst.sty"
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
-) (praca_inz.aux
-
-LaTeX Warning: Label `fig:9' multiply defined.
-
-)
+) (praca_inz.aux)
 \openout1 = `praca_inz.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
@@ -299,7 +295,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
 LaTeX Font Info:    ... okay on input line 80.
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 80
 .
- ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
+("C:\Program Files\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 ("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
@@ -512,41 +508,67 @@ File: ./fig/svpwm.png Graphic file (type png)
 <use ./fig/svpwm.png>
 Package pdftex.def Info: ./fig/svpwm.png  used on input line 460.
 (pdftex.def)             Requested size: 199.16928pt x 158.92294pt.
- [10 <./fig/transformacje.png> <./fig/hexagon.png>] (praca_inz.lof)
+ [10 <./fig/transformacje.png> <./fig/hexagon.png>]
+<./fig/naped1.png, id=70, 2778.63094pt x 1948.27875pt>
+File: ./fig/naped1.png Graphic file (type png)
+<use ./fig/naped1.png>
+Package pdftex.def Info: ./fig/naped1.png  used on input line 475.
+(pdftex.def)             Requested size: 341.43306pt x 239.40201pt.
+ [11 <./fig/svpwm.png> <./fig/naped1.png>]
+<./fig/silnik_bldc.png, id=76, 438.8897pt x 304.88907pt>
+File: ./fig/silnik_bldc.png Graphic file (type png)
+<use ./fig/silnik_bldc.png>
+Package pdftex.def Info: ./fig/silnik_bldc.png  used on input line 514.
+(pdftex.def)             Requested size: 284.52756pt x 197.65915pt.
+
+Overfull \hbox (20.2264pt too wide) in paragraph at lines 541--542
+[]\T1/lmr/m/n/10 Zestaw roz-wo-jowy B-G431B-ESC1 firmy STMi-cro-elec-tro-nics o
+party na mi-kro-kon-tro-le-rze STM32G431CB
+ []
+
+[12 <./fig/silnik_bldc.png>]
+<./fig/B-G431.png, id=81, 683.55376pt x 396.7322pt>
+File: ./fig/B-G431.png Graphic file (type png)
+<use ./fig/B-G431.png>
+Package pdftex.def Info: ./fig/B-G431.png  used on input line 567.
+(pdftex.def)             Requested size: 398.33858pt x 231.20053pt.
+ [13 <./fig/B-G431.png>]
+<./fig/nucleo.png, id=87, 441.14813pt x 450.18187pt>
+File: ./fig/nucleo.png Graphic file (type png)
+<use ./fig/nucleo.png>
+Package pdftex.def Info: ./fig/nucleo.png  used on input line 592.
+(pdftex.def)             Requested size: 227.62204pt x 232.28244pt.
+ (praca_inz.lof)
 \tf@lof=\write4
 \openout4 = `praca_inz.lof'.
 
- (praca_inz.bbl [11 <./fig/svpwm.png>]) [12]
-(praca_inz.aux)
 
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+(praca_inz.bbl [14 <./fig/nucleo.png>]) [15] (praca_inz.aux) ) 
 Here is how much of TeX's memory you used:
- 4640 strings out of 492483
- 65382 string characters out of 3131034
- 176930 words of memory out of 3000000
- 8836 multiletter control sequences out of 15000+200000
+ 4672 strings out of 492483
+ 65889 string characters out of 3131034
+ 176953 words of memory out of 3000000
+ 8864 multiletter control sequences out of 15000+200000
  56943 words of font info for 55 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  32i,8n,44p,1437b,367s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Fil
-es/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Program Files/MiKTeX 2.9/fon
-ts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ma
-thit.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program 
-Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/lm/lmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr1
-7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/lm/lmsy7.pfb>
-Output written on praca_inz.pdf (12 pages, 998831 bytes).
+{C:/Program Files
+/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/fonts
+/enc/dvips/lm/lm-mathex.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-
+rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Progra
+m Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
+m/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.pfb>
+Output written on praca_inz.pdf (15 pages, 19756608 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
+ 140 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

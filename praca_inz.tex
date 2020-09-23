@@ -96,7 +96,7 @@ Kolejne rozdzia³y opisuj¹ sposób, schematy, etapy dzia³añ i wyniki obliczeñ  zbu
 
 
 \section{Silnik BLDC}
-\subsection{Budowa silnika BLDC}
+\subsection{Budowa}
 Bezszczotkowe silniki z magnesami trwa³ymi mo¿na podzieliæ na silniki pr¹du sta³ego BLDC (ang. BrushLess Direct-Current motor) oraz synchroniczne silniki pr¹du przemiennego PMSM (ang. Permanent Magnet Synchronous Motor). Ró¿ni¹ siê one kszta³tem przebiegu si³y elektromotorycznej. W silniku BLDC przyjmuje kszta³t trapezoidalny a silnik PMSM  sinusoidalny \cite{goryca2012metody}.
 
 \begin{figure}[H]
@@ -124,7 +124,7 @@ Istnieje wiele odmian silników BLDC ró¿ni¹cych siê budow¹, konstrukcj¹ obwodów m
 \label{fig:3}
 \end{figure} 
 
-\subsection{Zasada dzia³ania sinika BLDC}
+\subsection{Zasada dzia³ania}
 Silnik elektryczny przetwarza dostarczon¹ energiê elektryczn¹ w energiê mechaniczn¹. Ruch wirnika wystêpuje, gdy zasilaj¹c odpowiednie uzwojenia stojana nastêpuje pojawienie siê wiruj¹cego pola elektromagnetycznego, które oddzia³uje na pole magnetyczne wirnika i wprawia go w ruch. Strumienie magnetyczne wirnika i stojana powinny byæ wzglêdem siebie nieruchome. W klasycznym silniku pr¹du sta³ego powy¿szy warunek jest spe³niony przez odpowiednie umiejscowienie szczotek komutatora wzglêdem pola stojana.
 Z powodu braku klasycznego komutatora w silniku BLDC zapewnienie wirowania strumienia stojana synchronicznie z wirnikiem jest realizowane przez odpowiednie prze³¹czanie uzwojeñ. W tym celu 
 wykorzystuje siê przetwornik energoelektroniczny, którego zadaniem jest odpowiednie usytuowanie strumieni wzglêdem siebie, poprzez prze³¹czanie tranzystorami mocy. Aby to zrealizowaæ potrzebna jest wiedza o aktualnym po³o¿eniu k¹ta obrotu wirnika, wykorzystuj¹c czujniki Halla lub przetworniki obrotowo-impulsowe\cite{krykowski}.
@@ -386,10 +386,10 @@ U_{A}  & U_{B}  & U_{C} & M
 \centering
 \includegraphics[width=14cm]{diagramFOC.png}   
 \caption{Algorytm FOC \cite{Frick2018BLDC}}
-\label{fig:9}
+\label{fig:12}
 \end{figure} 
  
-Metoda FOC steruje pr¹dami fazowymi stojana reprezentowanymi w postaci wektora. Czujniki pr¹du dostarczaj¹ informacjê zwrotn¹ o aktualnych pr¹dach fazowych. Za pomoc¹ transformaty Clark’a, wyra¿ona za pomoc¹ wzoru   \ref{eqn:15} i pokazana na rysunku \ref{fig:6},   przekszta³ca siê trójwymiarowy uk³ad wspó³rzêdnych, w którym opisane s¹ pr¹dy fazowe Ia,Ib,Ic na uk³ad ograniczony tylko do dwóch wspó³rzêdnych otrzymuj¹c wiruj¹cy wektor na p³aszczyŸnie. Znaj¹c aktualne po³o¿enie wirnika i korzystaj¹c z transformaty Park’a, wyra¿ona we wzorze \ref{eqn:16} i pokazana na rysunku \ref{fig:7}, uzyskujemy wiruj¹cy uk³ad wspó³rzêdnych . Operacja ta pozwala to na przekszta³cenie wiruj¹cego wektora pr¹du na dwie sk³adowe sta³e Id, Iq. Id jest wielkoœci¹ odpowiadaj¹c¹ strumieniowi magnetycznemu a Iq momentowi obrotowemu silnika. Minimalizuj¹c wartoœæ Id zapewniamy k¹t prosty miêdzy polem magnetycznym stojana i wirnika oraz uzyskujemy najwiêksza sprawnoœæ silnika\cite{Przepiorkowski2010FOC}
+Metoda FOC steruje pr¹dami fazowymi stojana reprezentowanymi w postaci wektora. Czujniki pr¹du dostarczaj¹ informacjê zwrotn¹ o aktualnych pr¹dach fazowych. Za pomoc¹ transformaty Clark’a, wyra¿ona za pomoc¹ wzoru   \ref{eqn:15} i pokazana na rysunku \ref{fig:6},   przekszta³ca trójwymiarowy uk³ad wspó³rzêdnych, w którym opisane s¹ pr¹dy fazowe Ia,Ib,Ic na uk³ad ograniczony tylko do dwóch wspó³rzêdnych otrzymuj¹c wiruj¹cy wektor na p³aszczyŸnie. Znaj¹c aktualne po³o¿enie wirnika i korzystaj¹c z transformaty Park’a, wyra¿ona we wzorze \ref{eqn:16} i pokazana na rysunku \ref{fig:7}, uzyskujemy wiruj¹cy uk³ad wspó³rzêdnych . Operacja ta pozwala na na przekszta³cenie wiruj¹cego wektora pr¹du na dwie sk³adowe sta³e Id, Iq. Id jest wielkoœci¹ odpowiadaj¹c¹ strumieniowi magnetycznemu a Iq momentowi elektromagnetycznemu silnika. Minimalizuj¹c wartoœæ Id zapewniamy k¹t prosty miêdzy polem magnetycznym stojana i wirnika oraz uzyskujemy najwiêksza sprawnoœæ silnika\cite{Przepiorkowski2010FOC}
 \cite{europe1998field}.
 \\
 
@@ -444,7 +444,7 @@ Zastosowanie odwrotnych transformat pozwala na sprowadzenie sk³adowych sta³ych n
  \label{chapter:2}
  
  Wydajnoœæ pr¹dowa mikrokontrolera jest niewystarczaj¹ca aby zasiliæ silnik, dlatego uzwojenia stojana s¹ bezpoœrednio pod³¹czone do przekszta³tnika energoelektronicznego. Na rysunku \ref{fig:4} przedstawiony jest uproszczony schemat.  Zasilany jest on napiêciem sta³ym. Elementami wykonawczymi s¹ tranzystory mocy. 
- W przekszta³tniku trójfazowym jest grupa trzech zaworów dodatnich i ujemnych. W ka¿dej chwili aktywne s¹ trzy zawory. W ten sposób uzyskujemy osiem mo¿liwych kombinacji za³¹czeñ tranzystorów, które generuj¹ osiem wektorów i dziel¹ przestrzeñ na szeœæ sektorów.Schemat przedstawiony na \\ rysunku \ref{fig:9}
+ W przekszta³tniku trójfazowym jest grupa trzech zaworów dodatnich i ujemnych. W ka¿dej chwili aktywne s¹ trzy zawory. W ten sposób uzyskujemy osiem mo¿liwych kombinacji za³¹czeñ tranzystorów, które generuj¹ osiem wektorów i dziel¹ przestrzeñ na szeœæ sektorów.Schemat przedstawiony na \\ rysunku \ref{fig:9}.
 
  \begin{figure}[H]
 \centering
@@ -465,6 +465,149 @@ Na przyk³adzie rysunku \ref{fig:10} zosta³ objaœniony sposób generowania dowolne
 Dla sektora pierwszego wektor Va jest zgodny z kierunkiem wektora V1 a wektor Vb z kierunkiem wektora V2. D³ugoœæ obu wektorów jest determinowana przez czas, w którym dana sekwencja zaworów (reprezentowana przez okreœlony wektor V1,…,V6) jest aktywna. Z wyra¿enia X mo¿na wyznaczyæ czasy, które s¹ potrzebne, aby wygenerowaæ dany wektor:
 
 Suma czasów potrzebnych do  wygenerowania wektorów Va, Vb i wektora zerowego jest równa okresowi  modulacji szerokoœci impulsów.
+
+\section{Uk³ad napêdowy z silnikiem BLDC}
+Realizacja praktyczna uk³adu napêdowego jest przedstawiona poni¿ej (rysunek \ref{fig:13}).
+
+
+ \begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{naped1.png}   
+\caption{Napêd z silnikiem BLDC}
+\label{fig:13}
+\end{figure} 
+
+
+\subsection{Spis urz¹dzeñ}
+
+\begin{enumerate}
+\item Silnik bezszczotkowy FXD57BL 24 VDC
+\item Przetwornik obrotowo-impulsowy N38G6-720-BM-8-30FG2
+\item Zestaw rozwojowy STM32 B-G431B-ESC1
+\item Zestaw rozwojowy STM32 Nucleo F746ZG
+\item  Czujnik pr¹du Pololu 1185 ACS714 -5A : +5A
+\item  Czujnik pr¹du Pololu 1185 ACS714 -5A : +5A
+\item  Czujnik pr¹du Pololu 1185 ACS714 -5A : +5A
+\item  Zasilacz laboratoryjny KORAD 0-30V, 0-5A
+\end{enumerate}
+
+\subsection{Dane techniczne i opis urz¹dzeñ}
+
+\begin{enumerate}
+\item Silnik bezszczotkowy FXD57BL 24 VDC
+
+Silnik wykorzystany do budowy napêdu pokazany na rysunku \ref{fig:14}
+ 
+Parametry techniczne:
+\begin{itemize}
+\item Moc: 60W
+\item Napiêcie zasilania: 24 V
+\item Pr¹d znamionowy: 3.3 A
+\item Maksymalna prêdkoœæ obrotowa: 3000 obr/min
+\item Moment znamionowy: 0,18 Nm
+\item Wirnik dwupolowy 
+\item D³ugoœæ silnika: 55 mm
+\end{itemize}
+
+ \begin{figure}[H]
+\centering
+\includegraphics[width=10cm]{silnik_bldc.png}   
+\caption{Silnik BLDC}
+\label{fig:14}
+\end{figure} 
+
+
+
+\item Inkrementalny przetwornik obrotowo-impulsowy N38G6-720-BM-8-30FG2
+
+Przetwornik obrotowo-impulsowy inaczej enkoder jest czujnikiem mierz¹cym ruch. Przekszta³ca ruch obrotowy 
+w sygna³ elektryczny o przebiegu prostok¹tnym. Enkoder inkrementalny nie generuje informacji o po³o¿eniu bezwzglêdnym.
+
+\begin{itemize}
+\item rozdzielczoœæ: 720 impulsów/obrót
+\item napiêcie zasilania: 5 - 30 VDC
+\item rodzaj wyjœcia: PUSH - PULL
+\item maksymalny pobór pr¹du: 150 mA
+\item maksymalne obci¹¿enie pr¹dowe:	30 mA
+\item maksymalna czêstotliwoœæ:	150 kHz
+\item znamionowa prêdkoœæ pracy:	5000 obr/min
+\end{itemize}
+
+
+
+\item Zestaw rozwojowy STM32 B-G431B-ESC1
+
+
+Zestaw rozwojowy B-G431B-ESC1 firmy STMicroelectronics  oparty na mikrokontrolerze STM32G431CB jest dedykowanym uk³adem elektronicznym dla napêdów z silnikami BLDC/PMSM. Posiada przekszta³tnik energoelektroniczny zbudowany w oparciu o sterowniki L6387 i tranzystory mocy MOSFET STL180N6F7. Dla sterowania i monitorowania prac¹ silnika oraz do wspó³pracy  z innymi uk³adami zapewnia ró¿ne sposoby komunikacji  - UART, CAN i PWM. STM32G431CB wyposa¿ony w procesor  ARM Cortex M4 32-bity, pe³en zestaw instrukcji DSP (ang. Digital Signal Processing)   oraz blok do przetwarzania liczb zmiennoprzecinkowych FPU (ang. Floating-Point Unit) zapewnia mo¿liwoœæ implementacji ró¿nych zaawansowanych algorytmów sterowania. Posiada wbudowane uk³ady mierz¹ce pr¹d w silniku\cite{B-G431}. Rysunek \ref{fig:15} przedstawia najistotniejsze elementy wbudowane w uk³ad B-G431B-ESC1.
+
+
+
+Parametry techniczne B-G431B-ESC1 \cite{B-G431}:
+\begin{itemize}
+\item napiêcie znamionowe 60 V
+\item maksymalny pr¹d szczytowy (z uk³adem ch³odzenia): 40 A
+\end{itemize}
+
+Parametry techniczne STM32G431CB \cite{B-G431}:
+\begin{itemize}
+\item procesor: ARM Cortex M4 32-bity DSP
+\item czêstotliwoœæ taktowania procesora: 170 MHz
+\item Pamiêæ Flash: 128 KB
+\item Pamiêæ SRAM: 32 KB
+\item Przetwornik analogowo-cyfrowy 12-bitowy: 2
+\item Komparatory: 4
+\item Wbudowane wzmacniacze operacyjne: 3
+\item Kontroler DMA
+\item Interfejsy: UART, PWM, CAN
+\end{itemize}
+
+
+ \begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{B-G431.png}   
+\caption{Silnik BLDC \cite{B-G431}}
+\label{fig:15}
+\end{figure} 
+
+\item Zestaw rozwojowy STM32 Nucleo F746ZG
+
+Nucleo F746ZG jest zestawem rozwojowym opartym na mikrokontrolerze STM32F746Z. Du¿a iloœæ peryferiów oraz wyprowadzonych pinów do ich pod³¹czenia zapewnia wiele mo¿liwoœci prototypownia. Posiada wbudowany programator ST-LINK/V2-1 oraz z³¹cze RJ-45 do po³¹czenia sieciowego. 
+
+Parametry techniczne mikrokontrolera STM32F746Z \cite{stm32f7}:
+
+\begin{itemize}
+\item procesor: ARM Cortex M7 32-bity FPU, DSP
+\item czêstotliwoœæ taktowania procesora: 216 MHz
+\item Pamiêæ Flash: 1 MB
+\item Pamiêæ SRAM: 320 KB
+\item przetwornik analogowo-cyfrowy 12-bitowy: 3
+\item Liczniki: 18
+\item przetwornik cyfrowo-analogowe 12-bitowy: 2
+\item Interfejsy: UART,USART, $I^2 C$, SPI, CAN, SAIs, HDMI, USB
+\item Kontroler DMA
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{nucleo.png}   
+\caption{Zestaw rozwojowy STM32 Nucleo F746ZG \cite{nucleo}}
+\label{fig:16}
+\end{figure} 
+ 
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
