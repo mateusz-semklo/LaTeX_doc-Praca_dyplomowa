@@ -8,8 +8,9 @@
 \contentsline {subsection}{\numberline {2.5}Wady i zalety}{8}%
 \contentsline {section}{\numberline {3}Field Orient Control}{8}%
 \contentsline {section}{\numberline {4}SVPWM}{10}%
-\contentsline {section}{\numberline {5}Uk\IeC {\l }ad nap\k edowy z silnikiem BLDC}{11}%
-\contentsline {subsection}{\numberline {5.1}Spis urz\k adze\'n}{11}%
-\contentsline {subsection}{\numberline {5.2}Dane techniczne i opis urz\k adze\'n}{12}%
-\contentsline {section}{\numberline {6}Wnioski}{14}%
-\contentsline {section}{Wykaz ilustracji}{14}%
+\contentsline {section}{\numberline {5}Uk\IeC {\l }ad nap\k edowy z silnikiem BLDC}{12}%
+\contentsline {subsection}{\numberline {5.1}Spis urz\k adze\'n}{12}%
+\contentsline {subsection}{\numberline {5.2}Opis i dane techniczne urz\k adze\'n}{12}%
+\contentsline {subsection}{\numberline {5.3}Implementacja uk\IeC {\l }adu regulacji}{15}%
+\contentsline {section}{\numberline {6}Wnioski}{16}%
+\contentsline {section}{Wykaz ilustracji}{16}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.9)  23 SEP 2020 13:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.9)  6 OCT 2020 20:52
 entering extended mode
 **./praca_inz.tex
 (praca_inz.tex
@@ -278,23 +278,28 @@ Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 )
 ("C:\Program Files\MiKTeX 2.9\tex/latex/tools\indentfirst.sty"
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ) (praca_inz.aux)
 \openout1 = `praca_inz.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 80
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 81
 .
+
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -319,45 +324,45 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 <./fig/logo.png, id=1, 155.83218pt x 155.07938pt>
 File: ./fig/logo.png Graphic file (type png)
 <use ./fig/logo.png>
-Package pdftex.def Info: ./fig/logo.png  used on input line 81.
+Package pdftex.def Info: ./fig/logo.png  used on input line 82.
 (pdftex.def)             Requested size: 155.8318pt x 155.07898pt.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 8
-1.
+2.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 8
-1.
+2.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-81.
+82.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-81.
+82.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 81.
+(Font)              <12> on input line 82.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 81.
+(Font)              <8> on input line 82.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 81.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 81.
+(Font)              <6> on input line 82.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 82.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 81.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 82.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
@@ -381,10 +386,10 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 <./fig/przebieg_SEM.png, id=19, 529.22719pt x 191.21437pt>
 File: ./fig/przebieg_SEM.png Graphic file (type png)
 <use ./fig/przebieg_SEM.png>
-Package pdftex.def Info: ./fig/przebieg_SEM.png  used on input line 104.
+Package pdftex.def Info: ./fig/przebieg_SEM.png  used on input line 105.
 (pdftex.def)             Requested size: 529.22589pt x 191.2139pt.
 
-Overfull \hbox (73.9818pt too wide) in paragraph at lines 104--105
+Overfull \hbox (73.9818pt too wide) in paragraph at lines 105--107
  [][] 
  []
 
@@ -478,97 +483,139 @@ File: ./fig/clark.png Graphic file (type png)
 Package pdftex.def Info: ./fig/clark.png  used on input line 399.
 (pdftex.def)             Requested size: 199.16928pt x 195.88033pt.
 [8 <./fig/diagramFOC.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 409--411
+Underfull \hbox (badness 10000) in paragraph at lines 411--413
 
  []
 
 <./fig/park.png, id=55, 311.66437pt x 188.20313pt>
 File: ./fig/park.png Graphic file (type png)
 <use ./fig/park.png>
-Package pdftex.def Info: ./fig/park.png  used on input line 417.
+Package pdftex.def Info: ./fig/park.png  used on input line 419.
 (pdftex.def)             Requested size: 227.62204pt x 137.45604pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 427--429
+Underfull \hbox (badness 10000) in paragraph at lines 431--433
 
  []
 
 <./fig/transformacje.png, id=56, 859.71187pt x 296.60812pt>
 File: ./fig/transformacje.png Graphic file (type png)
 <use ./fig/transformacje.png>
-Package pdftex.def Info: ./fig/transformacje.png  used on input line 438.
+Package pdftex.def Info: ./fig/transformacje.png  used on input line 442.
 (pdftex.def)             Requested size: 398.33858pt x 137.43256pt.
 [9 <./fig/clark.png> <./fig/park.png>]
 <./fig/hexagon.png, id=63, 428.35031pt x 366.61969pt>
 File: ./fig/hexagon.png Graphic file (type png)
 <use ./fig/hexagon.png>
-Package pdftex.def Info: ./fig/hexagon.png  used on input line 451.
+Package pdftex.def Info: ./fig/hexagon.png  used on input line 456.
 (pdftex.def)             Requested size: 199.16928pt x 170.4652pt.
-<./fig/svpwm.png, id=64, 290.58563pt x 231.86626pt>
+<./fig/svpwm_max.png, id=64, 362.85562pt x 269.50688pt>
+File: ./fig/svpwm_max.png Graphic file (type png)
+<use ./fig/svpwm_max.png>
+Package pdftex.def Info: ./fig/svpwm_max.png  used on input line 466.
+(pdftex.def)             Requested size: 227.62204pt x 169.06645pt.
+ [10 <./fig/transformacje.png> <./fig/hexagon.png>]
+<./fig/svpwm.png, id=70, 290.58563pt x 231.86626pt>
 File: ./fig/svpwm.png Graphic file (type png)
 <use ./fig/svpwm.png>
-Package pdftex.def Info: ./fig/svpwm.png  used on input line 460.
+Package pdftex.def Info: ./fig/svpwm.png  used on input line 476.
 (pdftex.def)             Requested size: 199.16928pt x 158.92294pt.
- [10 <./fig/transformacje.png> <./fig/hexagon.png>]
-<./fig/naped1.png, id=70, 2778.63094pt x 1948.27875pt>
+<./fig/naped1.png, id=71, 2778.63094pt x 1948.27875pt>
 File: ./fig/naped1.png Graphic file (type png)
 <use ./fig/naped1.png>
-Package pdftex.def Info: ./fig/naped1.png  used on input line 475.
+Package pdftex.def Info: ./fig/naped1.png  used on input line 517.
 (pdftex.def)             Requested size: 341.43306pt x 239.40201pt.
- [11 <./fig/svpwm.png> <./fig/naped1.png>]
-<./fig/silnik_bldc.png, id=76, 438.8897pt x 304.88907pt>
+ [11 <./fig/svpwm_max.png> <./fig/svpwm.png>]
+<./fig/silnik_bldc.png, id=78, 438.8897pt x 304.88907pt>
 File: ./fig/silnik_bldc.png Graphic file (type png)
 <use ./fig/silnik_bldc.png>
-Package pdftex.def Info: ./fig/silnik_bldc.png  used on input line 514.
+Package pdftex.def Info: ./fig/silnik_bldc.png  used on input line 556.
 (pdftex.def)             Requested size: 284.52756pt x 197.65915pt.
-
-Overfull \hbox (20.2264pt too wide) in paragraph at lines 541--542
+ [12 <./fig/naped1.png>]
+Overfull \hbox (20.2264pt too wide) in paragraph at lines 583--584
 []\T1/lmr/m/n/10 Zestaw roz-wo-jowy B-G431B-ESC1 firmy STMi-cro-elec-tro-nics o
 party na mi-kro-kon-tro-le-rze STM32G431CB
  []
 
-[12 <./fig/silnik_bldc.png>]
-<./fig/B-G431.png, id=81, 683.55376pt x 396.7322pt>
+[13 <./fig/silnik_bldc.png>]
+<./fig/B-G431.png, id=88, 683.55376pt x 396.7322pt>
 File: ./fig/B-G431.png Graphic file (type png)
 <use ./fig/B-G431.png>
-Package pdftex.def Info: ./fig/B-G431.png  used on input line 567.
+Package pdftex.def Info: ./fig/B-G431.png  used on input line 609.
 (pdftex.def)             Requested size: 398.33858pt x 231.20053pt.
- [13 <./fig/B-G431.png>]
-<./fig/nucleo.png, id=87, 441.14813pt x 450.18187pt>
+<./fig/nucleo.png, id=89, 441.14813pt x 450.18187pt>
 File: ./fig/nucleo.png Graphic file (type png)
 <use ./fig/nucleo.png>
-Package pdftex.def Info: ./fig/nucleo.png  used on input line 592.
+Package pdftex.def Info: ./fig/nucleo.png  used on input line 635.
 (pdftex.def)             Requested size: 227.62204pt x 232.28244pt.
- (praca_inz.lof)
+ [14 <./fig/B-G431.png>]
+<./fig/current_sense.png, id=94, 242.40562pt x 185.19188pt>
+File: ./fig/current_sense.png Graphic file (type png)
+<use ./fig/current_sense.png>
+Package pdftex.def Info: ./fig/current_sense.png  used on input line 654.
+(pdftex.def)             Requested size: 227.62204pt x 173.90517pt.
+<./fig/opamp.png, id=95, 286.06876pt x 140.77594pt>
+File: ./fig/opamp.png Graphic file (type png)
+<use ./fig/opamp.png>
+Package pdftex.def Info: ./fig/opamp.png  used on input line 661.
+(pdftex.def)             Requested size: 227.62204pt x 112.01512pt.
+ [15 <./fig/nucleo.png> <./fig/current_sense.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 671--673
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--681
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--681
+
+ []
+
+<./fig/pid.png, id=101, 451.6875pt x 237.13594pt>
+File: ./fig/pid.png Graphic file (type png)
+<use ./fig/pid.png>
+Package pdftex.def Info: ./fig/pid.png  used on input line 698.
+(pdftex.def)             Requested size: 227.62204pt x 119.50484pt.
+(praca_inz.lof [16 <./fig/opamp.png> <./fig/pid.png>])
 \tf@lof=\write4
 \openout4 = `praca_inz.lof'.
 
+ (praca_inz.bbl
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 6
+.
 
-(praca_inz.bbl [14 <./fig/nucleo.png>]) [15] (praca_inz.aux) ) 
+("C:\Program Files\MiKTeX 2.9\tex/latex/lm\t1lmtt.fd"
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)) [17] (praca_inz.aux) ) 
 Here is how much of TeX's memory you used:
- 4672 strings out of 492483
- 65889 string characters out of 3131034
- 176953 words of memory out of 3000000
- 8864 multiletter control sequences out of 15000+200000
- 56943 words of font info for 55 fonts, out of 3000000 for 9000
+ 4828 strings out of 492483
+ 68054 string characters out of 3131034
+ 178203 words of memory out of 3000000
+ 9008 multiletter control sequences out of 15000+200000
+ 57262 words of font info for 56 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  32i,8n,44p,1437b,367s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files
-/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/fonts
-/enc/dvips/lm/lm-mathex.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-
-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Progra
-m Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
-m/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.pfb>
-Output written on praca_inz.pdf (15 pages, 19756608 bytes).
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.
+enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program F
+iles/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/f
+onts/enc/dvips/lm/lm-mathex.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm
+/lm-rm.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi5.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm
+/lmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/lm/lmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pf
+b>
+Output written on praca_inz.pdf (17 pages, 19851131 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
+ 162 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
 
