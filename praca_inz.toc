@@ -2,15 +2,17 @@
 \contentsline {section}{\numberline {1}Wst\k ep}{3}%
 \contentsline {section}{\numberline {2}Silnik BLDC}{4}%
 \contentsline {subsection}{\numberline {2.1}Budowa}{4}%
-\contentsline {subsection}{\numberline {2.2}Zasada dzia\IeC {\l }ania}{5}%
+\contentsline {subsection}{\numberline {2.2}Zasada dzia\IeC {\l }ania}{4}%
 \contentsline {subsection}{\numberline {2.3}Sposoby sterowania}{5}%
-\contentsline {subsection}{\numberline {2.4}Model matematyczny}{6}%
-\contentsline {subsection}{\numberline {2.5}Wady i zalety}{8}%
+\contentsline {subsection}{\numberline {2.4}Model matematyczny}{5}%
+\contentsline {subsection}{\numberline {2.5}Charakterystyka silnika - wady, zalety}{7}%
 \contentsline {section}{\numberline {3}Field Orient Control}{8}%
-\contentsline {section}{\numberline {4}SVPWM}{10}%
-\contentsline {section}{\numberline {5}Uk\IeC {\l }ad nap\k edowy z silnikiem BLDC}{12}%
-\contentsline {subsection}{\numberline {5.1}Spis urz\k adze\'n}{12}%
-\contentsline {subsection}{\numberline {5.2}Opis i dane techniczne urz\k adze\'n}{12}%
-\contentsline {subsection}{\numberline {5.3}Implementacja uk\IeC {\l }adu regulacji}{15}%
-\contentsline {section}{\numberline {6}Wnioski}{16}%
-\contentsline {section}{Wykaz ilustracji}{16}%
+\contentsline {section}{\numberline {4}Modulacja wektorowa - SVPWM}{9}%
+\contentsline {section}{\numberline {5}Realizacja uk\IeC {\l }adu nap\k edowego z silnikiem BLDC}{12}%
+\contentsline {subsection}{\numberline {5.1}Realizacja sprz\k etowa}{12}%
+\contentsline {subsection}{\numberline {5.2}Spis urz\k adze\'n}{12}%
+\contentsline {subsection}{\numberline {5.3}Schemat elektryczny}{13}%
+\contentsline {subsection}{\numberline {5.4}Opis i dane techniczne urz\k adze\'n}{13}%
+\contentsline {subsection}{\numberline {5.5}Implementacja uk\IeC {\l }adu regulacji}{16}%
+\contentsline {section}{\numberline {6}Wnioski}{19}%
+\contentsline {section}{Wykaz ilustracji}{19}%

@@ -1,20 +1,23 @@
 \babel@toc {polish}{}
 \contentsline {figure}{\numberline {1}{\ignorespaces Przebiegi si\IeC {\l }y elektromotorycznej E, pr\k adu I i momentu T dla jednej fazy dla: a) silnika PMSM, b) silnika BLDC \cite {zajkowski2013sterowanie} }}{4}%
 \contentsline {figure}{\numberline {2}{\ignorespaces Stojan silnika BLDC \cite {goryca2012metody}}}{4}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Wirnik silnika BLDC \cite {goryca2012metody}}}{5}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Wirnik silnika BLDC \cite {goryca2012metody}}}{4}%
 \contentsline {figure}{\numberline {4}{\ignorespaces Uproszczony schemat uk\IeC {\l }adu sterowania i zasilania silnika \cite {domoracki2005silniki}}}{5}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Schemat silnika synchronicznego z magnesami trwa\IeC {\l }ymi}}{7}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Schemat silnika synchronicznego z magnesami trwa\IeC {\l }ymi}}{6}%
 \contentsline {figure}{\numberline {6}{\ignorespaces Algorytm FOC \cite {Frick2018BLDC}}}{8}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Transformata Clark'a \cite {europe1998field}}}{9}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Transformata Clark'a \cite {europe1998field}}}{8}%
 \contentsline {figure}{\numberline {8}{\ignorespaces Transformata Park'a \cite {europe1998field}}}{9}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Transformacje w algorytmie FOC \cite {Frick2018BLDC}}}{10}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Transformacje w algorytmie FOC \cite {Frick2018BLDC}}}{9}%
 \contentsline {figure}{\numberline {10}{\ignorespaces Wektory w przestrzeni stanu i podzia\IeC {\l } na sektory \cite {Frick2018BLDC}}}{10}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Maksymalna d\IeC {\l }ugo\'s\'c wektora \cite {Frick2018BLDC}}}{11}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Generowanie wektora Vx \cite {mansour2015novel}}}{11}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Nap\k ed z silnikiem BLDC}}{12}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Silnik BLDC}}{13}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Zestaw rozwojowy STM32 B-G431-ESC1 \cite {B-G431}}}{14}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Zestaw rozwojowy STM32 Nucleo F746ZG \cite {nucleo}}}{15}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Pomiar pr\k adu \cite {stspin32}}}{15}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Wzmacnianie mierzonego sygna\IeC {\l }u \cite {stspin32}}}{16}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Schemat regulatora PID \cite {cmsis}}}{16}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Maksymalna d\IeC {\l }ugo\'s\'c wektora \cite {Frick2018BLDC}}}{10}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Generowanie wektora $V_{X}$ \cite {mansour2015novel}}}{11}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Sekwencja generowania wektora referencyjnego}}{11}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Nap\k ed z silnikiem BLDC}}{12}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Silnik BLDC}}{14}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Zestaw rozwojowy STM32 B-G431-ESC1 \cite {B-G431}}}{15}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Zestaw rozwojowy STM32 Nucleo F746ZG \cite {nucleo}}}{16}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Pomiar pr\k adu \cite {stspin32}}}{16}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Wzmacnianie mierzonego sygna\IeC {\l }u \cite {stspin32}}}{17}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Schemat regulatora PID biblioteki CMSIS-DSP \cite {cmsis}}}{17}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Synchronizacja sygan\IeC {\l }u PWM z wyzwalaniem przerwania od przetwornika ADC}}{18}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Model nap\k edu silnika BLDC}}{19}%

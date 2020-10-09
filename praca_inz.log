@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.9)  6 OCT 2020 20:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.9)  9 OCT 2020 18:37
 entering extended mode
 **./praca_inz.tex
 (praca_inz.tex
@@ -382,203 +382,231 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@toc=\write3
 \openout3 = `praca_inz.toc'.
 
- [2] [3]
-<./fig/przebieg_SEM.png, id=19, 529.22719pt x 191.21437pt>
-File: ./fig/przebieg_SEM.png Graphic file (type png)
-<use ./fig/przebieg_SEM.png>
-Package pdftex.def Info: ./fig/przebieg_SEM.png  used on input line 105.
-(pdftex.def)             Requested size: 529.22589pt x 191.2139pt.
-
-Overfull \hbox (73.9818pt too wide) in paragraph at lines 105--107
- [][] 
- []
-
-<./fig/stojan.png, id=21, 333.49594pt x 249.93375pt>
-File: ./fig/stojan.png Graphic file (type png)
-<use ./fig/stojan.png>
-Package pdftex.def Info: ./fig/stojan.png  used on input line 115.
-(pdftex.def)             Requested size: 227.62204pt x 170.5934pt.
-<./fig/wirnik.png, id=22, 327.47343pt x 283.81032pt>
-File: ./fig/wirnik.png Graphic file (type png)
-<use ./fig/wirnik.png>
-Package pdftex.def Info: ./fig/wirnik.png  used on input line 122.
-(pdftex.def)             Requested size: 227.62204pt x 197.27141pt.
-[4 <./fig/przebieg_SEM.png> <./fig/stojan.png>]
-<./fig/sterowanie_BLDC.png, id=28, 475.7775pt x 432.11438pt>
-File: ./fig/sterowanie_BLDC.png Graphic file (type png)
-<use ./fig/sterowanie_BLDC.png>
-Package pdftex.def Info: ./fig/sterowanie_BLDC.png  used on input line 139.
-(pdftex.def)             Requested size: 227.62204pt x 206.7334pt.
- [5 <./fig/wirnik.png> <./fig/sterowanie_BLDC.png>]
-LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 1
-49.
+ [2]
+LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 9
+4.
  ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 149.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 94.
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--172
+[3]
+<./fig/przebieg_SEM.png, id=20, 529.22719pt x 191.21437pt>
+File: ./fig/przebieg_SEM.png Graphic file (type png)
+<use ./fig/przebieg_SEM.png>
+Package pdftex.def Info: ./fig/przebieg_SEM.png  used on input line 122.
+(pdftex.def)             Requested size: 341.43306pt x 123.36295pt.
+<./fig/stojan.png, id=22, 333.49594pt x 249.93375pt>
+File: ./fig/stojan.png Graphic file (type png)
+<use ./fig/stojan.png>
+Package pdftex.def Info: ./fig/stojan.png  used on input line 132.
+(pdftex.def)             Requested size: 142.26378pt x 106.61896pt.
+<./fig/wirnik.png, id=23, 327.47343pt x 283.81032pt>
+File: ./fig/wirnik.png Graphic file (type png)
+<use ./fig/wirnik.png>
+Package pdftex.def Info: ./fig/wirnik.png  used on input line 139.
+(pdftex.def)             Requested size: 142.26378pt x 123.29625pt.
+ [4 <./fig/przebieg_SEM.png> <./fig/stojan.png> <./fig/wirnik.png>]
+<./fig/sterowanie_BLDC.png, id=30, 475.7775pt x 432.11438pt>
+File: ./fig/sterowanie_BLDC.png Graphic file (type png)
+<use ./fig/sterowanie_BLDC.png>
+Package pdftex.def Info: ./fig/sterowanie_BLDC.png  used on input line 156.
+(pdftex.def)             Requested size: 227.62204pt x 206.7334pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--189
+
+ []
+
+[5 <./fig/sterowanie_BLDC.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 195--197
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--180
+Underfull \hbox (badness 10000) in paragraph at lines 218--220
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--203
+Underfull \hbox (badness 10000) in paragraph at lines 227--229
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--212
+Underfull \hbox (badness 10000) in paragraph at lines 234--236
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 217--219
-
- []
-
-<./fig/model_silnik.png, id=34, 459.96844pt x 290.58563pt>
+<./fig/model_silnik.png, id=38, 459.96844pt x 290.58563pt>
 File: ./fig/model_silnik.png Graphic file (type png)
 <use ./fig/model_silnik.png>
-Package pdftex.def Info: ./fig/model_silnik.png  used on input line 225.
+Package pdftex.def Info: ./fig/model_silnik.png  used on input line 242.
 (pdftex.def)             Requested size: 256.0748pt x 161.7824pt.
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 237--239
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--256
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--241
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
+
+ []
+
+[6 <./fig/model_silnik.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 340--342
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--325
+Underfull \hbox (badness 10000) in paragraph at lines 400--402
 
  []
 
-[7 <./fig/model_silnik.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 382--384
-
- []
-
-<./fig/diagramFOC.png, id=49, 770.88pt x 322.95656pt>
+<./fig/diagramFOC.png, id=45, 770.88pt x 322.95656pt>
 File: ./fig/diagramFOC.png Graphic file (type png)
 <use ./fig/diagramFOC.png>
-Package pdftex.def Info: ./fig/diagramFOC.png  used on input line 387.
+Package pdftex.def Info: ./fig/diagramFOC.png  used on input line 405.
 (pdftex.def)             Requested size: 398.33858pt x 166.87888pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 392--395
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 410--413
 
  []
 
 <./fig/clark.png, id=50, 319.1925pt x 313.9228pt>
 File: ./fig/clark.png Graphic file (type png)
 <use ./fig/clark.png>
-Package pdftex.def Info: ./fig/clark.png  used on input line 399.
+Package pdftex.def Info: ./fig/clark.png  used on input line 417.
 (pdftex.def)             Requested size: 199.16928pt x 195.88033pt.
-[8 <./fig/diagramFOC.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 411--413
+[8 <./fig/diagramFOC.png> <./fig/clark.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 429--431
 
  []
 
-<./fig/park.png, id=55, 311.66437pt x 188.20313pt>
+<./fig/park.png, id=56, 311.66437pt x 188.20313pt>
 File: ./fig/park.png Graphic file (type png)
 <use ./fig/park.png>
-Package pdftex.def Info: ./fig/park.png  used on input line 419.
+Package pdftex.def Info: ./fig/park.png  used on input line 437.
 (pdftex.def)             Requested size: 227.62204pt x 137.45604pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 431--433
+Underfull \hbox (badness 10000) in paragraph at lines 449--451
 
  []
 
-<./fig/transformacje.png, id=56, 859.71187pt x 296.60812pt>
+<./fig/transformacje.png, id=57, 859.71187pt x 296.60812pt>
 File: ./fig/transformacje.png Graphic file (type png)
 <use ./fig/transformacje.png>
-Package pdftex.def Info: ./fig/transformacje.png  used on input line 442.
+Package pdftex.def Info: ./fig/transformacje.png  used on input line 460.
 (pdftex.def)             Requested size: 398.33858pt x 137.43256pt.
-[9 <./fig/clark.png> <./fig/park.png>]
-<./fig/hexagon.png, id=63, 428.35031pt x 366.61969pt>
+[9 <./fig/park.png> <./fig/transformacje.png>]
+<./fig/hexagon.png, id=64, 428.35031pt x 366.61969pt>
 File: ./fig/hexagon.png Graphic file (type png)
 <use ./fig/hexagon.png>
-Package pdftex.def Info: ./fig/hexagon.png  used on input line 456.
+Package pdftex.def Info: ./fig/hexagon.png  used on input line 474.
 (pdftex.def)             Requested size: 199.16928pt x 170.4652pt.
-<./fig/svpwm_max.png, id=64, 362.85562pt x 269.50688pt>
+<./fig/svpwm_max.png, id=65, 362.85562pt x 269.50688pt>
 File: ./fig/svpwm_max.png Graphic file (type png)
 <use ./fig/svpwm_max.png>
-Package pdftex.def Info: ./fig/svpwm_max.png  used on input line 466.
+Package pdftex.def Info: ./fig/svpwm_max.png  used on input line 484.
 (pdftex.def)             Requested size: 227.62204pt x 169.06645pt.
- [10 <./fig/transformacje.png> <./fig/hexagon.png>]
-<./fig/svpwm.png, id=70, 290.58563pt x 231.86626pt>
+<./fig/svpwm.png, id=66, 290.58563pt x 231.86626pt>
 File: ./fig/svpwm.png Graphic file (type png)
 <use ./fig/svpwm.png>
-Package pdftex.def Info: ./fig/svpwm.png  used on input line 476.
+Package pdftex.def Info: ./fig/svpwm.png  used on input line 494.
 (pdftex.def)             Requested size: 199.16928pt x 158.92294pt.
-<./fig/naped1.png, id=71, 2778.63094pt x 1948.27875pt>
+ [10 <./fig/hexagon.png> <./fig/svpwm_max.png>]
+<./fig/sektor.png, id=72, 772.38562pt x 346.29375pt>
+File: ./fig/sektor.png Graphic file (type png)
+<use ./fig/sektor.png>
+Package pdftex.def Info: ./fig/sektor.png  used on input line 533.
+(pdftex.def)             Requested size: 284.52756pt x 127.56657pt.
+<./fig/naped1.png, id=73, 2778.63094pt x 1948.27875pt>
 File: ./fig/naped1.png Graphic file (type png)
 <use ./fig/naped1.png>
-Package pdftex.def Info: ./fig/naped1.png  used on input line 517.
+Package pdftex.def Info: ./fig/naped1.png  used on input line 546.
 (pdftex.def)             Requested size: 341.43306pt x 239.40201pt.
- [11 <./fig/svpwm_max.png> <./fig/svpwm.png>]
-<./fig/silnik_bldc.png, id=78, 438.8897pt x 304.88907pt>
+ [11 <./fig/svpwm.png> <./fig/sektor.png>]
+<./fig/schemat_el.pdf, id=80, 879.285pt x 713.7867pt>
+File: ./fig/schemat_el.pdf Graphic file (type pdf)
+<use ./fig/schemat_el.pdf>
+Package pdftex.def Info: ./fig/schemat_el.pdf  used on input line 574.
+(pdftex.def)             Requested size: 571.52849pt x 463.95586pt.
+
+Overfull \hbox (116.2844pt too wide) in paragraph at lines 574--576
+[][]
+ []
+
+[12 <./fig/naped1.png>]
+<./fig/silnik_bldc.png, id=85, 438.8897pt x 304.88907pt>
 File: ./fig/silnik_bldc.png Graphic file (type png)
 <use ./fig/silnik_bldc.png>
-Package pdftex.def Info: ./fig/silnik_bldc.png  used on input line 556.
+Package pdftex.def Info: ./fig/silnik_bldc.png  used on input line 598.
 (pdftex.def)             Requested size: 284.52756pt x 197.65915pt.
- [12 <./fig/naped1.png>]
-Overfull \hbox (20.2264pt too wide) in paragraph at lines 583--584
+ [13 <./fig/schemat_el.pdf>]
+Overfull \hbox (20.2264pt too wide) in paragraph at lines 625--626
 []\T1/lmr/m/n/10 Zestaw roz-wo-jowy B-G431B-ESC1 firmy STMi-cro-elec-tro-nics o
 party na mi-kro-kon-tro-le-rze STM32G431CB
  []
 
-[13 <./fig/silnik_bldc.png>]
-<./fig/B-G431.png, id=88, 683.55376pt x 396.7322pt>
+[14 <./fig/silnik_bldc.png>]
+<./fig/B-G431.png, id=131, 683.55376pt x 396.7322pt>
 File: ./fig/B-G431.png Graphic file (type png)
 <use ./fig/B-G431.png>
-Package pdftex.def Info: ./fig/B-G431.png  used on input line 609.
+Package pdftex.def Info: ./fig/B-G431.png  used on input line 651.
 (pdftex.def)             Requested size: 398.33858pt x 231.20053pt.
-<./fig/nucleo.png, id=89, 441.14813pt x 450.18187pt>
+<./fig/nucleo.png, id=132, 441.14813pt x 450.18187pt>
 File: ./fig/nucleo.png Graphic file (type png)
 <use ./fig/nucleo.png>
-Package pdftex.def Info: ./fig/nucleo.png  used on input line 635.
+Package pdftex.def Info: ./fig/nucleo.png  used on input line 677.
 (pdftex.def)             Requested size: 227.62204pt x 232.28244pt.
- [14 <./fig/B-G431.png>]
-<./fig/current_sense.png, id=94, 242.40562pt x 185.19188pt>
+ [15 <./fig/B-G431.png>]
+<./fig/current_sense.png, id=137, 242.40562pt x 185.19188pt>
 File: ./fig/current_sense.png Graphic file (type png)
 <use ./fig/current_sense.png>
-Package pdftex.def Info: ./fig/current_sense.png  used on input line 654.
+Package pdftex.def Info: ./fig/current_sense.png  used on input line 696.
 (pdftex.def)             Requested size: 227.62204pt x 173.90517pt.
-<./fig/opamp.png, id=95, 286.06876pt x 140.77594pt>
+<./fig/opamp.png, id=138, 286.06876pt x 140.77594pt>
 File: ./fig/opamp.png Graphic file (type png)
 <use ./fig/opamp.png>
-Package pdftex.def Info: ./fig/opamp.png  used on input line 661.
+Package pdftex.def Info: ./fig/opamp.png  used on input line 703.
 (pdftex.def)             Requested size: 227.62204pt x 112.01512pt.
- [15 <./fig/nucleo.png> <./fig/current_sense.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 671--673
+ [16 <./fig/nucleo.png> <./fig/current_sense.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 713--715
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 674--681
+Underfull \hbox (badness 10000) in paragraph at lines 716--722
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 674--681
+Underfull \hbox (badness 10000) in paragraph at lines 716--722
 
  []
 
-<./fig/pid.png, id=101, 451.6875pt x 237.13594pt>
+<./fig/pid.png, id=144, 451.6875pt x 237.13594pt>
 File: ./fig/pid.png Graphic file (type png)
 <use ./fig/pid.png>
-Package pdftex.def Info: ./fig/pid.png  used on input line 698.
+Package pdftex.def Info: ./fig/pid.png  used on input line 739.
 (pdftex.def)             Requested size: 227.62204pt x 119.50484pt.
-(praca_inz.lof [16 <./fig/opamp.png> <./fig/pid.png>])
+<./fig/synchronizacja.png, id=145, 502.12593pt x 472.76625pt>
+File: ./fig/synchronizacja.png Graphic file (type png)
+<use ./fig/synchronizacja.png>
+Package pdftex.def Info: ./fig/synchronizacja.png  used on input line 748.
+(pdftex.def)             Requested size: 341.43306pt x 321.48401pt.
+[17 <./fig/opamp.png> <./fig/pid.png>]
+<./fig/simulink.png, id=151, 800.9925pt x 414.79968pt>
+File: ./fig/simulink.png Graphic file (type png)
+<use ./fig/simulink.png>
+Package pdftex.def Info: ./fig/simulink.png  used on input line 761.
+(pdftex.def)             Requested size: 560.69093pt x 290.3578pt.
+
+Overfull \hbox (105.44684pt too wide) in paragraph at lines 761--762
+ [][] 
+ []
+
+[18 <./fig/synchronizacja.png>] (praca_inz.lof)
 \tf@lof=\write4
 \openout4 = `praca_inz.lof'.
 
@@ -588,34 +616,34 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 6
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)) [17] (praca_inz.aux) ) 
+) [19 <./fig/simulink.png>]) [20] (praca_inz.aux) ) 
 Here is how much of TeX's memory you used:
- 4828 strings out of 492483
- 68054 string characters out of 3131034
- 178203 words of memory out of 3000000
- 9008 multiletter control sequences out of 15000+200000
+ 4856 strings out of 492483
+ 68606 string characters out of 3131034
+ 179242 words of memory out of 3000000
+ 9032 multiletter control sequences out of 15000+200000
  57262 words of font info for 56 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,8n,44p,1437b,367s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.
-enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program F
-iles/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/f
-onts/enc/dvips/lm/lm-mathex.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm
-/lm-rm.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi5.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm
-/lmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/lm/lmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pf
-b>
-Output written on praca_inz.pdf (17 pages, 19851131 bytes).
+ 32i,8n,44p,1037b,367s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9
+/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/l
+m-mathit.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/
+Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Program Files/MiK
+TeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/lm/lmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
+m/lmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/lm/lmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/lm/lmtt10.pfb>
+Output written on praca_inz.pdf (20 pages, 20004221 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
+ 216 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 

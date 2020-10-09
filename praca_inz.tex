@@ -87,39 +87,56 @@ Mikroprocesorowy kaskadowy uk³ad regulacji pr¹du, prêdkoœci i po³o¿enia dla napê
 
 \section{Wstêp}
 
-W ramach pracy in¿ynierskiej zosta³ zbudowany uk³ad napêdowy z regulacj¹ pr¹du, prêdkoœci i k¹ta obrotu wirnika dla silnika BLDC  (ang.\textit{ BrushLess Direct-Current motor}) . G³ównym za³o¿eniem jest pokazanie mo¿liwoœci wykorzystania mikroprocesora jako jednego ze sposobów na realizacje uk³adu sterowania.
+Tematem pracy in¿ynierskiej jest\textit{Mikroprocesorowy kaskadowy uk³ad regulacji pr¹du, prêdkoœci i po³o¿enia dla napêdu z silnikiem BLDC}. Zainteresowanie i zdobyta wiedza z zakresu automatyki, mikroprocesorów i maszyn elektrycznych  spowodowa³a chêæ stworzenia  uk³adu napêdowego dla silnika elektrycznego przy wykorzystaniu mo¿liwoœci mikrokontrolerów i stawieniu czo³a trudnoœciom przy jego praktycznej realizacji.  
 
- Zbudowany prototyp wykorzystuje rdzeñ ARM Cortex-M4  jako g³ówn¹ jednostkê obliczeniow¹ i odpowiedzialny jest za proces regulacji. Procesor wbudowany  w p³ytê prototypow¹ B G431B-ESC1 firmy STMicroelectronics posiada wszystkie wymagane peryferia.  Sterownik B G431B ESC1 za pomoc¹ ³¹cza szeregowego UART sprzê¿ony zosta³  z mikrokontrolerem NUCLEO-F746ZG firmy STMicroelectronics  wyposa¿onym w rdzeñ ARM Cortex-M7. Odpowiedzialny  jest za komunikacje poprzez Ethernet i protokó³ TCP/IP z interfejsem u¿ytkownika oraz równolegle ze sterownikiem pobiera informacje z czujników. Rozwi¹zanie to umo¿liwia wykorzystanie mocy obliczeniowej tylko  do procesu regulacji. Silnik BLDC nale¿y do rodziny silników synchronicznych z magnesami trwa³ymi. W zwi¹zku z ich w³aœciwoœciami oraz coraz czêstszym wykorzystywaniu  w automatyce i robotyce sta³ siê obiektem, na podstawie którego przeprowadzono badania opisane w niniejszej pracy. Silnik  ze wzglêdu na konstrukcje wymaga bardziej z³o¿onego sposobu sterowania w porównaniu z silnikiem pr¹du sta³ego. FOC (ang. Field-orient control) jest jedn¹ z technik sterowania silnikiem trójfazowym. Pozwala ona sprowadziæ parametry silnika z   trójwymiarowego uk³ad wspó³rzêdnych do wiruj¹cego uk³adu o dwóch wspó³rzêdnych zgodnych z wektorem strumienia wirnika i sterowaæ trójfazowym silnikiem synchronicznym o magnesach trwa³ych  w taki sam sposób jak silnikiem pr¹du sta³ego.
+Celem jest pokazanie mo¿liwoœci wykorzystania mikroprocesora jako jednego ze sposobów na realizacje uk³adu regulacji dla silnika BLDC. Zakres pracy obejmuje:
+\begin{itemize}
+\item{Dobór i uruchomienie mikroprocesorowej p³yty rozwojowej STM32 dla wybranego uk³adu napêdowego z silnikiem BLDC}
+\item{Dobór parametrów regulatorów PID. Wykorzystanie regulatorów dostêpnych w bibliotece CMSIS-DSP}
+\item{Opracowanie interfejsu u¿ytkownika pozwalaj¹cego na parametryzacjê i monitoring pracy napêdu w czasie rzeczywistym}
+\item{Analiza mo¿liwoœci wykonania procedury automatycznego strojenia uk³adu napêdowego}
+\end{itemize}
+
+Silnik BLDC (ang. Burshless Direct Current) nale¿y do rodziny silników z magnesami trwa³ymi. Charakteryzuje siê sta³ym momentem elektromagnetycznym w szerokim zakresie prêdkoœci obrotowej. Brak komutatora zapewnia wiêksz¹ sprawnoœæ i ¿ywotnoœæ silnika. Z powodu wielu zalet czêsto wykorzystywane  w automatyce i robotyce.
+
+Silnik  ze wzglêdu na konstrukcje wymaga bardziej z³o¿onego sposobu sterowania w porównaniu z silnikiem pr¹du sta³ego. W tym celu wykorzystana zosta³a metoda FOC (ang. Field-orient control). Jest to jedna z powszechnie stosowanych technik w uk³adach regulacji trójfazowych silników synchronicznych z magnesami trwa³ymi. Pozwala ona sprowadziæ wartoœci pr¹dów fazowych stojana z trójwymiarowego uk³ad wspó³rzêdnych do wiruj¹cego uk³adu o dwóch wspó³rzêdnych biegn¹cego synchronicznie  z wektorem strumienia wirnika. Uzyskujemy w ten sposób dostêp do wartoœci sta³ych, które mo¿na umieœciæ bezpoœrednio w pêtlach regulatorów PID i uzyskaæ mo¿liwoœæ regulacji pr¹dem, prêdkoœci¹ i po³o¿eniem.
+
+ Do modulacji szerokoœci impulsów wykorzystano metodê SVPWM (ang. Space Vector Pulse Width Modulation) . W porównaniu z alternatywn¹ modulacj¹ SPWM (ang. Sine Pulse Width Modulation) cechujê siê mniejszymi zniekszta³ceniami sygna³u spowodowanych przez wy¿sze harmoniczne i wykorzystujê wiêkszy przedzia³ napiêcia zasilania. Przekszta³ca ona stany logiczne tranzystorów przekszta³tnika w wektory, które tworz¹ razem kszta³t szeœciok¹ta i dziel¹ przestrzeñ na szeœæ sektorów. Wektor referencyjny jest generowany w wyniku aktywowania dwóch s¹siaduj¹cych wektorów z przestrzeni stanu w okreœlonej sekwencji i czasie. W wyniku tych operacji formowane s¹ trzy sygna³y PWM dla trzech par tranzystorów przekszta³tnika energoelektronicznego. 
  
-Kolejne rozdzia³y opisuj¹ sposób, schematy, etapy dzia³añ i wyniki obliczeñ  zbudowanego prototypu uk³adu napêdowego dla silnika BLDC. 
+G³ównymi elementami uk³adu jest zestaw prototypowy STM32 B G431B-ESC1 oraz STM32 Nucleo F746ZG. B G431B-ESC1 wyposa¿ony w mikrokontroler STM32G431CB, rdzeñ ARM Cortex M4, trójfazowy przekszta³tnik energoelektroniczny jest uk³adem realizuj¹cym proces regulacji pr¹du, prêdkoœci i po³o¿enia wirnika.  Nucleo F746ZG odpowiada za komunikacjê miêdzy regulatorem a interfejsem u¿ytkownika. Aplikacja u¿ytkownika jest napisana w jêzyku python i ³¹czy z p³yt¹ Nucleo F746ZG za poœrednictwem przewodu sieciowego przy wykorzystaniu protok³u TCP/IP. Informacje przekazywane s¹ w postaci ³añcuchów znaków w formacie JSON.  
+Specyfika uk³adu pomiarowego pr¹du wymaga aby pomiar by³ wykonywany, gdy wszystkie tranzystory grupy górnej by³y wy³¹czone a grupy dolnej w³¹czone. Wyzwolenie nastêpuje w osi symetrii ka¿dego okresu sygna³u PWM.  W funkcji obs³ugi zdarzenia przeprowadzane s¹ wszystkie operacje zwi¹zane z regulacj¹ i modulacj¹ sygna³ów.
+
+W uk³adzie zdefiniowane s¹ cztery regulatory PID: pr¹du, strumienia magnetycznego wirnika skojarzonego ze stojanem, prêdkoœci i po³o¿enia wirnika. S¹ one po³¹czone ze sob¹ w sposób kaskadowy. Pêtle regulacji s¹ zagnie¿d¿one jedna w drugiej, gdzie wyjœcie z regulatora pêtli zewnêtrznej ustala wartoœæ zadan¹ pêtli wewnêtrznej. Ró¿ni¹ siê one czêstotliwoœci¹ obliczeñ. 
+     
+
 
 \newpage
 
 
 \section{Silnik BLDC}
 \subsection{Budowa}
-Bezszczotkowe silniki z magnesami trwa³ymi mo¿na podzieliæ na silniki pr¹du sta³ego BLDC (ang. BrushLess Direct-Current motor) oraz synchroniczne silniki pr¹du przemiennego PMSM (ang. Permanent Magnet Synchronous Motor). Ró¿ni¹ siê one kszta³tem przebiegu si³y elektromotorycznej. Na rysunku \ref{fig:1} przedstawiono przebiegi indukowanego napiêcia, pr¹du i momentu elektromagnetycznego dla silnika BLDC i PMSM. \cite{goryca2012metody}
+Bezszczotkowe silniki z magnesami trwa³ymi mo¿na podzieliæ na silniki pr¹du sta³ego BLDC oraz synchroniczne silniki pr¹du przemiennego PMSM (ang. Permanent Magnet Synchronous Motor). Ró¿ni¹ siê one kszta³tem przebiegu si³y elektromotorycznej. Na rysunku \ref{fig:1} przedstawiono przebiegi indukowanego napiêcia, pr¹du i momentu elektromagnetycznego dla silnika BLDC i PMSM. \cite{goryca2012metody}
 
 \begin{figure}[H]
 \centering
-\includegraphics{przebieg_SEM.png} 
+\includegraphics[width=12cm]{przebieg_SEM.png} 
 \caption{Przebiegi si³y elektromotorycznej E, pr¹du I i momentu T dla jednej fazy dla:
  a) silnika PMSM, b) silnika BLDC \cite{zajkowski2013sterowanie} }
 \label{fig:1}
 \end{figure} 
 
-Istnieje wiele odmian silników BLDC ró¿ni¹cych siê budow¹, konstrukcj¹ obwodów magnetycznych, rozk³adem indukcji i kszta³tem si³ elektromotorycznych. Uzwojenie  twornika jest zazwyczaj w stojanie i jest uzwojeniem trójfazowym. Kszta³t magnesów, trwa³e umieszczonych na wirniku zapewniaj¹ sta³¹ wartoœæ indukcji w szczelinie maszyny i trapezoidalny kszta³t si³y elektromotorycznej. Rysunek \ref{fig:2} przedstawia budowê stojana i wirnika przyk³adowego silnika bezszczotkowego. \cite{krykowski}
+Istnieje wiele odmian silników BLDC ró¿ni¹cych siê budow¹, konstrukcj¹ obwodów magnetycznych, rozk³adem indukcji i kszta³tem si³ elektromotorycznych. Uzwojenie  twornika jest zazwyczaj w stojanie i jest uzwojeniem trójfazowym. Kszta³t magnesów trwa³e umieszczonych na wirniku zapewniaj¹ sta³¹ wartoœæ indukcji w szczelinie maszyny i trapezoidalny kszta³t si³y elektromotorycznej. Rysunek \ref{fig:2} i \ref{fig:3} przedstawia budowê stojana i wirnika przyk³adowego silnika bezszczotkowego. \cite{krykowski}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=8cm]{stojan.png}   
+\includegraphics[width=5cm]{stojan.png}   
 \caption{Stojan silnika BLDC \cite{goryca2012metody}}
 \label{fig:2}
 \end{figure} 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=8cm]{wirnik.png}   
+\includegraphics[width=5cm]{wirnik.png}   
 \caption{Wirnik silnika BLDC \cite{goryca2012metody}}
 \label{fig:3}
 \end{figure} 
@@ -218,7 +235,7 @@ Wyra¿enie opisuj¹ce si³ê elektromotoryczn¹ indukowan¹ w k-tym uzwojeniu\cite{kry
 \\
 
 Silnik BLDC mo¿na traktowaæ jako szczególny przypadek silnika synchronicznego.
-Schemat silnika trójfazowego z magnesami trwa³ymi przedstawiony na rysunku \ref{fig:5}.
+Schemat zastêpczy silnika trójfazowego z magnesami trwa³ymi przedstawiony na rysunku \ref{fig:5}.
 
 \begin{figure}[H]
 \centering
@@ -323,7 +340,7 @@ U_{C}  \\
 \end{equation}
 \\
 
-Wykorzystuj¹c równanie \ref{eqn:3}, \ref{eqn:5}, \ref{eqn:7}, \ref{eqn:11} i zapis na w postaci równaæ stanu (wyra¿enie \ref{eqn:12}) uzyska siê pe³en model idealnego silnika o trapeziodalnej sile elektromotorycznej \cite{krykowski}:
+Wykorzystuj¹c równanie \ref{eqn:3}, \ref{eqn:5}, \ref{eqn:7}, \ref{eqn:11} i zapis \ref{eqn:12} w postaci równaæ stanu uzyska siê pe³en model idealnego silnika o trapezoidalnej sile elektromotorycznej \cite{krykowski}:
 
 \begin{equation} \label{eqn:12}
  \hat{x}=Ax+Bu
@@ -371,7 +388,8 @@ U_{A}  & U_{B}  & U_{C} & M
 
 
 
-\subsection{Wady i zalety}
+\subsection{Charakterystyka silnika - wady, zalety}
+Brak konwencjonalnego komutatora wyd³u¿a ¿ywotnoœæ silnika i nie wymaga konserwacji.  Brak szczotek powoduje mniejsze tarcie, brak negatywnych skutków iskrzenia podczas komutacji oraz mniejsze zaburzenia elektromotoryczne. W porównaniu ze szczotkowym silnikiem pr¹du sta³ego uzwojenia twornika s¹ zazwyczaj umieszczone w zewnêtrznej czêœci silnika, co zapewnia lepsze odprowadzanie ciep³a do otoczenia. Magnesy trwa³e maj¹ bardzo ma³¹ przenikalnoœæ magnetyczn¹ zbli¿on¹ do przenikalnoœci magnetycznej powietrza. Reaktancja twornika jest pomijalnie ma³a dziêki czemu osi¹gany jest du¿y moment elektromagnetyczny. Do wad nale¿y zaliczyæ bardziej skomplikowany sposób sterowania silnikiem przez zastosowanie komutatora elektronicznego w postaci przekszta³tnika energoelektronicznego do cyklicznego zasilania uzwojeñ twornika. 
 
 
 
@@ -379,7 +397,7 @@ U_{A}  & U_{B}  & U_{C} & M
 \section{Field Orient Control}
  \label{chapter:1}
  
- Algorytm wektorowy FOC (ang. Field Orient Control) przedstawiony schematycznie na rysunku \ref{fig:6} jest jedn¹ z powszechnie stosowanych metod sterowania silników trójfazowych. Polega na bezpoœrednim sterowaniu wiruj¹cym polem stojana.  Pozwala uzyskaæ dok³adn¹ i dynamiczn¹ regulacjê prêdkoœci i momentu w szerokim zakresie.\cite{Przepiorkowski2010FOC}
+ Algorytm wektorowy FOC (ang. Field Orient Control) przedstawiony schematycznie na rysunku \ref{fig:6} jest jedn¹ z powszechnie stosowanych metod sterowania silników trójfazowych z magnesami trwa³ymi. Polega na bezpoœrednim sterowaniu wiruj¹cym polem stojana.  Pozwala uzyskaæ dok³adn¹ i dynamiczn¹ regulacjê momentu elektrodynamicznego, prêdkoœci i po³o¿enia wirnika.\cite{Przepiorkowski2010FOC}
  \\
  
 \begin{figure}[H]
@@ -389,7 +407,7 @@ U_{A}  & U_{B}  & U_{C} & M
 \label{fig:6}
 \end{figure} 
  
-Metoda FOC steruje pr¹dami fazowymi stojana reprezentowanymi w postaci wektora. Czujniki pr¹du dostarczaj¹ informacjê zwrotn¹ o aktualnych pr¹dach fazowych. Za pomoc¹ transformaty Clark’a, wyra¿ona za pomoc¹ wzoru   \ref{eqn:17} i pokazana na rysunku \ref{fig:7},   przekszta³ca trójwymiarowy uk³ad wspó³rzêdnych, w którym opisane s¹ pr¹dy fazowe Ia,Ib,Ic na uk³ad ograniczony tylko do dwóch wspó³rzêdnych otrzymuj¹c wiruj¹cy wektor na p³aszczyŸnie. Znaj¹c aktualne po³o¿enie wirnika i korzystaj¹c z transformaty Park’a, wyra¿ona we wzorze \ref{eqn:18} i pokazana na rysunku \ref{fig:8}, uzyskujemy wiruj¹cy uk³ad wspó³rzêdnych . Operacja ta pozwala na na przekszta³cenie wiruj¹cego wektora pr¹du na dwie sk³adowe sta³e Id, Iq. Id jest wielkoœci¹ odpowiadaj¹c¹ strumieniowi magnetycznemu a Iq momentowi elektromagnetycznemu silnika. Minimalizuj¹c wartoœæ Id zapewniamy k¹t prosty miêdzy polem magnetycznym stojana i wirnika oraz uzyskujemy najwiêksza sprawnoœæ silnika.\cite{Przepiorkowski2010FOC}
+Metoda FOC steruje pr¹dami fazowymi stojana reprezentowanymi w postaci wektora. Czujniki pr¹du dostarczaj¹ informacjê zwrotn¹ o aktualnych pr¹dach fazowych. Za pomoc¹ transformaty Clark’a, wyra¿ona za pomoc¹ wzoru   \ref{eqn:17} i pokazana na rysunku \ref{fig:7},   przekszta³ca trójwymiarowy uk³ad wspó³rzêdnych, w którym opisane s¹ pr¹dy fazowe Ia,Ib,Ic na uk³ad ograniczony tylko do dwóch wspó³rzêdnych otrzymuj¹c wiruj¹cy wektor na p³aszczyŸnie. Znaj¹c aktualne po³o¿enie wirnika i korzystaj¹c z transformaty Park’a, wyra¿ona we wzorze \ref{eqn:18} i pokazana na rysunku \ref{fig:8}, uzyskujemy wiruj¹cy uk³ad wspó³rzêdnych . Operacja ta pozwala  na przekszta³cenie wiruj¹cego wektora pr¹du na dwie sk³adowe sta³e Id, Iq. Id jest wielkoœci¹ odpowiadaj¹c¹ strumieniowi magnetycznemu a Iq momentowi elektromagnetycznemu silnika. Minimalizuj¹c wartoœæ Id zapewniamy k¹t prosty miêdzy polem magnetycznym stojana i wirnika oraz uzyskujemy najwiêksza sprawnoœæ silnika.\cite{Przepiorkowski2010FOC}
 \cite{europe1998field}
 \\
 
@@ -432,7 +450,7 @@ I_{q}=I_{\alpha}sin(\theta)+I_{\beta}cos(\theta)
 \\
 
  
-Algorytm FOC pozwala uzyskaæ z trzech przebiegów pr¹dów przemiennych, dwie sk³adowe sta³opr¹dowe. Pozwala to na zastosowanie dwóch regulatorów PID dla sk³adowej Id oraz Iq uzyskuj¹c regulator pr¹du(momentu). Regulacje prêdkoœci obrotowej i po³o¿enia wirnika mo¿na zrealizowaæ przez dodanie kolejnych regulatorów PID do ga³êzi ze sta³¹ Iq. 
+Algorytm FOC pozwala uzyskaæ z trzech przebiegów pr¹dów przemiennych dwie sk³adowe sta³opr¹dowe. Pozwala to na zastosowanie dwóch regulatorów PID dla sk³adowej Id oraz Iq uzyskuj¹c regulator pr¹du. Regulacje prêdkoœci obrotowej i po³o¿enia wirnika mo¿na zrealizowaæ przez dodanie kolejnych regulatorów PID do ga³êzi ze sta³¹ Iq. 
  
 
 Zastosowanie odwrotnych transformat pozwala na sprowadzenie sk³adowych sta³ych do trzch przebiegów sinusoidalnych i wprowadzenie ich wartoœci na kolejny blok algorytmu FOC zwany SVPWM (ang. Space Vector Pulse Width Mudulation) opisany w rozdziale \ref{chapter:2}. Blok ten steruje bramkami tranzystorów przetwornika, aby uzyskaæ w uzwojeniach takie przebiegi pr¹dów, które bêd¹ generowa³y odpowiedni¹ amplitudê i prêdkoœæ wirowania pola magnetycznego stojana wzglêdem pola wirnika. Rysunek \ref{fig:9} przedstawia kolejnoœæ dokonywanych transformacji.
@@ -444,12 +462,12 @@ Zastosowanie odwrotnych transformat pozwala na sprowadzenie sk³adowych sta³ych d
 \label{fig:9}
 \end{figure}  
 
-\section{SVPWM}
+\section{Modulacja wektorowa - SVPWM}
  \label{chapter:2}
  
- Wydajnoœæ pr¹dowa mikrokontrolera jest niewystarczaj¹ca aby zasiliæ silnik, dlatego uzwojenia stojana s¹ bezpoœrednio pod³¹czone do przekszta³tnika energoelektronicznego zasilanego napiêciem sta³ym. Schemat przekszta³tnika przedstawia rysunek \ref{fig:4}. SVPWM jest meted¹ pozwalaj¹c¹ okreœliæ, sekwencje i czas trwania za³¹czeñ tranzystorów. W porównaniu z konwencjonaln¹ metod¹ SPWM (ang. Sine Pulse Width Modulation) do sterowania silników synchronicznych, pozwala na wykorzystanie szerszego zakresu napiêcia zasilania i zmniejszenia zniekszta³ceñ spowodowanych przez wy¿sze harmoniczne.
+ Wydajnoœæ pr¹dowa mikrokontrolera jest niewystarczaj¹ca aby zasiliæ silnik, dlatego uzwojenia stojana s¹ bezpoœrednio pod³¹czone do przekszta³tnika energoelektronicznego zasilanego napiêciem sta³ym. Schemat przekszta³tnika przedstawia rysunek \ref{fig:4}. SVPWM jest meted¹ pozwalaj¹c¹ okreœliæ, sekwencje i czas trwania za³¹czeñ tranzystorów. W porównaniu z konwencjonaln¹ metod¹ SPWM (ang. Sine Pulse Width Modulation) do sterowania silników synchronicznych, pozwala na wykorzystanie szerszego zakresu napiêcia zasilania i zmniejszenia zniekszta³ceñ spowodowanych przez wy¿sze harmoniczne.\cite{mansour2015novel}
 
- Elementami wykonawczymi s¹ tranzystory mocy, które mo¿na podzieliæ na grupê trzech zaworów dodatnich i ujemnych. W ka¿dej chwili aktywne s¹ trzy zawory. W ten sposób uzyskujemy osiem mo¿liwych kombinacji za³¹czeñ tranzystorów, które generuj¹ osiem wektorów i dziel¹ przestrzeñ na szeœæ sektorów - schematycznie przedstawiono na rysunku \ref{fig:10}. 
+ Elementami wykonawczymi s¹ tranzystory mocy, które mo¿na podzieliæ na grupê trzech zaworów dodatnich i ujemnych. W ka¿dej chwili aktywne s¹ trzy zawory. W ten sposób uzyskujemy osiem mo¿liwych kombinacji za³¹czeñ tranzystorów, które generuj¹ osiem wektorów (szeœæ wektorów aktywnych, dwa wektory zerowe lub nieaktywne) i dziel¹ przestrzeñ na szeœæ sektorów  - schematycznie przedstawiono na rysunku \ref{fig:10}. 
 
  \begin{figure}[H]
 \centering
@@ -458,8 +476,8 @@ Zastosowanie odwrotnych transformat pozwala na sprowadzenie sk³adowych sta³ych d
 \label{fig:10}
 \end{figure} 
 
-Napiêcie fazowe jest równe 2/3 VDC. Maksymalne napiêcie szczytowe jest ograniczone do wartoœci promienia  okrêgu
-wpisanego w szeœciok¹t pokazany na rysunku \ref{fig:11}  i jest równe $ V_{max}=V_{dc}  \sqrt{3}/2$.
+Maksymalne napiêcie fazowe jest równe 2/3 VDC. Aby uzyskaæ nieodkszta³cony przebieg sinusoidalny maksymalne napiêcie szczytowe jest ograniczone do wartoœci promienia  okrêgu
+wpisanego w szeœciok¹t i jest równe $ V_{max}=V_{dc}  \sqrt{3}/2$. Powy¿sze za³o¿enie przedstawiono na rysunku \ref{fig:11}.\cite{mansour2015novel}
 
  \begin{figure}[H]
 \centering
@@ -468,17 +486,17 @@ wpisanego w szeœciok¹t pokazany na rysunku \ref{fig:11}  i jest równe $ V_{max}=
 \label{fig:11}
 \end{figure}  
  
-Na przyk³adzie rysunku \ref{fig:12} zosta³ objaœniony sposób generowania dowolnego wektora wed³ug metody SVPWM.  Wektor Vx znajdujê siê w sektorze pierwszym i jest wynikiem dodania do siebie trzech wektorów Va, Vb, Vo, gdzie Vo jest wektorem zerowym.
+Na przyk³adzie rysunku \ref{fig:12} zosta³ objaœniony sposób generowania dowolnego wektora wed³ug metody SVPWM.  Wektor Vx znajdujê siê w sektorze pierwszym i jest wynikiem dodania do siebie trzech wektorów $V_{A}$, $V_{B}$, $V_{0}$, gdzie $V_{0}$ jest wektorem zerowym.\cite{mansour2015novel}
 
 
  \begin{figure}[H]
 \centering
 \includegraphics[width=7cm]{svpwm.png}   
-\caption{Generowanie wektora Vx \cite{mansour2015novel}}
+\caption{Generowanie wektora $V_{X}$ \cite{mansour2015novel}}
 \label{fig:12}
 \end{figure} 
 
-Dla sektora pierwszego wektor Va jest zgodny z kierunkiem wektora V1 a wektor Vb z kierunkiem wektora V2. D³ugoœæ obu wektorów jest determinowana przez czas, w którym dana sekwencja zaworów (reprezentowana przez okreœlony wektor V1,…,V6) jest aktywna. 
+Dla sektora pierwszego wektor $V_{A}$ jest zgodny z kierunkiem wektora $V_{1}$ a wektor $V_{B}$ z kierunkiem wektora $V_{2}$. D³ugoœæ obu wektorów jest determinowana przez czas, w którym dana sekwencja zaworów (reprezentowana przez okreœlony wektor V1,…,V6) jest aktywna.\cite{mansour2015novel} 
 
 Z równania \cite{mansour2015novel}:
 
@@ -489,7 +507,7 @@ Z równania \cite{mansour2015novel}:
 \end{array} \right. 
 \end{equation} 
 
-\noindent oraz z wyra¿enia, które pozwala zredukowaæ k¹t do przedzia³u od 0 do $\pi/3$ \cite{bouanane2019design} :
+\noindent oraz z wyra¿enia \ref{egn:20}, które pozwala zredukowaæ k¹t $\alpha $ do przedzia³u od 0 do $\pi/3$ \cite{bouanane2019design} :
 \begin{equation} \label{egn:20}
 \theta=\phi-\frac{k-1}{3}\pi 
 \end{equation} 
@@ -506,18 +524,32 @@ T_{B} = \frac{\sqrt{3} T_{s} V_{x}}{V_{DC}} (sin((k-1)\pi/3 - \theta))
 \end{equation} 
 
 
-Suma czasów potrzebnych do  wygenerowania wektorów Va, Vb i wektora zerowego jest równa okresowi modulacji szerokoœci impulsów $T_{S}$.
+Suma czasów $T_{A}$, $T_{B}$ i $T_{0}$ jest równa okresowi modulacji szerokoœci impulsów $T_{S}$.
 
-\section{Uk³ad napêdowy z silnikiem BLDC}
-Realizacja praktyczna uk³adu napêdowego jest przedstawiona poni¿ej (rysunek \ref{fig:13}).
+Znaj¹c sektor i czasy $T_{A}$, $T_{B}$, $T_{0}$ mo¿na wygenerowaæ dowolny wektor w przestrzeni stanu. Aby tego dokonaæ nale¿y zastosowaæ odpowiedni¹ sekwencjê za³¹czeñ wektorów $V_{A}$, $V_{B}$, $V_{0}$. Wektory te, w zale¿noœci od sektora, w którym siê znajduj¹, maj¹ swoj¹ reprezentacje w odpowiadaj¹cej im kombinacji za³¹czeñ kluczy tranzystorów przekszta³tnika.  Rysunek \ref{fig:13} przedstawia sekwencje wektorów $V_{A}$, $V_{B}$, $V_{0}$ i czasy ich aktywnoœci w zale¿noœci od umiejscowienia wektora referencyjnego w przestrzeni stanu. W wyniku powy¿szych operacji otrzymujemy trzy sygna³y PWM dla ka¿dej ga³êzi trójfazowego przekszta³tnika.
+
+ \begin{figure}[H]
+\centering
+\includegraphics[width=10cm]{sektor.png}   
+\caption{Sekwencja generowania wektora referencyjnego} 
+\label{fig:13}
+\end{figure} 
+
+
+\section{Realizacja uk³adu napêdowego z silnikiem BLDC}
+\subsection{Realizacja sprzêtowa}
+Realizacja praktyczna uk³adu napêdowego jest przedstawiona na rysunku \ref{fig:14}.
 
 
  \begin{figure}[H]
 \centering
 \includegraphics[width=12cm]{naped1.png}   
 \caption{Napêd z silnikiem BLDC}
-\label{fig:13}
+\label{fig:14}
 \end{figure} 
+
+
+
 
 
 \subsection{Spis urz¹dzeñ}
@@ -533,12 +565,22 @@ Realizacja praktyczna uk³adu napêdowego jest przedstawiona poni¿ej (rysunek \ref
 \item  Zasilacz laboratoryjny KORAD 0-30V, 0-5A
 \end{enumerate}
 
+
+
+\subsection{Schemat elektryczny}
+
+
+ \begin{figure}[H]
+\includegraphics[scale=0.65]{schemat_el.pdf}   
+\label{fig:15}
+\end{figure} 
+
 \subsection{Opis i dane techniczne urz¹dzeñ}
 
 \begin{enumerate}
 \item Silnik bezszczotkowy FXD57BL 24 VDC
 
-Silnik wykorzystany do budowy napêdu pokazany na rysunku \ref{fig:14}
+Silnik wykorzystany do budowy napêdu pokazany na rysunku \ref{fig:16}
  
 Parametry techniczne:
 \begin{itemize}
@@ -555,7 +597,7 @@ Parametry techniczne:
 \centering
 \includegraphics[width=10cm]{silnik_bldc.png}   
 \caption{Silnik BLDC}
-\label{fig:14}
+\label{fig:16}
 \end{figure} 
 
 
@@ -580,7 +622,7 @@ w sygna³ elektryczny o przebiegu prostok¹tnym. Enkoder inkrementalny nie generuj
 \item Zestaw rozwojowy STM32 B-G431B-ESC1
 
 
-Zestaw rozwojowy B-G431B-ESC1 firmy STMicroelectronics  oparty na mikrokontrolerze STM32G431CB jest dedykowanym uk³adem elektronicznym dla napêdów z silnikami BLDC/PMSM. Posiada przekszta³tnik energoelektroniczny zbudowany w oparciu o sterowniki L6387 i tranzystory mocy MOSFET STL180N6F7. Dla sterowania i monitorowania prac¹ silnika oraz do wspó³pracy  z innymi uk³adami zapewnia ró¿ne sposoby komunikacji  - UART, CAN i PWM. STM32G431CB wyposa¿ony w procesor  ARM Cortex M4 32-bity, pe³en zestaw instrukcji DSP (ang. Digital Signal Processing)   oraz blok do przetwarzania liczb zmiennoprzecinkowych FPU (ang. Floating-Point Unit) zapewnia mo¿liwoœæ implementacji ró¿nych zaawansowanych algorytmów sterowania. Posiada wbudowane uk³ady mierz¹ce pr¹d w silniku. Rysunek \ref{fig:15} przedstawia najistotniejsze elementy wbudowane w uk³ad B-G431B-ESC1.\cite{B-G431}
+Zestaw rozwojowy B-G431B-ESC1 firmy STMicroelectronics  oparty na mikrokontrolerze STM32G431CB jest dedykowanym uk³adem elektronicznym dla napêdów z silnikami BLDC/PMSM. Posiada przekszta³tnik energoelektroniczny zbudowany w oparciu o sterowniki L6387 i tranzystory mocy MOSFET STL180N6F7. Dla sterowania i monitorowania prac¹ silnika oraz do wspó³pracy  z innymi uk³adami zapewnia ró¿ne sposoby komunikacji  - UART, CAN i PWM. STM32G431CB wyposa¿ony w procesor  ARM Cortex M4 32-bity, pe³en zestaw instrukcji DSP (ang. Digital Signal Processing)   oraz blok do przetwarzania liczb zmiennoprzecinkowych FPU (ang. Floating-Point Unit) zapewnia mo¿liwoœæ implementacji ró¿nych zaawansowanych algorytmów sterowania. Posiada wbudowane uk³ady mierz¹ce pr¹d w silniku. Rysunek \ref{fig:17} przedstawia najistotniejsze elementy wbudowane w uk³ad B-G431B-ESC1.\cite{B-G431}
 
 
 
@@ -608,12 +650,12 @@ Parametry techniczne STM32G431CB \cite{B-G431}:
 \centering
 \includegraphics[width=14cm]{B-G431.png}   
 \caption{Zestaw rozwojowy STM32 B-G431-ESC1 \cite{B-G431}}
-\label{fig:15}
+\label{fig:17}
 \end{figure} 
 
 \item Zestaw rozwojowy STM32 Nucleo F746ZG
 
-Nucleo F746ZG jest zestawem rozwojowym opartym na mikrokontrolerze STM32F746Z. Du¿a iloœæ peryferiów oraz wyprowadzonych pinów do ich pod³¹czenia zapewnia wiele mo¿liwoœci prototypownia. Posiada wbudowany programator ST-LINK/V2-1 oraz z³¹cze RJ-45 do po³¹czenia sieciowego. Rysunek \ref{fig:16} przedstawia  uk³ad 
+Nucleo F746ZG jest zestawem rozwojowym opartym na mikrokontrolerze STM32F746Z. Du¿a iloœæ peryferiów oraz wyprowadzonych pinów do ich pod³¹czenia zapewnia wiele mo¿liwoœci prototypownia. Posiada wbudowany programator ST-LINK/V2-1 oraz z³¹cze RJ-45 do po³¹czenia sieciowego. Rysunek \ref{fig:18} przedstawia  uk³ad 
 Nucleo F746ZG.
 
 Parametry techniczne mikrokontrolera STM32F746Z \cite{stm32f7}:
@@ -634,7 +676,7 @@ Parametry techniczne mikrokontrolera STM32F746Z \cite{stm32f7}:
 \centering
 \includegraphics[width=8cm]{nucleo.png}   
 \caption{Zestaw rozwojowy STM32 Nucleo F746ZG \cite{nucleo}}
-\label{fig:16}
+\label{fig:18}
 \end{figure} 
  
 
@@ -647,20 +689,20 @@ Parametry techniczne mikrokontrolera STM32F746Z \cite{stm32f7}:
 
 W zestawie rozwojowym B-G431-ESC zosta³ zaimplementowany uk³ad regulacji pr¹du, prêdkoœci i po³o¿enia dla napêdu z silnikiem BLDC przy wykorzystaniu metod FOC i SVPWM.
  
-Do mierzenia pr¹dów fazowych zosta³y wykorzystane wbudowane, dedykowane uk³ady.  Mierzony jest spadek napiêcia na rezystorach umieszczonych miêdzy doln¹ grup¹ tranzystorów mocy a mas¹ (rysunek  \ref{fig:17}). W wyniku bardzo ma³ej rezystancji wynosz¹cej 0.03 $\Omega$  sygna³ jest wzmacniany przez wzmacniacz operacyjny i za pomoc¹ przetwornika analogowo-cyfrowego uzyskiwane wartoœci pr¹dów (rysunek \ref{fig:18}).
+Do mierzenia pr¹dów fazowych zosta³y wykorzystane wbudowane, dedykowane uk³ady.  Mierzony jest spadek napiêcia na rezystorach umieszczonych miêdzy doln¹ grup¹ tranzystorów mocy a mas¹. Na rysunku  \ref{fig:19} przedstawiono sposób pomiaru. W wyniku bardzo ma³ej rezystancji wynosz¹cej 0.03 $\Omega$  sygna³ jest wzmacniany przez wzmacniacz operacyjny i za pomoc¹ przetwornika analogowo-cyfrowego uzyskiwane aktualne wartoœci pr¹dów - rysunek \ref{fig:20}.
 
  \begin{figure}[H]
 \centering
 \includegraphics[width=8cm]{current_sense.png}   
 \caption{Pomiar pr¹du \cite{stspin32}}
-\label{fig:17}
+\label{fig:19}
 \end{figure} 
 
  \begin{figure}[H]
 \centering
 \includegraphics[width=8cm]{opamp.png}   
 \caption{Wzmacnianie mierzonego sygna³u  \cite{stspin32}}
-\label{fig:18}
+\label{fig:20}
 \end{figure} 
 
 
@@ -668,11 +710,10 @@ Pomiar prêdkoœci  odbywa siê za pomoc¹ enkodera. Licznik skonfigurowany w trybie
 
 Pomiar po³o¿enia wirnika równie¿ odbywa siê przy pomocy enkodera. Licznik w konfiguracji Encoder Mode zlicza wykryte zbocza z dwóch kana³ów, do których pod³¹czone s¹ dwa sygna³y z czujnika ruchu przesuniête w fazie. W zale¿noœci od kierunku obrotu licznik jest inkrementowany lub dekrementowany. Po zliczeniu iloœci impulsów równej rozdzielczoœci enkodera licznik zlicza od zera.
 
-Biblioteka CMSIS-DSP udostêpnia szereg funkcji dla obliczeñ transformat, regulatorów PID oraz funkcji trygonometrycznych. Funkcja obliczaj¹ca wartoœæ sygna³u wyjœciowego regulatora PID ma postaæ:
+Biblioteka CMSIS-DSP udostêpnia szereg funkcji dla obliczeñ transformat, regulatorów PID oraz funkcji trygonometrycznych. Funkcja obliczaj¹ca wartoœæ sygna³u wyjœciowego regulatora PID ma postaæ \cite{cmsis}:
 \\
 
  \textit{float32\_t   arm\_pid\_f32 (arm\_pid\_instance\_f32 *S, float32\_t in)}
-\cite{cmsis}
 \\
 \\
 gdzie:\\
@@ -688,20 +729,40 @@ y[n] = y[n-1] + A0 * x[n] + A1 * x[n-1] + A2 * x[n-2]\\
 \end{array} \right. 
 \end{equation} 
 
-\noindent gdzie: Kp- wzmocnienie, Ki- sta³a ca³kowania, Kd- sta³a ró¿niczkowania
+\noindent Kp- wzmocnienie, Ki- sta³a ca³kowania, Kd- sta³a ró¿niczkowania
 \vspace{0.4cm}
 
-\noindent Rysunek poni¿ej reprezentuje schemat blokowy regulatora PID.
+\noindent Rysunek poni¿ej reprezentuje schemat blokowy regulatora PID biblioteki CMSIS-DSP.
 
  \begin{figure}[H]
 \centering
 \includegraphics[width=8cm]{pid.png}   
-\caption{Schemat regulatora PID \cite{cmsis}}
-\label{fig:19}
+\caption{Schemat regulatora PID biblioteki CMSIS-DSP \cite{cmsis}}
+\label{fig:21}
 \end{figure} 
 
+Modulacja wektorowa SVPWM sk³ada siê z funkcji, które na podstawie zadanego wektora referencyjnego wyznacza trzy sygna³y  PWM oraz licznika skonfigurowanego w trybie PWM Center Mode z trzema kana³ami do wygenerowania sygna³ów PWM dla trzech par tranzystorów przekszta³tnika energoelektronicznego.  Dodatkowo czwarty kana³ przeznaczony jest do okreœlenia momentu uruchomienia przetwornika ADC i przypada on w po³owie okresu PWM, gdzie wszystkie tranzystory grupy dolnej s¹ w³¹czone a grupy górnej wy³¹czone. Na rysunku \ref{fig:22} przedstawiono synchronizacje wyzwalania przetwornika ADC z sygna³ami PWM.
+
+ \begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{synchronizacja.png}   
+\caption{Synchronizacja sygan³u PWM z wyzwalaniem przerwania od przetwornika ADC}
+\label{fig:22}
+\end{figure} 
+\vspace{0.4cm}
+
+W funkcji obsu³gi przerwania od zdarzenia przetwornika ADC obliczane s¹ transformaty, funkcje regulatorów PID, transformaty odwrotne i funkcje modulacji wektorowej. W wyniku tych operacji, za pomoc¹ licznika z kana³ami steruj¹cymi bramkami tranzystorów przekszta³tnika, zostaj¹ wygenerowane trzy sygna³y PWM.
 
 
+Do regulacji pr¹du, prêdkoœci i po³o¿enia zastosowano cztery regulatory PID oraz trzy pêtle regulacji. Po³¹czone ze sob¹ w sposób kaskadowy. Wynik regulatora zewnêtrznej pêtli wprowadzany jest na wejœcie regulatora wewnêtrznej pêtli. Schematycznie przedstawiono na rysunku \ref{fig:23}. Regulacja pr¹du dzia³a z najwy¿sz¹ czêstotliwoœci¹ 10kHz i jest w pêtli wewnêtrznej. Regulacja prêdkoœci odbywa siê z czêstotliwoœci¹ 5kHz. Regulator po³o¿enia znajdujê siê w pêtli zewnêtrznej i taktowany jest z czêstotliwoœci¹ 2kHz. 
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{simulink.png}   
+\caption{Model napêdu silnika BLDC}
+\label{fig:23}
+\end{figure} 
+\vspace{0.4cm}
 
 
 
