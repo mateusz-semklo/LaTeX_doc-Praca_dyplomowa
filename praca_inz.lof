@@ -24,14 +24,17 @@
 \contentsline {figure}{\numberline {23}{\ignorespaces Schemat uk\IeC {\l }adu komunikacji}}{19}%
 \contentsline {figure}{\numberline {24}{\ignorespaces Interfejs u\.zytkownika}}{20}%
 \contentsline {figure}{\numberline {25}{\ignorespaces Interfejs u\.zytkownika}}{21}%
-\contentsline {figure}{\numberline {26}{\ignorespaces Przebiegi wygenerowanych sygna\IeC {\l }\'ow na podstawie trzech sygna\IeC {\l }\'ow sinusoidalnych}}{21}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Przebiegi generowanych sygna\IeC {\l }\'ow za pomoc\k a SVPWM na podstawie trzech wej\'sciowych sygna\IeC {\l }\'ow sinusoidalnych}}{22}%
 \contentsline {figure}{\numberline {27}{\ignorespaces Nastawy regulator\'ow PID}}{22}%
-\contentsline {figure}{\numberline {28}{\ignorespaces Przepieg pr\k adu dla warto\'sci amplitudy 0.3A bez obci\k a\.zenia}}{22}%
-\contentsline {figure}{\numberline {29}{\ignorespaces Przepieg pr\k adu dla warto\'sci amplitudy 0.3A z obci\k a\.zeniem}}{23}%
-\contentsline {figure}{\numberline {30}{\ignorespaces Przepieg pr\k edko\'sci obrotowej dla cyklicznego obci\k a\.zania i obci\k a\.zania wa\IeC {\l }u silnika dla pr\k edko\'sci zadanej 2500 obr/min i amplitudy pr\k adu 0.3A }}{23}%
-\contentsline {figure}{\numberline {31}{\ignorespaces Przepieg pr\k adu dla warto\'sci amplitudy 0.5A bez obci\k a\.zenia}}{24}%
-\contentsline {figure}{\numberline {32}{\ignorespaces Przepieg pr\k adu dla warto\'sci amplitudy 0.5A z obci\k a\.zeniem}}{24}%
-\contentsline {figure}{\numberline {33}{\ignorespaces Przepieg pr\k adu dla warto\'sci amplitudy 1A bez obci\k a\.zenia}}{25}%
-\contentsline {figure}{\numberline {34}{\ignorespaces Przepieg pr\k adu dla warto\'sci amplitudy 1A z obci\k a\.zeniem}}{25}%
-\contentsline {figure}{\numberline {35}{\ignorespaces Przebieg sk\IeC {\l }adowej Id, Iq dla warto\'sci zadanej 1A}}{26}%
-\contentsline {figure}{\numberline {36}{\ignorespaces Hodogram pr\k adu w uk\IeC {\l }adzie wsp\'o\IeC {\l }rz\k ednych alfa, beta dla warto\'sc zadanej 1A}}{26}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Przebieg pr\k adu dla warto\'sci zadanej amplitudy 0.3A bez obci\k a\.zenia zewn\k etrznym momentem oporowym}}{23}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Przebieg pr\k adu dla warto\'sci zadanej amplitudy 0.3A z obci\k a\.zeniem zewn\k etrznym}}{23}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Przebieg pr\k edko\'sci obrotowej dla warto\'sci zadanej 2500 obr/min i pr\k adu 0.3A bez obci\k a\.zenia zewn\k etrznym momentem oporowym }}{24}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Przebieg pr\k adu dla warto\'sci zadanej amplitudy 0.5A bez obci\k a\.zenia zewn\k etrznym momentem oporowym}}{24}%
+\contentsline {figure}{\numberline {32}{\ignorespaces Przebieg pr\k adu dla warto\'sci zadanej amplitudy 0.5A z obci\k a\.zeniem zewn\k etrznym}}{25}%
+\contentsline {figure}{\numberline {33}{\ignorespaces Przebieg pr\k edko\'sci obrotowej dla warto\'sci zadanej 2500 obr/min i pr\k adu 0.5A bez obci\k a\.zenia zewn\k etrznym momentem oporowym }}{25}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Przebieg pr\k adu dla warto\'sci zadanej amplitudy 1A bez obci\k a\.zenia zewn\k etrznym momentem oporowym}}{26}%
+\contentsline {figure}{\numberline {35}{\ignorespaces Przebieg pr\k adu dla warto\'sci zadanej amplitudy 1A z obci\k a\.zeniem zewn\k etrznym}}{26}%
+\contentsline {figure}{\numberline {36}{\ignorespaces Przebieg pr\k edko\'sci obrotowej dla warto\'sci zadanej 2500 obr/min i pr\k adu 1Abez obci\k a\.zenia zewn\k etrznym momentem oporowym }}{27}%
+\contentsline {figure}{\numberline {37}{\ignorespaces Przebieg sk\IeC {\l }adowej Id, Iq dla warto\'sci zadanej amplitudy pr\k adu 1A}}{27}%
+\contentsline {figure}{\numberline {38}{\ignorespaces Hodograf pr\k adu w uk\IeC {\l }adzie wsp\'o\IeC {\l }rz\k ednych alfa, beta dla warto\'sci zadanej 1A}}{28}%
+\contentsline {figure}{\numberline {39}{\ignorespaces Regulacja po\IeC {\l }o\.zenia wirnika dla warto\'sci zadanej 200 000 stopni}}{28}%

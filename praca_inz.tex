@@ -109,8 +109,9 @@ G³ównymi elementami uk³adu jest zestaw prototypowy STM32 B-G431B-ESC1 oraz STM32
 Specyfika uk³adu pomiarowego pr¹du wymaga aby pomiar by³ wykonywany, gdy wszystkie tranzystory grupy górnej by³y wy³¹czone a grupy dolnej w³¹czone. Wyzwolenie nastêpuje w osi symetrii ka¿dego okresu sygna³u PWM.  W funkcji obs³ugi zdarzenia przeprowadzane s¹ wszystkie operacje zwi¹zane z regulacj¹ i modulacj¹ sygna³ów.
 
 W uk³adzie zdefiniowane s¹ cztery regulatory PID: pr¹du, strumienia magnetycznego wirnika skojarzonego ze stojanem, prêdkoœci i po³o¿enia wirnika. S¹ one po³¹czone ze sob¹ w sposób kaskadowy. Pêtle regulacji s¹ zagnie¿d¿one jedna w drugiej, gdzie wyjœcie z regulatora pêtli zewnêtrznej ustala wartoœæ zadan¹ pêtli wewnêtrznej. 
-     
 
+Przy pomocy oscyloskopu i oprogramowania STMStudio do podgl¹du zmiennych programu w czasie rzeczywistym przeprowadzono pomiary pr¹du, prêdkoœci i po³o¿enia wirnika dla ró¿nych wartoœci zadanych przy okreœlonych nastawach regulatorów PID. Zmierzone przebiegi najistotniejszych wielkoœci zosta³y przedstawione w rozdziale \ref{chapter:3}.
+     
 
 \newpage
 
@@ -805,15 +806,15 @@ Interfejs u¿ytkownika zosta³ napisany w jêzyku Python przy pomocy oprogramowania
 
 
 \section{Testowanie uk³adu napêdowego}
-\subsection{Sprawdzenie poprawnoœci dzia³ania transformat i modulacji SVPWM}
+\label{chapter:3}
+\subsection{Sprawdzenie poprawnoœci dzia³ania funkcji SVPWM}
 
-Jednym z elementów uk³adu s¹ transformaty i modulacja SVPWM. Sk³adaj¹ siê one ze zbioru funkcji, które zosta³y zaimplementowane i przetestowane w celu sprawdzenia poprawnoœci dzia³ania przed przyst¹pieniem do testowania wraz z regulatorami PID. W wyniku dzia³ania transformat i SVPWM dla trzech wejœciowych sygna³ów sinusoidalnych o amplitudzie 1000, czêstotliwoœci 0.5 Hz, przesuniêtych w fazie o 120 stopni generowane s¹ trzy przebiegi o bardzo zbli¿onych parametrach co sygna³y wejœciowe. Rysunek \ref{fig:27} pokazuje przebieg wygenerowanych sygna³ów, które nastêpnie zostan¹ przekszta³cone w sygna³y prostok¹tne i wprowadzone na przetwornik energoelektroniczny. Do podgl¹du przebiegów 
-zosta³o wykorzystane oprogramowanie STMStudio, które umo¿liwia graficzne wyœwietlenie stanu zmiennych programu w czasie rzeczywistym. 
+Jednym z elementów uk³adu jest modulacja SVPWM. Sk³ada siê one ze zbioru funkcji, które zosta³y zaimplementowane i przetestowane w celu sprawdzenia poprawnoœci dzia³ania przed przyst¹pieniem do testowania wraz z regulatorami PID. Do funkcji zosta³y wprowadzone trzy sygna³y sinusoidalne o amplitudzie 1000, czêstotliwoœci 0.5 Hz, przesuniête w fazie o 120 stopni. W wyniku dzia³ania SVPWM generowany jest referencyjny wektor napiêciowy. Aby unikn¹æ zjawiska nadmodulacji i wynikaj¹cego z niej zniekszta³cenia sygna³u sinusoidalnego amplituda jest ograniczona do wartoœci $\sqrt{3}/2*Vdc$.  Wektor referencyjny za pomoc¹ transformat odwrotnych jest przekszta³cany w trzy przebiegi pokazane na rysunku \ref{fig:27}. W kolejnym etapie s¹ one porównywane ze sygna³em trójk¹tnym tworz¹c przebiegi prostok¹tne i wprowadzone na przetwornik energoelektroniczny. Do podgl¹du przebiegów zosta³o wykorzystane oprogramowanie STMStudio, które umo¿liwia graficzne wyœwietlenie stanu zmiennych programu w czasie rzeczywistym.  
 
  \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{svpwm_wykres.png}   
-\caption{Przebiegi wygenerowanych sygna³ów na podstawie trzech sygna³ów sinusoidalnych}
+\caption{Przebiegi generowanych sygna³ów za pomoc¹ SVPWM na podstawie trzech wejœciowych sygna³ów sinusoidalnych}
 \label{fig:27}
 \end{figure} 
 \vspace{0.4cm}
@@ -829,39 +830,39 @@ Uk³ad zosta³ przetestowany dla nastaw regulatorów opisanych na rysunku \ref{fig:
 \end{figure} 
 \vspace{0.4cm}
 
-\subsubsection{Regulacja pr¹du}
 
-W celu sprawdzenia poprawnoœci dzia³ania regulatora pr¹du wykonano pomiary dla 
-trzech wartoœci amplitud sk³adowej pr¹du Iq: 0.3A, 0.5A, 1A oraz sk³adowej oddzia³ywania pola magnetycznego wirnika Id: 0 dla przypadku gdzie wirnik nie zosta³ obci¹¿ony i dla przypadku dzia³ania zewnêtrznego momentu oporowego. Wartoœæ zadana prêdkoœci obrotowej wynosi 2500 obr/min, regulator po³o¿enia wirnika jest wy³¹czony. Przebiegi przedstawione s¹ rysunkach \ref{fig:29}, \ref{fig:30}, \ref{fig:31}, \ref{fig:32}, \ref{fig:33}, \ref{fig:34}, \ref{fig:35}. Pomiary zosta³y wykonane za pomoc¹ oscyloskopu UNI-T UTD2102CEX. Do wyprowadzeñ uzwojeñ silnika zosta³y pod³¹czone rezystory o wartoœci 1 $\Omega$  dziêki czemu spadek napiêcia o wartoœci 1V odpowiada pr¹dowi o wartoœci 1A.  
+W celu sprawdzenia poprawnoœci dzia³ania regulatorów wykonano pomiary dla trzech wartoœci amplitud sk³adowej pr¹du Iq: 0.3A, 0.5A, 1A dla przypadku gdzie wirnik nie zosta³ obci¹¿ony i dla przypadku dzia³ania zewnêtrznego momentu oporowego. Wartoœæ zadana prêdkoœci obrotowej wynosi 2500 obr/min. Przebiegi przedstawione s¹ rysunkach od \ref{fig:29} do \ref{fig:39}. Pomiary zosta³y wykonane za pomoc¹ oscyloskopu UNI-T UTD2102CEX i oprogramowania STMStudio do podgl¹du zmiennych programu w czasie rzeczywistym. Do wyprowadzeñ uzwojeñ silnika zosta³y pod³¹czone rezystory o wartoœci 1 $\Omega$  dziêki czemu spadek napiêcia o wartoœci 1V odpowiada pr¹dowi o wartoœci 1A.  
 
  \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{03Abez.pdf}   
-\caption{Przepieg pr¹du dla wartoœci amplitudy 0.3A bez obci¹¿enia}
+\caption{Przebieg pr¹du dla wartoœci zadanej amplitudy 0.3A bez obci¹¿enia zewnêtrznym momentem oporowym}
 \label{fig:29}
 \end{figure} 
 \vspace{0.4cm}
 
+
+
  \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{03Az.pdf}   
-\caption{Przepieg pr¹du dla wartoœci amplitudy 0.3A z obci¹¿eniem}
+\caption{Przebieg pr¹du dla wartoœci zadanej amplitudy 0.3A z obci¹¿eniem zewnêtrznym}
 \label{fig:30}
 \end{figure} 
 \vspace{0.4cm}
 
- \begin{figure}[H]
+\textbf{ \begin{figure}[H]
 \centering
-\includegraphics[scale=0.35]{speed03.png}   
-\caption{Przepieg prêdkoœci obrotowej dla cyklicznego obci¹¿ania i obci¹¿ania wa³u silnika dla prêdkoœci zadanej 2500 obr/min i amplitudy pr¹du 0.3A }
+\includegraphics[scale=0.35]{speed03A.png}   
+\caption{Przebieg prêdkoœci obrotowej dla wartoœci zadanej 2500 obr/min i pr¹du 0.3A bez obci¹¿enia zewnêtrznym momentem oporowym }
 \label{fig:31}
 \end{figure} 
-\vspace{0.4cm}
+\vspace{0.4cm}}
 
  \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{05Abez.pdf}   
-\caption{Przepieg pr¹du dla wartoœci amplitudy 0.5A bez obci¹¿enia}
+\caption{Przebieg pr¹du dla wartoœci zadanej amplitudy 0.5A bez obci¹¿enia zewnêtrznym momentem oporowym}
 \label{fig:32}
 \end{figure} 
 \vspace{0.4cm}
@@ -869,40 +870,68 @@ trzech wartoœci amplitud sk³adowej pr¹du Iq: 0.3A, 0.5A, 1A oraz sk³adowej oddzi
  \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{05Az.pdf}   
-\caption{Przepieg pr¹du dla wartoœci amplitudy 0.5A z obci¹¿eniem}
+\caption{Przebieg pr¹du dla wartoœci zadanej amplitudy 0.5A z obci¹¿eniem zewnêtrznym}
 \label{fig:33}
 \end{figure} 
 \vspace{0.4cm}
 
- \begin{figure}[H]
+\textbf{ \begin{figure}[H]
 \centering
-\includegraphics[scale=0.6]{1Abez.pdf}   
-\caption{Przepieg pr¹du dla wartoœci amplitudy 1A bez obci¹¿enia}
+\includegraphics[scale=0.45]{speed05A.png}   
+\caption{Przebieg prêdkoœci obrotowej dla wartoœci zadanej 2500 obr/min i pr¹du 0.5A bez obci¹¿enia zewnêtrznym momentem oporowym }
 \label{fig:34}
 \end{figure} 
-\vspace{0.4cm}
+\vspace{0.4cm}}
+
 
  \begin{figure}[H]
 \centering
-\includegraphics[scale=0.6]{1Az.pdf}   
-\caption{Przepieg pr¹du dla wartoœci amplitudy 1A z obci¹¿eniem}
+\includegraphics[scale=0.6]{1Abez.pdf}   
+\caption{Przebieg pr¹du dla wartoœci zadanej amplitudy 1A bez obci¹¿enia zewnêtrznym momentem oporowym}
 \label{fig:35}
 \end{figure} 
 \vspace{0.4cm}
 
  \begin{figure}[H]
 \centering
-\includegraphics[scale=0.45]{idiq1A.png}   
-\caption{Przebieg sk³adowej Id, Iq dla wartoœci zadanej 1A}
+\includegraphics[scale=0.6]{1Az.pdf}   
+\caption{Przebieg pr¹du dla wartoœci zadanej amplitudy 1A z obci¹¿eniem zewnêtrznym}
 \label{fig:36}
+\end{figure} 
+\vspace{0.4cm}
+
+\textbf{ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{speed1A.png}   
+\caption{Przebieg prêdkoœci obrotowej dla wartoœci zadanej 2500 obr/min i pr¹du 1Abez obci¹¿enia zewnêtrznym momentem oporowym }
+\label{fig:37}
+\end{figure} 
+\vspace{0.4cm}}
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.45]{idiq1A.png}   
+\caption{Przebieg sk³adowej Id, Iq dla wartoœci zadanej amplitudy pr¹du 1A}
+\label{fig:38}
 \end{figure} 
 \vspace{0.4cm}
 
  \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{alpha_beta.png}   
-\caption{Hodogram pr¹du w uk³adzie wspó³rzêdnych alfa, beta dla wartoœc zadanej 1A}
-\label{fig:37}
+\includegraphics[scale=0.38]{alpha_beta.png}   
+\caption{Hodograf pr¹du w uk³adzie wspó³rzêdnych alfa, beta dla wartoœci zadanej 1A}
+\label{fig:39}
+\end{figure} 
+\vspace{0.4cm}
+
+
+Na rysunku 
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.40]{degree.png}   
+\caption{Regulacja po³o¿enia wirnika dla wartoœci zadanej 200 000 stopni}
+\label{fig:40}
 \end{figure} 
 \vspace{0.4cm}
 

@@ -17,7 +17,6 @@
 \contentsline {subsection}{\numberline {5.6}Komunikacja}{19}%
 \contentsline {subsection}{\numberline {5.7}Interfejs u\.zytkownika}{20}%
 \contentsline {section}{\numberline {6}Testowanie uk\IeC {\l }adu nap\k edowego}{21}%
-\contentsline {subsection}{\numberline {6.1}Sprawdzenie poprawno\'sci dzia\IeC {\l }ania transformat i modulacji SVPWM}{21}%
+\contentsline {subsection}{\numberline {6.1}Sprawdzenie poprawno\'sci dzia\IeC {\l }ania funkcji SVPWM}{21}%
 \contentsline {subsection}{\numberline {6.2}Testowanie uk\IeC {\l }adu regulacji}{22}%
-\contentsline {subsubsection}{\numberline {6.2.1}Regulacja pr\k adu}{22}%
-\contentsline {section}{Wykaz ilustracji}{27}%
+\contentsline {section}{Wykaz ilustracji}{29}%

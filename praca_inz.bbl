@@ -40,6 +40,13 @@ Krzysztof Krykowski.
 \newblock {\em Silniki PM BLDC}.
 \newblock Wydawnictwo BTC, Legionowo, 2015.
 
+\bibitem{luczak2014comparison}
+Dominik {\L}uczak and Krzysztof Siembab.
+\newblock Comparison of fault tolerant control algorithm using space vector
+  modulation of pmsm drive.
+\newblock In {\em Proceedings of the 16th international conference on
+  mechatronics-mechatronika 2014}, pages 24--31. IEEE, 2014.
+
 \bibitem{mansour2015novel}
 Ahmed~A Mansour.
 \newblock Novel svpwm based on first order equation.
