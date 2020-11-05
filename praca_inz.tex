@@ -51,7 +51,9 @@ PRACA DYPLOMOWA
 IN¯YNIERSKA
 \vspace{1cm}
 
-Mikroprocesorowy kaskadowy uk³ad regulacji pr¹du, prêdkoœci i po³o¿enia dla napêdu z silnikiem BLDC
+\large MIKROPROCESOROWY KASKADOWY UK£AD REGULACJI PR¥DU, PRÊDKOŒCI I PO£O¯ENIA DLA NAPÊDU Z 
+SILNIKIEM BLDC
+
 \vspace{2cm}
 \begin{flushleft}
 \normalsize
@@ -61,7 +63,7 @@ Mikroprocesorowy kaskadowy uk³ad regulacji pr¹du, prêdkoœci i po³o¿enia dla napê
 \hspace{8cm}DR IN¯. DOMINIK £UCZAK
 \vspace{0.2cm}
 
-\scriptsize \hspace{8cm}POTWIERDZAM PRZYJÊCIE PRACY
+\scriptsize \hspace{8cm}POTWIERDZAM PRZYJÊCIE PRACY:
 \vspace{0.5cm}
 
 \hspace{8cm}...........................
@@ -74,7 +76,7 @@ Mikroprocesorowy kaskadowy uk³ad regulacji pr¹du, prêdkoœci i po³o¿enia dla napê
 
 \author{MATEUSZ SEMK£O}
 
-\date{2020-10-25}
+\date{2020-11-30}
 
 
 
@@ -101,12 +103,12 @@ Silnik BLDC (ang. Burshless Direct Current) nale¿y do rodziny silników z magnesa
 
 Silnik  ze wzglêdu na konstrukcje wymaga bardziej z³o¿onego sposobu sterowania w porównaniu z silnikiem pr¹du sta³ego. W tym celu wykorzystana zosta³a metoda FOC (ang. Field-orient control). Jest to jedna z powszechnie stosowanych technik w uk³adach regulacji trójfazowych silników synchronicznych z magnesami trwa³ymi. Pozwala ona sprowadziæ wartoœci pr¹dów fazowych stojana z trójwymiarowego uk³ad wspó³rzêdnych do wiruj¹cego uk³adu o dwóch wspó³rzêdnych biegn¹cego synchronicznie  z wektorem strumienia wirnika. Uzyskujemy w ten sposób dostêp do wartoœci sta³ych, które mo¿na umieœciæ bezpoœrednio w pêtlach regulatorów PID i uzyskaæ mo¿liwoœæ regulacji pr¹dem, prêdkoœci¹ i po³o¿eniem.
 
- Do modulacji szerokoœci impulsów wykorzystano metodê SVPWM (ang. Space Vector Pulse Width Modulation) . W porównaniu z alternatywn¹ modulacj¹ SPWM (ang. Sine Pulse Width Modulation) cechujê siê mniejszymi zniekszta³ceniami sygna³u spowodowanych przez wy¿sze harmoniczne i wykorzystujê wiêkszy przedzia³ napiêcia zasilania. Przekszta³ca ona stany logiczne tranzystorów przekszta³tnika w wektory, które tworz¹ razem kszta³t szeœciok¹ta i dziel¹ przestrzeñ na szeœæ sektorów. Wektor referencyjny jest generowany w wyniku aktywowania dwóch s¹siaduj¹cych wektorów z przestrzeni stanu w okreœlonej sekwencji i czasie. W wyniku tych operacji formowane s¹ trzy sygna³y PWM dla trzech par tranzystorów przekszta³tnika energoelektronicznego. 
+ Do modulacji szerokoœci impulsów wykorzystano metodê SVPWM (ang. Space Vector Pulse Width Modulation). W porównaniu z alternatywn¹ modulacj¹ SPWM (ang. Sine Pulse Width Modulation) cechujê siê mniejszymi zniekszta³ceniami sygna³u spowodowanych przez wy¿sze harmoniczne i wykorzystujê wiêkszy przedzia³ napiêcia zasilania. W wyniku modulacji SVPWM generowane s¹ wektory, które przyjmuj¹ kszta³t szeœciok¹ta i dziel¹ przestrzeñ na szeœæ sektorów. Wektor referencyjny jest generowany w wyniku aktywowania dwóch s¹siaduj¹cych wektorów z przestrzeni stanu w okreœlonej sekwencji i czasie. W wyniku tych operacji formowane s¹ trzy sygna³y PWM dla trzech par tranzystorów przekszta³tnika energoelektronicznego. 
  
-G³ównymi elementami uk³adu jest zestaw prototypowy STM32 B G431B-ESC1 oraz STM32 Nucleo F746ZG. B G431B-ESC1 wyposa¿ony w mikrokontroler STM32G431CB, rdzeñ ARM Cortex M4, trójfazowy przekszta³tnik energoelektroniczny jest uk³adem realizuj¹cym proces regulacji pr¹du, prêdkoœci i po³o¿enia wirnika.  Nucleo F746ZG odpowiada za komunikacjê miêdzy regulatorem a interfejsem u¿ytkownika. Aplikacja u¿ytkownika jest napisana w jêzyku python i ³¹czy z p³yt¹ Nucleo F746ZG za poœrednictwem przewodu sieciowego przy wykorzystaniu protok³u TCP/IP. Informacje przekazywane s¹ w postaci ³añcuchów znaków w formacie JSON.  
+G³ównymi elementami uk³adu jest zestaw prototypowy STM32 B-G431B-ESC1 oraz STM32 Nucleo F746ZG. B-G431B-ESC1 wyposa¿ony w mikrokontroler STM32G431CB, rdzeñ ARM Cortex M4, trójfazowy przekszta³tnik energoelektroniczny jest uk³adem realizuj¹cym proces regulacji pr¹du, prêdkoœci i po³o¿enia wirnika.  Nucleo F746ZG odpowiada za komunikacjê miêdzy regulatorem a interfejsem u¿ytkownika. Aplikacja u¿ytkownika jest napisana w jêzyku python i ³¹czy siê z p³yt¹ Nucleo F746ZG za poœrednictwem przewodu sieciowego przy wykorzystaniu protok³u TCP/IP. Informacje przekazywane s¹ w postaci ³añcuchów znaków w formacie JSON.  
 Specyfika uk³adu pomiarowego pr¹du wymaga aby pomiar by³ wykonywany, gdy wszystkie tranzystory grupy górnej by³y wy³¹czone a grupy dolnej w³¹czone. Wyzwolenie nastêpuje w osi symetrii ka¿dego okresu sygna³u PWM.  W funkcji obs³ugi zdarzenia przeprowadzane s¹ wszystkie operacje zwi¹zane z regulacj¹ i modulacj¹ sygna³ów.
 
-W uk³adzie zdefiniowane s¹ cztery regulatory PID: pr¹du, strumienia magnetycznego wirnika skojarzonego ze stojanem, prêdkoœci i po³o¿enia wirnika. S¹ one po³¹czone ze sob¹ w sposób kaskadowy. Pêtle regulacji s¹ zagnie¿d¿one jedna w drugiej, gdzie wyjœcie z regulatora pêtli zewnêtrznej ustala wartoœæ zadan¹ pêtli wewnêtrznej. Ró¿ni¹ siê one czêstotliwoœci¹ obliczeñ. 
+W uk³adzie zdefiniowane s¹ cztery regulatory PID: pr¹du, strumienia magnetycznego wirnika skojarzonego ze stojanem, prêdkoœci i po³o¿enia wirnika. S¹ one po³¹czone ze sob¹ w sposób kaskadowy. Pêtle regulacji s¹ zagnie¿d¿one jedna w drugiej, gdzie wyjœcie z regulatora pêtli zewnêtrznej ustala wartoœæ zadan¹ pêtli wewnêtrznej. 
      
 
 
@@ -233,7 +235,6 @@ Wyra¿enie opisuj¹ce si³ê elektromotoryczn¹ indukowan¹ w k-tym uzwojeniu\cite{kry
  E_{k}=p \psi _{k}(\theta _{e})\omega
 \end{equation} 
 \\
-
 Silnik BLDC mo¿na traktowaæ jako szczególny przypadek silnika synchronicznego.
 Schemat zastêpczy silnika trójfazowego z magnesami trwa³ymi przedstawiony na rysunku \ref{fig:5}.
 
@@ -526,7 +527,7 @@ T_{B} = \frac{\sqrt{3} T_{s} V_{x}}{V_{DC}} (sin((k-1)\pi/3 - \theta))
 
 Suma czasów $T_{A}$, $T_{B}$ i $T_{0}$ jest równa okresowi modulacji szerokoœci impulsów $T_{S}$.
 
-Znaj¹c sektor i czasy $T_{A}$, $T_{B}$, $T_{0}$ mo¿na wygenerowaæ dowolny wektor w przestrzeni stanu. Aby tego dokonaæ nale¿y zastosowaæ odpowiedni¹ sekwencjê za³¹czeñ wektorów $V_{A}$, $V_{B}$, $V_{0}$. Wektory te, w zale¿noœci od sektora, w którym siê znajduj¹, maj¹ swoj¹ reprezentacje w odpowiadaj¹cej im kombinacji za³¹czeñ kluczy tranzystorów przekszta³tnika.  Rysunek \ref{fig:13} przedstawia sekwencje wektorów $V_{A}$, $V_{B}$, $V_{0}$ i czasy ich aktywnoœci w zale¿noœci od umiejscowienia wektora referencyjnego w przestrzeni stanu. W wyniku powy¿szych operacji otrzymujemy trzy sygna³y PWM dla ka¿dej ga³êzi trójfazowego przekszta³tnika.
+Znaj¹c sektor i czasy $T_{A}$, $T_{B}$, $T_{0}$ mo¿na wygenerowaæ dowolny wektor w przestrzeni stanu. Aby tego dokonaæ nale¿y zastosowaæ odpowiedni¹ sekwencjê za³¹czeñ wektorów $V_{A}$, $V_{B}$, $V_{0}$. Wektory te, w zale¿noœci od sektora, w którym siê znajduj¹, maj¹ swoj¹ reprezentacje w odpowiadaj¹cej im kombinacji za³¹czeñ kluczy tranzystorów przekszta³tnika.  Rysunek \ref{fig:13} przedstawia sekwencje wektorów $V_{A}$, $V_{B}$, $V_{0}$ i czasy ich aktywnoœci w zale¿noœci od umiejscowienia wektora referencyjnego w przestrzeni stanu. W wyniku powy¿szych operacji otrzymujemy trzy sygna³y PWM dla ka¿dej ga³êzi trójfazowego przekszta³tnika \cite{luczak2014comparison}.
 
  \begin{figure}[H]
 \centering
@@ -754,7 +755,7 @@ Modulacja wektorowa SVPWM sk³ada siê z funkcji, które na podstawie zadanego wekt
 W funkcji obsu³gi przerwania od zdarzenia przetwornika ADC obliczane s¹ transformaty, funkcje regulatorów PID, transformaty odwrotne i funkcje modulacji wektorowej. W wyniku tych operacji, za pomoc¹ licznika z kana³ami steruj¹cymi bramkami tranzystorów przekszta³tnika, zostaj¹ wygenerowane trzy sygna³y PWM.
 
 
-Do regulacji pr¹du, prêdkoœci i po³o¿enia zastosowano cztery regulatory PID oraz trzy pêtle regulacji. Po³¹czone ze sob¹ w sposób kaskadowy. Wynik regulatora zewnêtrznej pêtli wprowadzany jest na wejœcie regulatora wewnêtrznej pêtli. Schematycznie przedstawiono na rysunku \ref{fig:23}. Regulacja pr¹du dzia³a z najwy¿sz¹ czêstotliwoœci¹ 10kHz i jest w pêtli wewnêtrznej. Regulacja prêdkoœci odbywa siê z czêstotliwoœci¹ 5kHz. Regulator po³o¿enia znajdujê siê w pêtli zewnêtrznej i taktowany jest z czêstotliwoœci¹ 2kHz. 
+Do regulacji pr¹du, prêdkoœci i po³o¿enia zastosowano cztery regulatory PID po³¹czone ze sob¹ w sposób kaskadowy. Wynik regulatora zewnêtrznej pêtli wprowadzany jest na wejœcie regulatora pêtli wewnêtrznej. Schemat przedstawiono na rysunku \ref{fig:23}. Regulacja odbywa siê z czêstotliwoœci¹ wynosz¹c¹ 10kHz. 
 
  \begin{figure}[H]
 \centering
@@ -764,19 +765,159 @@ Do regulacji pr¹du, prêdkoœci i po³o¿enia zastosowano cztery regulatory PID oraz
 \end{figure} 
 \vspace{0.4cm}
 
+\subsection{Komunikacja}
+Zestaw ewaluacyjny Nucleo F746ZG jest g³ównym wêz³em komunikacyjnym. £¹czy siê ze sterownikiem B-G431-ESC1 za pomoc¹ portu szeregowego UART o prêdkoœci transmisji 115200 bitów na sekunde. Za pomoc¹ tego portu wysy³ane s¹ wartoœci zadane pr¹du, prêdkoœci, po³o¿enia wirnika, nastawy regulatorów oraz ustawienia konfiguracyjne. B-G431-ESC1 generuje sygna³ PWM do synchronizacji pomiarów i obliczeñ z p³yt¹ Nucleo F746ZG. Rysunek \ref{fig:24} przedstawia    graficzny schemat uk³adu komunikacji. 
+Nucleo F746ZG, wyposa¿ony w Ethernet i z³¹cze RJ45, ³¹czy siê z interfejsem u¿ytkownika zaimplementowanym na zdalnym komputerze za pomoc¹ przewodu sieciowego i routera. Informacje przekazywane s¹ za pomoc¹ protoko³u TCP/IP w postaci ³añcuchów znaków we formacie JSON (ang. JavaScript Object Notation). JSON jest formatem zapisu struktur danych przeznaczonym do wymiany informacji miêdzy aplikacjami. Dane zapisywane w notacji atrybut - wartoœæ charakteryzuj¹ siê prostot¹ i czytelnoœci¹. Za pomoc¹ interfejsu u¿ytkownika wysy³ane s¹ wartoœci zadane, nastawy regulatorów i ustawienia a odbierane bie¿¹ce wartoœci pr¹dów, prêdkoœci i po³o¿enia wirnika.
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.55]{komunikacja.png}   
+\caption{Schemat uk³adu komunikacji}
+\label{fig:24}
+\end{figure} 
+\vspace{0.4cm}
 
 
-\section{Wnioski}
+
+
+\subsection{Interfejs u¿ytkownika}
+
+Interfejs u¿ytkownika zosta³ napisany w jêzyku Python przy pomocy oprogramowania Spyder w œrodowisku Anaconda. Aplikacja za pomoc¹ Ethernetu i protoko³u TCP/IP ³¹czy siê z p³yt¹ Nucleo F746ZG na której zaimplementowany jest serwer TCP. Informacje wysy³ane s¹ w postaci ³añcuchów znaków we formacie JSON. Aplikacja wysy³a do serwera zapytania cyklicznie co 20 ms. W odpowiedzi serwer zwraca informacje o bie¿¹cych wartoœciach pr¹dów fazowych, prêdkoœci i po³o¿eniu wirnika. Na rysunku \ref{fig:25} i \ref{fig:26}  przedstawiony jest interfejsu aplikacji. U¿ytkownik ma mo¿liwoœæ okreœlenia wartoœci zadanych pr¹du, prêdkoœci, po³o¿enia wirnika oraz nastaw dla regulatorów PID. Dodatkowo istnieje mo¿liwoœæ wy³¹czenia regulatora po³o¿enia i pozostawienia tylko aktywnego regulatora pr¹du i prêdkoœci. Przycisk \textit{Wyœlij ustawienia} powoduje dodanie do zapytania danych konfiguracyjnych i zaktualizowanie ustawieñ napêdu.\textit{Start, stop} uruchamia i zatrzymuje prace silnika. Przycisk \textit{Wyœwietl dane} przedstawia aktualne informacje z czujników w czêœci aplikacji oznaczonej jako \textit{POMIARY SILNIKA} oraz dodatkowo w osobnym oknie dialogowym przedstawia dane w postaci wykresów. Przycisk \textit{Kasuj} zatrzymuje i czyœci obszar wyœwietlanie wykresów.
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.65]{interfejs1.png}   
+\caption{Interfejs u¿ytkownika}
+\label{fig:25}
+\end{figure} 
+\vspace{0.4cm}
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.55]{interfejs2.png}   
+\caption{Interfejs u¿ytkownika}
+\label{fig:26}
+\end{figure} 
+\vspace{0.4cm}
 
 
 
-%% The List of Figures
+
+
+\section{Testowanie uk³adu napêdowego}
+\subsection{Sprawdzenie poprawnoœci dzia³ania transformat i modulacji SVPWM}
+
+Jednym z elementów uk³adu s¹ transformaty i modulacja SVPWM. Sk³adaj¹ siê one ze zbioru funkcji, które zosta³y zaimplementowane i przetestowane w celu sprawdzenia poprawnoœci dzia³ania przed przyst¹pieniem do testowania wraz z regulatorami PID. W wyniku dzia³ania transformat i SVPWM dla trzech wejœciowych sygna³ów sinusoidalnych o amplitudzie 1000, czêstotliwoœci 0.5 Hz, przesuniêtych w fazie o 120 stopni generowane s¹ trzy przebiegi o bardzo zbli¿onych parametrach co sygna³y wejœciowe. Rysunek \ref{fig:27} pokazuje przebieg wygenerowanych sygna³ów, które nastêpnie zostan¹ przekszta³cone w sygna³y prostok¹tne i wprowadzone na przetwornik energoelektroniczny. Do podgl¹du przebiegów 
+zosta³o wykorzystane oprogramowanie STMStudio, które umo¿liwia graficzne wyœwietlenie stanu zmiennych programu w czasie rzeczywistym. 
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{svpwm_wykres.png}   
+\caption{Przebiegi wygenerowanych sygna³ów na podstawie trzech sygna³ów sinusoidalnych}
+\label{fig:27}
+\end{figure} 
+\vspace{0.4cm}
+
+\subsection{Testowanie uk³adu regulacji}
+Uk³ad zosta³ przetestowany dla nastaw regulatorów opisanych na rysunku \ref{fig:28}.
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{nastawy.png}   
+\caption{Nastawy regulatorów PID}
+\label{fig:28}
+\end{figure} 
+\vspace{0.4cm}
+
+\subsubsection{Regulacja pr¹du}
+
+W celu sprawdzenia poprawnoœci dzia³ania regulatora pr¹du wykonano pomiary dla 
+trzech wartoœci amplitud sk³adowej pr¹du Iq: 0.3A, 0.5A, 1A oraz sk³adowej oddzia³ywania pola magnetycznego wirnika Id: 0 dla przypadku gdzie wirnik nie zosta³ obci¹¿ony i dla przypadku dzia³ania zewnêtrznego momentu oporowego. Wartoœæ zadana prêdkoœci obrotowej wynosi 2500 obr/min, regulator po³o¿enia wirnika jest wy³¹czony. Przebiegi przedstawione s¹ rysunkach \ref{fig:29}, \ref{fig:30}, \ref{fig:31}, \ref{fig:32}, \ref{fig:33}, \ref{fig:34}, \ref{fig:35}. Pomiary zosta³y wykonane za pomoc¹ oscyloskopu UNI-T UTD2102CEX. Do wyprowadzeñ uzwojeñ silnika zosta³y pod³¹czone rezystory o wartoœci 1 $\Omega$  dziêki czemu spadek napiêcia o wartoœci 1V odpowiada pr¹dowi o wartoœci 1A.  
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{03Abez.pdf}   
+\caption{Przepieg pr¹du dla wartoœci amplitudy 0.3A bez obci¹¿enia}
+\label{fig:29}
+\end{figure} 
+\vspace{0.4cm}
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{03Az.pdf}   
+\caption{Przepieg pr¹du dla wartoœci amplitudy 0.3A z obci¹¿eniem}
+\label{fig:30}
+\end{figure} 
+\vspace{0.4cm}
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{speed03.png}   
+\caption{Przepieg prêdkoœci obrotowej dla cyklicznego obci¹¿ania i obci¹¿ania wa³u silnika dla prêdkoœci zadanej 2500 obr/min i amplitudy pr¹du 0.3A }
+\label{fig:31}
+\end{figure} 
+\vspace{0.4cm}
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{05Abez.pdf}   
+\caption{Przepieg pr¹du dla wartoœci amplitudy 0.5A bez obci¹¿enia}
+\label{fig:32}
+\end{figure} 
+\vspace{0.4cm}
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{05Az.pdf}   
+\caption{Przepieg pr¹du dla wartoœci amplitudy 0.5A z obci¹¿eniem}
+\label{fig:33}
+\end{figure} 
+\vspace{0.4cm}
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{1Abez.pdf}   
+\caption{Przepieg pr¹du dla wartoœci amplitudy 1A bez obci¹¿enia}
+\label{fig:34}
+\end{figure} 
+\vspace{0.4cm}
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{1Az.pdf}   
+\caption{Przepieg pr¹du dla wartoœci amplitudy 1A z obci¹¿eniem}
+\label{fig:35}
+\end{figure} 
+\vspace{0.4cm}
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.45]{idiq1A.png}   
+\caption{Przebieg sk³adowej Id, Iq dla wartoœci zadanej 1A}
+\label{fig:36}
+\end{figure} 
+\vspace{0.4cm}
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{alpha_beta.png}   
+\caption{Hodogram pr¹du w uk³adzie wspó³rzêdnych alfa, beta dla wartoœc zadanej 1A}
+\label{fig:37}
+\end{figure} 
+\vspace{0.4cm}
+
+ Z pomiarów wynika, ¿e dla silnika dzia³aj¹cego bez obci¹¿enia przebieg pr¹du
+ jest odkszta³cony i mocno odbiega od kszta³tu sinusoidy. Moment elektromagnetyczny jest
+ iloczynem strumienia strumienia elektromagnetycznego wirnika skojarzonego ze stojanem, pr¹du i kosinusa k¹ta miêdzy polem stojana i wirnika. Przy braku obci¹¿enia i osi¹gniêciu zadanej prêdkoœci obrotowej, pr¹d utrzymuje ma³¹ wartoœæ
+
+
+
 
 \addcontentsline{toc}{section}{Wykaz ilustracji}
 \listoffigures
 
-\bibliographystyle{plain} %Style of Bibliography: plain / apalike / amsalpha / ...
-\bibliography{bibl} %You need a~file 'literature.bib' for this.
+\bibliographystyle{plain} 
+\bibliography{bibl} 
 
 \end{document}
 

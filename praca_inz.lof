@@ -21,3 +21,17 @@
 \contentsline {figure}{\numberline {20}{\ignorespaces Schemat regulatora PID biblioteki CMSIS-DSP \cite {cmsis}}}{17}%
 \contentsline {figure}{\numberline {21}{\ignorespaces Synchronizacja sygan\IeC {\l }u PWM z wyzwalaniem przerwania od przetwornika ADC}}{18}%
 \contentsline {figure}{\numberline {22}{\ignorespaces Model nap\k edu silnika BLDC}}{19}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Schemat uk\IeC {\l }adu komunikacji}}{19}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Interfejs u\.zytkownika}}{20}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Interfejs u\.zytkownika}}{21}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Przebiegi wygenerowanych sygna\IeC {\l }\'ow na podstawie trzech sygna\IeC {\l }\'ow sinusoidalnych}}{21}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Nastawy regulator\'ow PID}}{22}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Przepieg pr\k adu dla warto\'sci amplitudy 0.3A bez obci\k a\.zenia}}{22}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Przepieg pr\k adu dla warto\'sci amplitudy 0.3A z obci\k a\.zeniem}}{23}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Przepieg pr\k edko\'sci obrotowej dla cyklicznego obci\k a\.zania i obci\k a\.zania wa\IeC {\l }u silnika dla pr\k edko\'sci zadanej 2500 obr/min i amplitudy pr\k adu 0.3A }}{23}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Przepieg pr\k adu dla warto\'sci amplitudy 0.5A bez obci\k a\.zenia}}{24}%
+\contentsline {figure}{\numberline {32}{\ignorespaces Przepieg pr\k adu dla warto\'sci amplitudy 0.5A z obci\k a\.zeniem}}{24}%
+\contentsline {figure}{\numberline {33}{\ignorespaces Przepieg pr\k adu dla warto\'sci amplitudy 1A bez obci\k a\.zenia}}{25}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Przepieg pr\k adu dla warto\'sci amplitudy 1A z obci\k a\.zeniem}}{25}%
+\contentsline {figure}{\numberline {35}{\ignorespaces Przebieg sk\IeC {\l }adowej Id, Iq dla warto\'sci zadanej 1A}}{26}%
+\contentsline {figure}{\numberline {36}{\ignorespaces Hodogram pr\k adu w uk\IeC {\l }adzie wsp\'o\IeC {\l }rz\k ednych alfa, beta dla warto\'sc zadanej 1A}}{26}%
