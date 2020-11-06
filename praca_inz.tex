@@ -91,7 +91,9 @@ SILNIKIEM BLDC
 
 Tematem pracy in¿ynierskiej jest\textit{Mikroprocesorowy kaskadowy uk³ad regulacji pr¹du, prêdkoœci i po³o¿enia dla napêdu z silnikiem BLDC}. Zainteresowanie i zdobyta wiedza z zakresu automatyki, mikroprocesorów i maszyn elektrycznych  spowodowa³a chêæ stworzenia  uk³adu napêdowego dla silnika elektrycznego przy wykorzystaniu mo¿liwoœci mikrokontrolerów i stawieniu czo³a trudnoœciom przy jego praktycznej realizacji.  
 
-Celem jest pokazanie mo¿liwoœci wykorzystania mikroprocesora jako jednego ze sposobów na realizacje uk³adu regulacji dla silnika BLDC. Zakres pracy obejmuje:
+Celem jest pokazanie mo¿liwoœci wykorzystania mikroprocesora z rodziny ARM Cortex wbudowanego w mikrokontroler firmy STM32 jako jednego ze sposobów na sprzêtow¹ realizacje
+uk³adu sterowania dla silnika BLDC. Zaimplementowanie Sterowania Zorientowanego Polowo (ang. Field Orient Cotrol) tworz¹cego formê uk³adu napêdowego i konfiguracji w kaskadowy uk³ad regulacji pr¹du, prêdkoœci i po³o¿enia. Pokazania funkcjonalnoœci i zalet wykorzystania napêdu wektorowego.
+ Zakres pracy obejmuje:
 \begin{itemize}
 \item{Dobór i uruchomienie mikroprocesorowej p³yty rozwojowej STM32 dla wybranego uk³adu napêdowego z silnikiem BLDC}
 \item{Dobór parametrów regulatorów PID. Wykorzystanie regulatorów dostêpnych w bibliotece CMSIS-DSP}
@@ -101,7 +103,7 @@ Celem jest pokazanie mo¿liwoœci wykorzystania mikroprocesora jako jednego ze spo
 
 Silnik BLDC (ang. Burshless Direct Current) nale¿y do rodziny silników z magnesami trwa³ymi. Charakteryzuje siê sta³ym momentem elektromagnetycznym w szerokim zakresie prêdkoœci obrotowej. Brak komutatora zapewnia wiêksz¹ sprawnoœæ i ¿ywotnoœæ silnika. Z powodu wielu zalet czêsto wykorzystywane  w automatyce i robotyce.
 
-Silnik  ze wzglêdu na konstrukcje wymaga bardziej z³o¿onego sposobu sterowania w porównaniu z silnikiem pr¹du sta³ego. W tym celu wykorzystana zosta³a metoda FOC (ang. Field-orient control). Jest to jedna z powszechnie stosowanych technik w uk³adach regulacji trójfazowych silników synchronicznych z magnesami trwa³ymi. Pozwala ona sprowadziæ wartoœci pr¹dów fazowych stojana z trójwymiarowego uk³ad wspó³rzêdnych do wiruj¹cego uk³adu o dwóch wspó³rzêdnych biegn¹cego synchronicznie  z wektorem strumienia wirnika. Uzyskujemy w ten sposób dostêp do wartoœci sta³ych, które mo¿na umieœciæ bezpoœrednio w pêtlach regulatorów PID i uzyskaæ mo¿liwoœæ regulacji pr¹dem, prêdkoœci¹ i po³o¿eniem.
+Silnik  ze wzglêdu na konstrukcje wymaga bardziej z³o¿onego sposobu sterowania w porównaniu z silnikiem pr¹du sta³ego. W tym celu wykorzystana zosta³a metoda sterowania FOC (ang. Field-orient control). Jest to jedna z powszechnie stosowanych technik w uk³adach regulacji trójfazowych silników synchronicznych z magnesami trwa³ymi. Pozwala ona sprowadziæ wartoœci pr¹dów fazowych stojana z trójwymiarowego uk³ad wspó³rzêdnych do wiruj¹cego uk³adu o dwóch wspó³rzêdnych biegn¹cego synchronicznie  z wektorem strumienia wirnika. Uzyskujemy w ten sposób dostêp do dwóch wartoœci sta³ych - pr¹du i strumienia magnetycznego, które mo¿na umieœciæ bezpoœrednio w pêtlach regulatorów PID i uzyskaæ mo¿liwoœæ regulacji pr¹dem, wzbudzeniem, prêdkoœci¹ i po³o¿eniem.
 
  Do modulacji szerokoœci impulsów wykorzystano metodê SVPWM (ang. Space Vector Pulse Width Modulation). W porównaniu z alternatywn¹ modulacj¹ SPWM (ang. Sine Pulse Width Modulation) cechujê siê mniejszymi zniekszta³ceniami sygna³u spowodowanych przez wy¿sze harmoniczne i wykorzystujê wiêkszy przedzia³ napiêcia zasilania. W wyniku modulacji SVPWM generowane s¹ wektory, które przyjmuj¹ kszta³t szeœciok¹ta i dziel¹ przestrzeñ na szeœæ sektorów. Wektor referencyjny jest generowany w wyniku aktywowania dwóch s¹siaduj¹cych wektorów z przestrzeni stanu w okreœlonej sekwencji i czasie. W wyniku tych operacji formowane s¹ trzy sygna³y PWM dla trzech par tranzystorów przekszta³tnika energoelektronicznego. 
  
@@ -111,6 +113,8 @@ Specyfika uk³adu pomiarowego pr¹du wymaga aby pomiar by³ wykonywany, gdy wszystk
 W uk³adzie zdefiniowane s¹ cztery regulatory PID: pr¹du, strumienia magnetycznego wirnika skojarzonego ze stojanem, prêdkoœci i po³o¿enia wirnika. S¹ one po³¹czone ze sob¹ w sposób kaskadowy. Pêtle regulacji s¹ zagnie¿d¿one jedna w drugiej, gdzie wyjœcie z regulatora pêtli zewnêtrznej ustala wartoœæ zadan¹ pêtli wewnêtrznej. 
 
 Przy pomocy oscyloskopu i oprogramowania STMStudio do podgl¹du zmiennych programu w czasie rzeczywistym przeprowadzono pomiary pr¹du, prêdkoœci i po³o¿enia wirnika dla ró¿nych wartoœci zadanych przy okreœlonych nastawach regulatorów PID. Zmierzone przebiegi najistotniejszych wielkoœci zosta³y przedstawione w rozdziale \ref{chapter:3}.
+
+
      
 
 \newpage
@@ -399,7 +403,7 @@ Brak konwencjonalnego komutatora wyd³u¿a ¿ywotnoœæ silnika i nie wymaga konserwa
 \section{Field Orient Control}
  \label{chapter:1}
  
- Algorytm wektorowy FOC (ang. Field Orient Control) przedstawiony schematycznie na rysunku \ref{fig:6} jest jedn¹ z powszechnie stosowanych metod sterowania silników trójfazowych z magnesami trwa³ymi. Polega na bezpoœrednim sterowaniu wiruj¹cym polem stojana.  Pozwala uzyskaæ dok³adn¹ i dynamiczn¹ regulacjê momentu elektrodynamicznego, prêdkoœci i po³o¿enia wirnika.\cite{Przepiorkowski2010FOC}
+ Algorytm Sterowania Zorientowanego Polowo FOC przedstawiony schematycznie na rysunku \ref{fig:6} jest jedn¹ z powszechnie stosowanych metod sterowania silników trójfazowych z magnesami trwa³ymi. Polega na bezpoœrednim sterowaniu wiruj¹cym polem stojana.  Pozwala uzyskaæ dok³adn¹ i dynamiczn¹ regulacjê momentu elektrodynamicznego, prêdkoœci i po³o¿enia wirnika.\cite{Przepiorkowski2010FOC}
  \\
  
 \begin{figure}[H]
@@ -409,7 +413,8 @@ Brak konwencjonalnego komutatora wyd³u¿a ¿ywotnoœæ silnika i nie wymaga konserwa
 \label{fig:6}
 \end{figure} 
  
-Metoda FOC steruje pr¹dami fazowymi stojana reprezentowanymi w postaci wektora. Czujniki pr¹du dostarczaj¹ informacjê zwrotn¹ o aktualnych pr¹dach fazowych. Za pomoc¹ transformaty Clark’a, wyra¿ona za pomoc¹ wzoru   \ref{eqn:17} i pokazana na rysunku \ref{fig:7},   przekszta³ca trójwymiarowy uk³ad wspó³rzêdnych, w którym opisane s¹ pr¹dy fazowe Ia,Ib,Ic na uk³ad ograniczony tylko do dwóch wspó³rzêdnych otrzymuj¹c wiruj¹cy wektor na p³aszczyŸnie. Znaj¹c aktualne po³o¿enie wirnika i korzystaj¹c z transformaty Park’a, wyra¿ona we wzorze \ref{eqn:18} i pokazana na rysunku \ref{fig:8}, uzyskujemy wiruj¹cy uk³ad wspó³rzêdnych . Operacja ta pozwala  na przekszta³cenie wiruj¹cego wektora pr¹du na dwie sk³adowe sta³e Id, Iq. Id jest wielkoœci¹ odpowiadaj¹c¹ strumieniowi magnetycznemu a Iq momentowi elektromagnetycznemu silnika. Minimalizuj¹c wartoœæ Id zapewniamy k¹t prosty miêdzy polem magnetycznym stojana i wirnika oraz uzyskujemy najwiêksza sprawnoœæ silnika.\cite{Przepiorkowski2010FOC}
+Metoda FOC steruje pr¹dami fazowymi stojana reprezentowanymi w postaci wektora. Czujniki pr¹du dostarczaj¹ informacjê zwrotn¹ o aktualnych pr¹dach fazowych. Transformata Clark’a, wyra¿ona za pomoc¹ wzoru   \ref{eqn:17} i pokazana na rysunku \ref{fig:7},   przekszta³ca trójwymiarowy uk³ad wspó³rzêdnych, w którym opisane s¹ pr¹dy fazowe Ia,Ib,Ic na uk³ad ograniczony do dwóch wspó³rzêdnych otrzymuj¹c wiruj¹cy wektor na p³aszczyŸnie. Znaj¹c aktualne po³o¿enie wirnika i korzystaj¹c z transformaty Park’a, wyra¿ona we wzorze \ref{eqn:18} i pokazana na rysunku \ref{fig:8}, uzyskujemy wiruj¹cy uk³ad wspó³rzêdnych. Operacja ta pozwala  na przekszta³cenie wiruj¹cego wektora pr¹du na dwie sk³adowe sta³e:
+ strumienia magnetycznego Id oraz momentu elektromagnetycznego Iq. Daje to mo¿liwoœæ sterowania w sposób rozdzielny pr¹dem odpowiedzialnym za moment obrotowy oraz wzbudzeniem wytwarzaj¹cym strumieñ magnetyczny skojarzony z twornikiem. Minimalizuj¹c wartoœæ Id zapewniamy k¹t prosty miêdzy polem magnetycznym stojana i wirnika oraz uzyskujemy najwiêksza sprawnoœæ silnika.\cite{Przepiorkowski2010FOC}
 \cite{europe1998field}
 \\
 
@@ -452,7 +457,7 @@ I_{q}=I_{\alpha}sin(\theta)+I_{\beta}cos(\theta)
 \\
 
  
-Algorytm FOC pozwala uzyskaæ z trzech przebiegów pr¹dów przemiennych dwie sk³adowe sta³opr¹dowe. Pozwala to na zastosowanie dwóch regulatorów PID dla sk³adowej Id oraz Iq uzyskuj¹c regulator pr¹du. Regulacje prêdkoœci obrotowej i po³o¿enia wirnika mo¿na zrealizowaæ przez dodanie kolejnych regulatorów PID do ga³êzi ze sta³¹ Iq. 
+Przekszta³cenie przebiegów pr¹dów przemiennych w dwie sk³adowe sta³opr¹dowe pozwala na zastosowanie regulatorów PID dla sk³adowej Id oraz Iq uzyskuj¹c regulator pr¹du i wzbudzenia. Regulacje prêdkoœci obrotowej i po³o¿enia wirnika jest zrealizowana przez dodanie kolejnych regulatorów PID do ga³êzi ze sta³¹ Iq. 
  
 
 Zastosowanie odwrotnych transformat pozwala na sprowadzenie sk³adowych sta³ych do trzch przebiegów sinusoidalnych i wprowadzenie ich wartoœci na kolejny blok algorytmu FOC zwany SVPWM (ang. Space Vector Pulse Width Mudulation) opisany w rozdziale \ref{chapter:2}. Blok ten steruje bramkami tranzystorów przetwornika, aby uzyskaæ w uzwojeniach takie przebiegi pr¹dów, które bêd¹ generowa³y odpowiedni¹ amplitudê i prêdkoœæ wirowania pola magnetycznego stojana wzglêdem pola wirnika. Rysunek \ref{fig:9} przedstawia kolejnoœæ dokonywanych transformacji.
@@ -820,7 +825,7 @@ Jednym z elementów uk³adu jest modulacja SVPWM. Sk³ada siê one ze zbioru funkcji
 \vspace{0.4cm}
 
 \subsection{Testowanie uk³adu regulacji}
-Uk³ad zosta³ przetestowany dla nastaw regulatorów opisanych na rysunku \ref{fig:28}.
+Uk³ad zosta³ przetestowany dla nastaw regulatorów dobranych doœwiadczalnie i opisanych na rysunku \ref{fig:28}. Pomiary zosta³y wykonane za pomoc¹ oscyloskopu UNI-T UTD2102CEX i oprogramowania STMStudio do podgl¹du zmiennych programu w czasie rzeczywistym.
 
  \begin{figure}[H]
 \centering
@@ -830,8 +835,9 @@ Uk³ad zosta³ przetestowany dla nastaw regulatorów opisanych na rysunku \ref{fig:
 \end{figure} 
 \vspace{0.4cm}
 
+\subsubsection{Regulacja pr¹du}
 
-W celu sprawdzenia poprawnoœci dzia³ania regulatorów wykonano pomiary dla trzech wartoœci amplitud sk³adowej pr¹du Iq: 0.3A, 0.5A, 1A dla przypadku gdzie wirnik nie zosta³ obci¹¿ony i dla przypadku dzia³ania zewnêtrznego momentu oporowego. Wartoœæ zadana prêdkoœci obrotowej wynosi 2500 obr/min. Przebiegi przedstawione s¹ rysunkach od \ref{fig:29} do \ref{fig:39}. Pomiary zosta³y wykonane za pomoc¹ oscyloskopu UNI-T UTD2102CEX i oprogramowania STMStudio do podgl¹du zmiennych programu w czasie rzeczywistym. Do wyprowadzeñ uzwojeñ silnika zosta³y pod³¹czone rezystory o wartoœci 1 $\Omega$  dziêki czemu spadek napiêcia o wartoœci 1V odpowiada pr¹dowi o wartoœci 1A.  
+W celu sprawdzenia poprawnoœci dzia³ania regulatorów wykonano pomiary dla trzech wartoœci amplitud sk³adowej pr¹du Iq: 0.3A, 0.5A, 1A dla przypadku gdzie wirnik nie zosta³ obci¹¿ony i dla przypadku dzia³ania zewnêtrznego momentu oporowego. Wartoœæ zadana prêdkoœci obrotowej wynosi 2500 obr/min. Przebiegi przedstawione s¹ rysunkach od \ref{fig:29} do \ref{fig:41}. Do wyprowadzeñ uzwojeñ silnika zosta³y pod³¹czone rezystory o wartoœci 1 $\Omega$  dziêki czemu spadek napiêcia o wartoœci 1V odpowiada pr¹dowi o wartoœci 1A. 
 
  \begin{figure}[H]
 \centering
@@ -853,8 +859,8 @@ W celu sprawdzenia poprawnoœci dzia³ania regulatorów wykonano pomiary dla trzech
 
 \textbf{ \begin{figure}[H]
 \centering
-\includegraphics[scale=0.35]{speed03A.png}   
-\caption{Przebieg prêdkoœci obrotowej dla wartoœci zadanej 2500 obr/min i pr¹du 0.3A bez obci¹¿enia zewnêtrznym momentem oporowym }
+\includegraphics[scale=0.32]{speed03A.png}   
+\caption{Przebieg prêdkoœci obrotowej dla wartoœci zadanej 2500 obr/min i pr¹du 0.3A}
 \label{fig:31}
 \end{figure} 
 \vspace{0.4cm}}
@@ -878,7 +884,7 @@ W celu sprawdzenia poprawnoœci dzia³ania regulatorów wykonano pomiary dla trzech
 \textbf{ \begin{figure}[H]
 \centering
 \includegraphics[scale=0.45]{speed05A.png}   
-\caption{Przebieg prêdkoœci obrotowej dla wartoœci zadanej 2500 obr/min i pr¹du 0.5A bez obci¹¿enia zewnêtrznym momentem oporowym }
+\caption{Przebieg prêdkoœci obrotowej dla wartoœci zadanej 2500 obr/min i pr¹du 0.5A}
 \label{fig:34}
 \end{figure} 
 \vspace{0.4cm}}
@@ -902,8 +908,8 @@ W celu sprawdzenia poprawnoœci dzia³ania regulatorów wykonano pomiary dla trzech
 
 \textbf{ \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{speed1A.png}   
-\caption{Przebieg prêdkoœci obrotowej dla wartoœci zadanej 2500 obr/min i pr¹du 1Abez obci¹¿enia zewnêtrznym momentem oporowym }
+\includegraphics[scale=0.38]{speed1A.png}   
+\caption{Przebieg prêdkoœci obrotowej dla wartoœci zadanej 2500 obr/min i pr¹du 1A}
 \label{fig:37}
 \end{figure} 
 \vspace{0.4cm}}
@@ -924,22 +930,97 @@ W celu sprawdzenia poprawnoœci dzia³ania regulatorów wykonano pomiary dla trzech
 \end{figure} 
 \vspace{0.4cm}
 
-
-Na rysunku 
-
  \begin{figure}[H]
 \centering
-\includegraphics[scale=0.40]{degree.png}   
-\caption{Regulacja po³o¿enia wirnika dla wartoœci zadanej 200 000 stopni}
+\includegraphics[scale=0.6]{napiecie_fazowe.pdf}   
+\caption{Przebieg napiêcia fazowego}
 \label{fig:40}
 \end{figure} 
 \vspace{0.4cm}
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{napiecie_miedzyfazowe.pdf}   
+\caption{Przebieg napiêcia miêdzyfazowego}
+\label{fig:41}
+\end{figure} 
+\vspace{0.4cm}
+
+
 
  Z pomiarów wynika, ¿e dla silnika dzia³aj¹cego bez obci¹¿enia przebieg pr¹du
  jest odkszta³cony i mocno odbiega od kszta³tu sinusoidy. Moment elektromagnetyczny jest
  iloczynem strumienia strumienia elektromagnetycznego wirnika skojarzonego ze stojanem, pr¹du i kosinusa k¹ta miêdzy polem stojana i wirnika. Przy braku obci¹¿enia i osi¹gniêciu zadanej prêdkoœci obrotowej, pr¹d utrzymuje ma³¹ wartoœæ
 
+\subsubsection{Regulacja prêdkoœci obrotowej}
+Pomiary przebiegów prêdkoœci obrotowej zosta³y dokonane dla prêdkoœci obrotowych
+3500,1500,500,200 obr/min przy amplitudzie pr¹du ograniczonej do 0.8A.
+Przebiegi przedstawione na rysunkach \ref{fig:42}, \ref{fig:43}, \ref{fig:44} i \ref{fig:45}.
 
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{speed3500_1A}   
+\caption{Przebieg prêdkoœci obrotowej o wartoœci zadanej 3500 obr/min}
+\label{fig:42}
+\end{figure} 
+\vspace{0.4cm}
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{speed1500_1A}   
+\caption{Przebieg prêdkoœci obrotowej o wartoœci zadanej 1500 obr/min}
+\label{fig:43}
+\end{figure} 
+\vspace{0.4cm}
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{speed500_1A}   
+\caption{Przebieg prêdkoœci obrotowej o wartoœci zadanej 500 obr/min}
+\label{fig:44}
+\end{figure} 
+\vspace{0.4cm}
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{speed200_1A}   
+\caption{Przebieg prêdkoœci obrotowej o wartoœci zadanej 200 obr/min}
+\label{fig:45}
+\end{figure} 
+\vspace{0.4cm}
+
+
+
+
+
+\subsubsection{Regulacja po³o¿enia wirnika}
+
+W celu sprawdzenia jakoœci dzia³ania regulatora po³o¿enia wa³u silnika pomiary wykonano 
+wartoœci zadanych 2000,1000,200 stopni. Przebiegi przedstawione na rysunkach \ref{fig:46}, \ref{fig:47} i \ref{fig:48}. Rozdzielczoœæ przetwornika obrotowo-impulsowego wynosi 720 impulsów/obr.
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{angle2000.png}   
+\caption{Przebieg po³o¿enia wa³u silnika dla wartoœci zadanej 2000 stopni}
+\label{fig:45}
+\end{figure} 
+\vspace{0.4cm}
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{angle1000.png}   
+\caption{Przebieg po³o¿enia wa³u silnika dla wartoœci zadanej 1000 stopni}
+\label{fig:45}
+\end{figure} 
+\vspace{0.4cm}
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{angle200.png}   
+\caption{Przebieg po³o¿enia wa³u silnika dla wartoœci zadanej 200 stopni}
+\label{fig:45}
+\end{figure} 
+\vspace{0.4cm}
 
 
 \addcontentsline{toc}{section}{Wykaz ilustracji}
