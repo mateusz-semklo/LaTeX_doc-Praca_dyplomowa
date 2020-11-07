@@ -6,7 +6,7 @@
 \contentsline {subsection}{\numberline {2.3}Sposoby sterowania}{6}%
 \contentsline {subsection}{\numberline {2.4}Model matematyczny}{6}%
 \contentsline {subsection}{\numberline {2.5}Charakterystyka silnika - wady, zalety}{8}%
-\contentsline {section}{\numberline {3}Field Orient Control}{9}%
+\contentsline {section}{\numberline {3}Sterowanie Zorientowane Polowo}{9}%
 \contentsline {section}{\numberline {4}Modulacja wektorowa - SVPWM}{10}%
 \contentsline {section}{\numberline {5}Realizacja uk\IeC {\l }adu nap\k edowego z silnikiem BLDC}{13}%
 \contentsline {subsection}{\numberline {5.1}Realizacja sprz\k etowa}{13}%
@@ -20,6 +20,6 @@
 \contentsline {subsection}{\numberline {6.1}Sprawdzenie poprawno\'sci dzia\IeC {\l }ania funkcji SVPWM}{22}%
 \contentsline {subsection}{\numberline {6.2}Testowanie uk\IeC {\l }adu regulacji}{23}%
 \contentsline {subsubsection}{\numberline {6.2.1}Regulacja pr\k adu}{23}%
-\contentsline {subsubsection}{\numberline {6.2.2}Regulacja pr\k edko\'sci obrotowej}{30}%
-\contentsline {subsubsection}{\numberline {6.2.3}Regulacja po\IeC {\l }o\.zenia wirnika}{32}%
-\contentsline {section}{Wykaz ilustracji}{33}%
+\contentsline {subsubsection}{\numberline {6.2.2}Regulacja pr\k edko\'sci obrotowej}{31}%
+\contentsline {subsubsection}{\numberline {6.2.3}Regulacja po\IeC {\l }o\.zenia wirnika}{33}%
+\contentsline {section}{Wykaz ilustracji}{35}%

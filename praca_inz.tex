@@ -89,10 +89,11 @@ SILNIKIEM BLDC
 
 \section{Wstêp}
 
-Tematem pracy in¿ynierskiej jest\textit{Mikroprocesorowy kaskadowy uk³ad regulacji pr¹du, prêdkoœci i po³o¿enia dla napêdu z silnikiem BLDC}. Zainteresowanie i zdobyta wiedza z zakresu automatyki, mikroprocesorów i maszyn elektrycznych  spowodowa³a chêæ stworzenia  uk³adu napêdowego dla silnika elektrycznego przy wykorzystaniu mo¿liwoœci mikrokontrolerów i stawieniu czo³a trudnoœciom przy jego praktycznej realizacji.  
+Tematem pracy in¿ynierskiej jest\textit{Mikroprocesorowy kaskadowy uk³ad regulacji pr¹du, prêdkoœci i po³o¿enia dla napêdu z silnikiem BLDC}. Zainteresowanie i zdobyta wiedza z zakresu automatyki, mikroprocesorów i maszyn elektrycznych  spowodowa³a chêæ stworzenia  uk³adu napêdowego dla silnika BLDC przy wykorzystaniu mo¿liwoœci mikrokontrolerów i stawieniu czo³a trudnoœciom przy jego praktycznej realizacji.  
 
 Celem jest pokazanie mo¿liwoœci wykorzystania mikroprocesora z rodziny ARM Cortex wbudowanego w mikrokontroler firmy STM32 jako jednego ze sposobów na sprzêtow¹ realizacje
 uk³adu sterowania dla silnika BLDC. Zaimplementowanie Sterowania Zorientowanego Polowo (ang. Field Orient Cotrol) tworz¹cego formê uk³adu napêdowego i konfiguracji w kaskadowy uk³ad regulacji pr¹du, prêdkoœci i po³o¿enia. Pokazania funkcjonalnoœci i zalet wykorzystania napêdu wektorowego.
+
  Zakres pracy obejmuje:
 \begin{itemize}
 \item{Dobór i uruchomienie mikroprocesorowej p³yty rozwojowej STM32 dla wybranego uk³adu napêdowego z silnikiem BLDC}
@@ -400,7 +401,7 @@ Brak konwencjonalnego komutatora wyd³u¿a ¿ywotnoœæ silnika i nie wymaga konserwa
 
 
 
-\section{Field Orient Control}
+\section{Sterowanie Zorientowane Polowo}
  \label{chapter:1}
  
  Algorytm Sterowania Zorientowanego Polowo FOC przedstawiony schematycznie na rysunku \ref{fig:6} jest jedn¹ z powszechnie stosowanych metod sterowania silników trójfazowych z magnesami trwa³ymi. Polega na bezpoœrednim sterowaniu wiruj¹cym polem stojana.  Pozwala uzyskaæ dok³adn¹ i dynamiczn¹ regulacjê momentu elektrodynamicznego, prêdkoœci i po³o¿enia wirnika.\cite{Przepiorkowski2010FOC}
@@ -837,7 +838,7 @@ Uk³ad zosta³ przetestowany dla nastaw regulatorów dobranych doœwiadczalnie i opi
 
 \subsubsection{Regulacja pr¹du}
 
-W celu sprawdzenia poprawnoœci dzia³ania regulatorów wykonano pomiary dla trzech wartoœci amplitud sk³adowej pr¹du Iq: 0.3A, 0.5A, 1A dla przypadku gdzie wirnik nie zosta³ obci¹¿ony i dla przypadku dzia³ania zewnêtrznego momentu oporowego. Wartoœæ zadana prêdkoœci obrotowej wynosi 2500 obr/min. Przebiegi przedstawione s¹ rysunkach od \ref{fig:29} do \ref{fig:41}. Do wyprowadzeñ uzwojeñ silnika zosta³y pod³¹czone rezystory o wartoœci 1 $\Omega$  dziêki czemu spadek napiêcia o wartoœci 1V odpowiada pr¹dowi o wartoœci 1A. 
+W celu sprawdzenia poprawnoœci dzia³ania regulatorów wykonano pomiary dla trzech wartoœci amplitud sk³adowej pr¹du Iq: 0.3A, 0.5A, 1A dla przypadku gdzie wirnik nie zosta³ obci¹¿ony i dla przypadku dzia³ania zewnêtrznego momentu oporowego. Wartoœæ zadana prêdkoœci obrotowej wynosi 2500 obr/min. Przebiegi przedstawione s¹ rysunkach od \ref{fig:29} do \ref{fig:41}. Aby dokonaæ pomiaru pr¹du przy pomocy oscyloskopu do wyprowadzeñ uzwojeñ silnika zosta³y pod³¹czone rezystory o wartoœci 1 $\Omega$  dziêki czemu spadek napiêcia o wartoœci 1V odpowiada pr¹dowi o wartoœci 1A. 
 
  \begin{figure}[H]
 \centering
@@ -916,9 +917,18 @@ W celu sprawdzenia poprawnoœci dzia³ania regulatorów wykonano pomiary dla trzech
 
  \begin{figure}[H]
 \centering
-\includegraphics[scale=0.45]{idiq1A.png}   
-\caption{Przebieg sk³adowej Id, Iq dla wartoœci zadanej amplitudy pr¹du 1A}
+\includegraphics[scale=0.45]{idiq1Abez.png}   
+\caption{Przebieg sk³adowej Id, Iq dla wartoœci zadanej amplitudy pr¹du 1A bez obci¹¿enia zewnêtrznym momentem oporowym}
 \label{fig:38}
+\end{figure} 
+\vspace{0.4cm}
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.45]{idiq1A.png}   
+\caption{Przebieg sk³adowej Id, Iq dla wartoœci zadanej amplitudy pr¹du 1A
+z obci¹¿eniem zewnêtrznym momentem oporowym}
+\label{fig:49}
 \end{figure} 
 \vspace{0.4cm}
 
@@ -948,9 +958,19 @@ W celu sprawdzenia poprawnoœci dzia³ania regulatorów wykonano pomiary dla trzech
 
 
 
- Z pomiarów wynika, ¿e dla silnika dzia³aj¹cego bez obci¹¿enia przebieg pr¹du
- jest odkszta³cony i mocno odbiega od kszta³tu sinusoidy. Moment elektromagnetyczny jest
- iloczynem strumienia strumienia elektromagnetycznego wirnika skojarzonego ze stojanem, pr¹du i kosinusa k¹ta miêdzy polem stojana i wirnika. Przy braku obci¹¿enia i osi¹gniêciu zadanej prêdkoœci obrotowej, pr¹d utrzymuje ma³¹ wartoœæ
+Z pomiarów wynika, ¿e regulacja pr¹du przy ustalonej prêdkoœci obrotowej i przy braku obci¹¿enia zewnêtrznym momentem oporowym, pr¹d ma przebieg zniekszta³cony i nieprzypominaj¹cy sinusoidy. Z wykresu sk³adowych pr¹du Iq i  strumienia magnetycznego Id, pokazanego na rysunku \ref{fig:38} widaæ, ¿e przebieg s¹ przemienne, co oznacza ¿e nie jest utrzymywany sta³y k¹t miêdzy polem magnetycznym wirnika i stojana. Moment elektromagnetyczny jest iloczynem strumienia magnetycznego, pr¹du i kosinusa k¹ta miêdzy polem magnetycznym stojana i wektorem si³y przeciwelektromotorycznej. Przy ustalonej prêdkoœci obrotowej i braku obci¹¿enia generowany jest niski moment napêdowy, który nie jest w stanie utrzymaæ  k¹ta 90 stopni miêdzy polami magnetycznymi. Uk³ad regulacji mimo wszystko próbuje uzyskaæ okreœlona wartoœæ zadan¹ generuj¹c oscylacje. 
+
+Zwiêkszaj¹c moment oporowy przebieg pr¹du przyjmuje kszta³t sinusoidy o amplitudzie wartoœci zadanej. K¹t miêdzy polem magnetycznym wirnika i stojana ustala siê na poziome bliskim 90 stopni. W takim przypadku moment elektrodynamiczny jest równy iloczynowi pr¹du Iq i strumienia magnetycznego. Regulator prêdkoœci steruje pr¹dem Iq aby utrzymaæ prêdkoœæ obrotowa niezale¿nie od momentu oporowego. Wartoœæ zadana pr¹du Iq ustala maksymalny moment przy którym nie ma spadku prêdkoœci obrotowej.
+
+Z przebiegów prêdkoœci obrotowej dla wartoœci zadanej 2500 obr/min dla nastaw
+wartoœci pr¹du 0.3A, 0.5A, 1A, które zosta³y przedstawione na rysunkach \ref{fig:31}, \ref{fig:34} i \ref{fig:37} wynika, ¿e wartoœæ zadana pr¹du Iq bezpoœrednio wp³ywa na moment obrotowy i dynamikê uk³adu. Wraz ze wzrostem wartoœci pr¹du Iq wzrasta przyspieszenie silnika. Czas potrzebny do osi¹gniêcia 
+ustalonej prêdkoœci zadanej 2500 obr/min wynosi kolejno: 
+\begin{itemize}
+\item 0.3 A - 0.5 sekundy
+\item 0.5 A - 0.22 sekundy
+\item 1 A - 0.06 sekundy
+\end{itemize} 
+
 
 \subsubsection{Regulacja prêdkoœci obrotowej}
 Pomiary przebiegów prêdkoœci obrotowej zosta³y dokonane dla prêdkoœci obrotowych
@@ -989,20 +1009,20 @@ Przebiegi przedstawione na rysunkach \ref{fig:42}, \ref{fig:43}, \ref{fig:44} i 
 \end{figure} 
 \vspace{0.4cm}
 
-
+Z pomiarów wynika, ¿e przy zastosowaniu uk³adu napêdowego ze sterowaniem wektorowym dla silnika trójfazowego uzyskujemy p³ynn¹ regulacjê prêdkoœci 
+obrotowej w ca³ym zakresie. 
 
 
 
 \subsubsection{Regulacja po³o¿enia wirnika}
 
-W celu sprawdzenia jakoœci dzia³ania regulatora po³o¿enia wa³u silnika pomiary wykonano 
-wartoœci zadanych 2000,1000,200 stopni. Przebiegi przedstawione na rysunkach \ref{fig:46}, \ref{fig:47} i \ref{fig:48}. Rozdzielczoœæ przetwornika obrotowo-impulsowego wynosi 720 impulsów/obr.
+W celu sprawdzenia jakoœci dzia³ania regulatora po³o¿enia wa³u silnika pomiary wykonano dla wartoœci zadanych 2000,1000 i 200 stopni. Przebiegi przedstawione na rysunkach \ref{fig:46}, \ref{fig:47} i \ref{fig:48}. Rozdzielczoœæ przetwornika obrotowo-impulsowego wynosi 720 impulsów/obr.
 
  \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{angle2000.png}   
 \caption{Przebieg po³o¿enia wa³u silnika dla wartoœci zadanej 2000 stopni}
-\label{fig:45}
+\label{fig:46}
 \end{figure} 
 \vspace{0.4cm}
 
@@ -1010,7 +1030,7 @@ wartoœci zadanych 2000,1000,200 stopni. Przebiegi przedstawione na rysunkach \re
 \centering
 \includegraphics[scale=0.4]{angle1000.png}   
 \caption{Przebieg po³o¿enia wa³u silnika dla wartoœci zadanej 1000 stopni}
-\label{fig:45}
+\label{fig:47}
 \end{figure} 
 \vspace{0.4cm}
 
@@ -1018,9 +1038,21 @@ wartoœci zadanych 2000,1000,200 stopni. Przebiegi przedstawione na rysunkach \re
 \centering
 \includegraphics[scale=0.4]{angle200.png}   
 \caption{Przebieg po³o¿enia wa³u silnika dla wartoœci zadanej 200 stopni}
-\label{fig:45}
+\label{fig:48}
 \end{figure} 
 \vspace{0.4cm}
+
+\section{Podsumowanie}
+
+Do sprzêtowej konfiguracji napêdu wykorzystano zestaw rozwojowy
+STM32 B-G431-ESC1 wyposa¿ony w rdzeñ ARM Cortex G4, przetwornik energoelektroniczny i 
+w obwody pomiaru pr¹du. Jest uk³adem dedykowanym do budowania napêdów silnikowych.
+Za komunikacjê miêdzy sterownikiem a interfejsem u¿ytkownika 
+jest odpowiedzialny zestaw rozwojowy STM32 Nucleo F746ZG, który posiada wbudowany interfejs Ethernet za pomoc¹ którego ³¹czy siê z aplikacj¹ u¿ytkownika. Ze sterownikiem jest po³¹czony dziêki wykorzystaniu ³¹cza szeregowego UART. Interfejs u¿ytkownika
+zosta³ zaprogramowany w jêzyku Python za pomoc¹ oprogramowania Spyder w œrodowisku Anaconda. Umo¿liwia wprowadzanie wartoœci zadanych pr¹du, prêdkoœci, po³o¿enia wirnika i
+nastaw dla regulatorów PID. Wyœwietla aktualne parametry silnika w czasie rzeczywistym
+w postaci tekstowej i wykresów. Uk³ad napêdowy zosta³ zaimplementowany na p³ycie STM32 B-G431-ESC1 w postaci sterowania wektorowego FOC i modulacji wektorowej SVPWM. Do stworzenia oprogramowania napêdu wykorzystano œrodowisko programistyczne STM32CubeIDE. Za pomoc¹ oscyloskopu UNI-T UTD2102CEX i aplikacji STMStudio, która umo¿liwia podgl¹d do zmiennych w czasie rzeczywistym, dokonano pomiarów przebiegów pr¹du, prêdkoœci obrotowej, po³o¿enia 
+wirnika dla ró¿nych wartoœci zadanych przy okreœlonych nastawach regulatorów PID dobranych doœwiadczalnie.     
 
 
 \addcontentsline{toc}{section}{Wykaz ilustracji}

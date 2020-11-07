@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.9)  6 NOV 2020 12:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.9)  7 NOV 2020 17:57
 entering extended mode
 **./praca_inz.tex
 (praca_inz.tex
@@ -282,17 +282,7 @@ Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 ("C:\Program Files\MiKTeX 2.9\tex/latex/url\url.sty"
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-) (praca_inz.aux
-
-LaTeX Warning: Label `fig:45' multiply defined.
-
-
-LaTeX Warning: Label `fig:45' multiply defined.
-
-
-LaTeX Warning: Label `fig:45' multiply defined.
-
-)
+) (praca_inz.aux)
 \openout1 = `praca_inz.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
@@ -309,7 +299,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
 LaTeX Font Info:    ... okay on input line 83.
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 83
 .
- ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 ("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
@@ -393,150 +384,150 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
  [2]
 LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 9
-8.
+9.
  ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 98.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 99.
 
 [3] [4]
 <./fig/przebieg_SEM.png, id=23, 529.22719pt x 191.21437pt>
 File: ./fig/przebieg_SEM.png Graphic file (type png)
 <use ./fig/przebieg_SEM.png>
-Package pdftex.def Info: ./fig/przebieg_SEM.png  used on input line 129.
+Package pdftex.def Info: ./fig/przebieg_SEM.png  used on input line 130.
 (pdftex.def)             Requested size: 341.43306pt x 123.36295pt.
 <./fig/stojan.png, id=25, 333.49594pt x 249.93375pt>
 File: ./fig/stojan.png Graphic file (type png)
 <use ./fig/stojan.png>
-Package pdftex.def Info: ./fig/stojan.png  used on input line 139.
+Package pdftex.def Info: ./fig/stojan.png  used on input line 140.
 (pdftex.def)             Requested size: 142.26378pt x 106.61896pt.
 <./fig/wirnik.png, id=26, 327.47343pt x 283.81032pt>
 File: ./fig/wirnik.png Graphic file (type png)
 <use ./fig/wirnik.png>
-Package pdftex.def Info: ./fig/wirnik.png  used on input line 146.
+Package pdftex.def Info: ./fig/wirnik.png  used on input line 147.
 (pdftex.def)             Requested size: 142.26378pt x 123.29625pt.
  [5 <./fig/przebieg_SEM.png> <./fig/stojan.png> <./fig/wirnik.png>]
 <./fig/sterowanie_BLDC.png, id=33, 475.7775pt x 432.11438pt>
 File: ./fig/sterowanie_BLDC.png Graphic file (type png)
 <use ./fig/sterowanie_BLDC.png>
-Package pdftex.def Info: ./fig/sterowanie_BLDC.png  used on input line 163.
+Package pdftex.def Info: ./fig/sterowanie_BLDC.png  used on input line 164.
 (pdftex.def)             Requested size: 227.62204pt x 206.7334pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--196
+Underfull \hbox (badness 10000) in paragraph at lines 195--197
 
  []
 
 [6 <./fig/sterowanie_BLDC.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 202--204
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--227
+Underfull \hbox (badness 10000) in paragraph at lines 226--228
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--236
+Underfull \hbox (badness 10000) in paragraph at lines 235--237
 
  []
 
 <./fig/model_silnik.png, id=41, 459.96844pt x 290.58563pt>
 File: ./fig/model_silnik.png Graphic file (type png)
 <use ./fig/model_silnik.png>
-Package pdftex.def Info: ./fig/model_silnik.png  used on input line 248.
+Package pdftex.def Info: ./fig/model_silnik.png  used on input line 249.
 (pdftex.def)             Requested size: 256.0748pt x 161.7824pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--262
+Underfull \hbox (badness 10000) in paragraph at lines 261--263
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--264
+Underfull \hbox (badness 10000) in paragraph at lines 264--265
 
  []
 
 [7 <./fig/model_silnik.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 346--348
+Underfull \hbox (badness 10000) in paragraph at lines 347--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 406--408
+Underfull \hbox (badness 10000) in paragraph at lines 407--409
 
  []
 
 <./fig/diagramFOC.png, id=49, 770.88pt x 322.95656pt>
 File: ./fig/diagramFOC.png Graphic file (type png)
 <use ./fig/diagramFOC.png>
-Package pdftex.def Info: ./fig/diagramFOC.png  used on input line 411.
+Package pdftex.def Info: ./fig/diagramFOC.png  used on input line 412.
 (pdftex.def)             Requested size: 398.33858pt x 166.87888pt.
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 416--420
+Underfull \hbox (badness 10000) in paragraph at lines 417--421
 
  []
 
 <./fig/clark.png, id=53, 319.1925pt x 313.9228pt>
 File: ./fig/clark.png Graphic file (type png)
 <use ./fig/clark.png>
-Package pdftex.def Info: ./fig/clark.png  used on input line 424.
+Package pdftex.def Info: ./fig/clark.png  used on input line 425.
 (pdftex.def)             Requested size: 199.16928pt x 195.88033pt.
 [9 <./fig/diagramFOC.png> <./fig/clark.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 436--438
+Underfull \hbox (badness 10000) in paragraph at lines 437--439
 
  []
 
 <./fig/park.png, id=59, 311.66437pt x 188.20313pt>
 File: ./fig/park.png Graphic file (type png)
 <use ./fig/park.png>
-Package pdftex.def Info: ./fig/park.png  used on input line 444.
+Package pdftex.def Info: ./fig/park.png  used on input line 445.
 (pdftex.def)             Requested size: 227.62204pt x 137.45604pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 456--458
+Underfull \hbox (badness 10000) in paragraph at lines 457--459
 
  []
 
 <./fig/transformacje.png, id=60, 859.71187pt x 296.60812pt>
 File: ./fig/transformacje.png Graphic file (type png)
 <use ./fig/transformacje.png>
-Package pdftex.def Info: ./fig/transformacje.png  used on input line 467.
+Package pdftex.def Info: ./fig/transformacje.png  used on input line 468.
 (pdftex.def)             Requested size: 398.33858pt x 137.43256pt.
 [10 <./fig/park.png> <./fig/transformacje.png>]
 <./fig/hexagon.png, id=67, 428.35031pt x 366.61969pt>
 File: ./fig/hexagon.png Graphic file (type png)
 <use ./fig/hexagon.png>
-Package pdftex.def Info: ./fig/hexagon.png  used on input line 481.
+Package pdftex.def Info: ./fig/hexagon.png  used on input line 482.
 (pdftex.def)             Requested size: 199.16928pt x 170.4652pt.
 <./fig/svpwm_max.png, id=68, 362.85562pt x 269.50688pt>
 File: ./fig/svpwm_max.png Graphic file (type png)
 <use ./fig/svpwm_max.png>
-Package pdftex.def Info: ./fig/svpwm_max.png  used on input line 491.
+Package pdftex.def Info: ./fig/svpwm_max.png  used on input line 492.
 (pdftex.def)             Requested size: 227.62204pt x 169.06645pt.
 <./fig/svpwm.png, id=69, 290.58563pt x 231.86626pt>
 File: ./fig/svpwm.png Graphic file (type png)
 <use ./fig/svpwm.png>
-Package pdftex.def Info: ./fig/svpwm.png  used on input line 501.
+Package pdftex.def Info: ./fig/svpwm.png  used on input line 502.
 (pdftex.def)             Requested size: 199.16928pt x 158.92294pt.
  [11 <./fig/hexagon.png> <./fig/svpwm_max.png>]
 <./fig/sektor.png, id=75, 772.38562pt x 346.29375pt>
 File: ./fig/sektor.png Graphic file (type png)
 <use ./fig/sektor.png>
-Package pdftex.def Info: ./fig/sektor.png  used on input line 540.
+Package pdftex.def Info: ./fig/sektor.png  used on input line 541.
 (pdftex.def)             Requested size: 284.52756pt x 127.56657pt.
 <./fig/naped1.png, id=76, 2778.63094pt x 1948.27875pt>
 File: ./fig/naped1.png Graphic file (type png)
 <use ./fig/naped1.png>
-Package pdftex.def Info: ./fig/naped1.png  used on input line 553.
+Package pdftex.def Info: ./fig/naped1.png  used on input line 554.
 (pdftex.def)             Requested size: 341.43306pt x 239.40201pt.
  [12 <./fig/svpwm.png> <./fig/sektor.png>]
 <./fig/schemat_el.pdf, id=83, 879.285pt x 713.7867pt>
 File: ./fig/schemat_el.pdf Graphic file (type pdf)
 <use ./fig/schemat_el.pdf>
-Package pdftex.def Info: ./fig/schemat_el.pdf  used on input line 581.
+Package pdftex.def Info: ./fig/schemat_el.pdf  used on input line 582.
 (pdftex.def)             Requested size: 571.52849pt x 463.95586pt.
 
-Overfull \hbox (116.2844pt too wide) in paragraph at lines 581--583
+Overfull \hbox (116.2844pt too wide) in paragraph at lines 582--584
 [][]
  []
 
@@ -544,10 +535,10 @@ Overfull \hbox (116.2844pt too wide) in paragraph at lines 581--583
 <./fig/silnik_bldc.png, id=89, 438.8897pt x 304.88907pt>
 File: ./fig/silnik_bldc.png Graphic file (type png)
 <use ./fig/silnik_bldc.png>
-Package pdftex.def Info: ./fig/silnik_bldc.png  used on input line 605.
+Package pdftex.def Info: ./fig/silnik_bldc.png  used on input line 606.
 (pdftex.def)             Requested size: 284.52756pt x 197.65915pt.
  [14 <./fig/schemat_el.pdf>]
-Overfull \hbox (20.2264pt too wide) in paragraph at lines 632--633
+Overfull \hbox (20.2264pt too wide) in paragraph at lines 633--634
 []\T1/lmr/m/n/10 Zestaw roz-wo-jowy B-G431B-ESC1 firmy STMi-cro-elec-tro-nics o
 party na mi-kro-kon-tro-le-rze STM32G431CB
  []
@@ -556,57 +547,57 @@ party na mi-kro-kon-tro-le-rze STM32G431CB
 <./fig/B-G431.png, id=134, 683.55376pt x 396.7322pt>
 File: ./fig/B-G431.png Graphic file (type png)
 <use ./fig/B-G431.png>
-Package pdftex.def Info: ./fig/B-G431.png  used on input line 658.
+Package pdftex.def Info: ./fig/B-G431.png  used on input line 659.
 (pdftex.def)             Requested size: 398.33858pt x 231.20053pt.
 <./fig/nucleo.png, id=135, 441.14813pt x 450.18187pt>
 File: ./fig/nucleo.png Graphic file (type png)
 <use ./fig/nucleo.png>
-Package pdftex.def Info: ./fig/nucleo.png  used on input line 684.
+Package pdftex.def Info: ./fig/nucleo.png  used on input line 685.
 (pdftex.def)             Requested size: 227.62204pt x 232.28244pt.
  [16 <./fig/B-G431.png>]
 <./fig/current_sense.png, id=140, 242.40562pt x 185.19188pt>
 File: ./fig/current_sense.png Graphic file (type png)
 <use ./fig/current_sense.png>
-Package pdftex.def Info: ./fig/current_sense.png  used on input line 703.
+Package pdftex.def Info: ./fig/current_sense.png  used on input line 704.
 (pdftex.def)             Requested size: 227.62204pt x 173.90517pt.
 <./fig/opamp.png, id=141, 286.06876pt x 140.77594pt>
 File: ./fig/opamp.png Graphic file (type png)
 <use ./fig/opamp.png>
-Package pdftex.def Info: ./fig/opamp.png  used on input line 710.
+Package pdftex.def Info: ./fig/opamp.png  used on input line 711.
 (pdftex.def)             Requested size: 227.62204pt x 112.01512pt.
  [17 <./fig/nucleo.png> <./fig/current_sense.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 720--722
+Underfull \hbox (badness 10000) in paragraph at lines 721--723
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 723--729
+Underfull \hbox (badness 10000) in paragraph at lines 724--730
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 723--729
+Underfull \hbox (badness 10000) in paragraph at lines 724--730
 
  []
 
 <./fig/pid.png, id=147, 451.6875pt x 237.13594pt>
 File: ./fig/pid.png Graphic file (type png)
 <use ./fig/pid.png>
-Package pdftex.def Info: ./fig/pid.png  used on input line 746.
+Package pdftex.def Info: ./fig/pid.png  used on input line 747.
 (pdftex.def)             Requested size: 227.62204pt x 119.50484pt.
 <./fig/synchronizacja.png, id=148, 502.12593pt x 472.76625pt>
 File: ./fig/synchronizacja.png Graphic file (type png)
 <use ./fig/synchronizacja.png>
-Package pdftex.def Info: ./fig/synchronizacja.png  used on input line 755.
+Package pdftex.def Info: ./fig/synchronizacja.png  used on input line 756.
 (pdftex.def)             Requested size: 341.43306pt x 321.48401pt.
 [18 <./fig/opamp.png> <./fig/pid.png>]
 <./fig/simulink.png, id=154, 800.9925pt x 414.79968pt>
 File: ./fig/simulink.png Graphic file (type png)
 <use ./fig/simulink.png>
-Package pdftex.def Info: ./fig/simulink.png  used on input line 768.
+Package pdftex.def Info: ./fig/simulink.png  used on input line 769.
 (pdftex.def)             Requested size: 560.69093pt x 290.3578pt.
 
-Overfull \hbox (105.44684pt too wide) in paragraph at lines 768--769
+Overfull \hbox (105.44684pt too wide) in paragraph at lines 769--770
  [][] 
  []
 
@@ -614,10 +605,10 @@ Overfull \hbox (105.44684pt too wide) in paragraph at lines 768--769
 <./fig/komunikacja.png, id=160, 834.86906pt x 170.88844pt>
 File: ./fig/komunikacja.png Graphic file (type png)
 <use ./fig/komunikacja.png>
-Package pdftex.def Info: ./fig/komunikacja.png  used on input line 780.
+Package pdftex.def Info: ./fig/komunikacja.png  used on input line 781.
 (pdftex.def)             Requested size: 459.17941pt x 93.98892pt.
 
-Overfull \hbox (3.93532pt too wide) in paragraph at lines 780--781
+Overfull \hbox (3.93532pt too wide) in paragraph at lines 781--782
  [][] 
  []
 
@@ -625,41 +616,41 @@ Overfull \hbox (3.93532pt too wide) in paragraph at lines 780--781
 <./fig/interfejs1.png, id=166, 596.98032pt x 468.24937pt>
 File: ./fig/interfejs1.png Graphic file (type png)
 <use ./fig/interfejs1.png>
-Package pdftex.def Info: ./fig/interfejs1.png  used on input line 795.
+Package pdftex.def Info: ./fig/interfejs1.png  used on input line 796.
 (pdftex.def)             Requested size: 388.03261pt x 304.35847pt.
 <./fig/interfejs2.png, id=167, 668.4975pt x 574.39594pt>
 File: ./fig/interfejs2.png Graphic file (type png)
 <use ./fig/interfejs2.png>
-Package pdftex.def Info: ./fig/interfejs2.png  used on input line 803.
+Package pdftex.def Info: ./fig/interfejs2.png  used on input line 804.
 (pdftex.def)             Requested size: 367.67476pt x 315.91873pt.
  [21 <./fig/interfejs1.png>]
 <./fig/svpwm_wykres.png, id=172, 1102.1175pt x 293.59688pt>
 File: ./fig/svpwm_wykres.png Graphic file (type png)
 <use ./fig/svpwm_wykres.png>
-Package pdftex.def Info: ./fig/svpwm_wykres.png  used on input line 821.
+Package pdftex.def Info: ./fig/svpwm_wykres.png  used on input line 822.
 (pdftex.def)             Requested size: 440.83919pt x 117.43666pt.
 
 [22 <./fig/interfejs2.png>]
 <./fig/nastawy.png, id=177, 575.14874pt x 196.48407pt>
 File: ./fig/nastawy.png Graphic file (type png)
 <use ./fig/nastawy.png>
-Package pdftex.def Info: ./fig/nastawy.png  used on input line 832.
+Package pdftex.def Info: ./fig/nastawy.png  used on input line 833.
 (pdftex.def)             Requested size: 345.0919pt x 117.89134pt.
 <./fig/03Abez.pdf, id=178, 602.25pt x 361.35pt>
 File: ./fig/03Abez.pdf Graphic file (type pdf)
 <use ./fig/03Abez.pdf>
-Package pdftex.def Info: ./fig/03Abez.pdf  used on input line 844.
+Package pdftex.def Info: ./fig/03Abez.pdf  used on input line 845.
 (pdftex.def)             Requested size: 361.35278pt x 216.81168pt.
  [23 <./fig/svpwm_wykres.png> <./fig/nastawy.png>]
 <./fig/03Az.pdf, id=184, 602.25pt x 361.35pt>
 File: ./fig/03Az.pdf Graphic file (type pdf)
 <use ./fig/03Az.pdf>
-Package pdftex.def Info: ./fig/03Az.pdf  used on input line 854.
+Package pdftex.def Info: ./fig/03Az.pdf  used on input line 855.
 (pdftex.def)             Requested size: 361.35278pt x 216.81168pt.
 <./fig/speed03A.png, id=185, 1394.96156pt x 706.89093pt>
 File: ./fig/speed03A.png Graphic file (type png)
 <use ./fig/speed03A.png>
-Package pdftex.def Info: ./fig/speed03A.png  used on input line 866.
+Package pdftex.def Info: ./fig/speed03A.png  used on input line 867.
 (pdftex.def)             Requested size: 446.39682pt x 226.20972pt.
 
 [24 <./fig/03Abez.pdf> <./fig/03Az.pdf
@@ -670,37 +661,37 @@ th page group included in a single page
 <./fig/05Abez.pdf, id=196, 602.25pt x 361.35pt>
 File: ./fig/05Abez.pdf Graphic file (type pdf)
 <use ./fig/05Abez.pdf>
-Package pdftex.def Info: ./fig/05Abez.pdf  used on input line 870.
+Package pdftex.def Info: ./fig/05Abez.pdf  used on input line 871.
 (pdftex.def)             Requested size: 361.35278pt x 216.81168pt.
 <./fig/05Az.pdf, id=197, 602.25pt x 361.35pt>
 File: ./fig/05Az.pdf Graphic file (type pdf)
 <use ./fig/05Az.pdf>
-Package pdftex.def Info: ./fig/05Az.pdf  used on input line 878.
+Package pdftex.def Info: ./fig/05Az.pdf  used on input line 879.
 (pdftex.def)             Requested size: 361.35278pt x 216.81168pt.
  [25 <./fig/speed03A.png> <./fig/05Abez.pdf>]
 <./fig/speed05A.png, id=206, 976.39781pt x 682.80093pt>
 File: ./fig/speed05A.png Graphic file (type png)
 <use ./fig/speed05A.png>
-Package pdftex.def Info: ./fig/speed05A.png  used on input line 890.
+Package pdftex.def Info: ./fig/speed05A.png  used on input line 891.
 (pdftex.def)             Requested size: 439.37495pt x 307.25757pt.
 <./fig/1Abez.pdf, id=207, 602.25pt x 361.35pt>
 File: ./fig/1Abez.pdf Graphic file (type pdf)
 <use ./fig/1Abez.pdf>
-Package pdftex.def Info: ./fig/1Abez.pdf  used on input line 895.
+Package pdftex.def Info: ./fig/1Abez.pdf  used on input line 896.
 (pdftex.def)             Requested size: 361.35278pt x 216.81168pt.
  [26 <./fig/05Az.pdf> <./fig/speed05A.png>]
 <./fig/1Az.pdf, id=216, 602.25pt x 361.35pt>
 File: ./fig/1Az.pdf Graphic file (type pdf)
 <use ./fig/1Az.pdf>
-Package pdftex.def Info: ./fig/1Az.pdf  used on input line 903.
+Package pdftex.def Info: ./fig/1Az.pdf  used on input line 904.
 (pdftex.def)             Requested size: 361.35278pt x 216.81168pt.
 <./fig/speed1A.png, id=217, 1207.51125pt x 682.80093pt>
 File: ./fig/speed1A.png Graphic file (type png)
 <use ./fig/speed1A.png>
-Package pdftex.def Info: ./fig/speed1A.png  used on input line 915.
+Package pdftex.def Info: ./fig/speed1A.png  used on input line 916.
 (pdftex.def)             Requested size: 458.85904pt x 259.46704pt.
 
-Overfull \hbox (3.61494pt too wide) in paragraph at lines 915--915
+Overfull \hbox (3.61494pt too wide) in paragraph at lines 916--916
  [][] 
  []
 
@@ -709,82 +700,84 @@ Overfull \hbox (3.61494pt too wide) in paragraph at lines 915--915
 pdfTeX warning: pdflatex (file ./fig/1Az.pdf): PDF inclusion: multiple pdfs wit
 h page group included in a single page
 >]
-<./fig/idiq1A.png, id=228, 970.3753pt x 685.05937pt>
+<./fig/idiq1Abez.png, id=228, 975.645pt x 685.05937pt>
+File: ./fig/idiq1Abez.png Graphic file (type png)
+<use ./fig/idiq1Abez.png>
+Package pdftex.def Info: ./fig/idiq1Abez.png  used on input line 920.
+(pdftex.def)             Requested size: 439.0362pt x 308.27386pt.
+<./fig/idiq1A.png, id=229, 980.91469pt x 682.04813pt>
 File: ./fig/idiq1A.png Graphic file (type png)
 <use ./fig/idiq1A.png>
-Package pdftex.def Info: ./fig/idiq1A.png  used on input line 919.
-(pdftex.def)             Requested size: 436.66486pt x 308.27386pt.
-<./fig/alpha_beta.png, id=229, 1163.84813pt x 691.83469pt>
+Package pdftex.def Info: ./fig/idiq1A.png  used on input line 928.
+(pdftex.def)             Requested size: 441.40753pt x 306.91882pt.
+ [28 <./fig/speed1A.png> <./fig/idiq1Abez.png>]
+<./fig/alpha_beta.png, id=235, 1163.84813pt x 691.83469pt>
 File: ./fig/alpha_beta.png Graphic file (type png)
 <use ./fig/alpha_beta.png>
-Package pdftex.def Info: ./fig/alpha_beta.png  used on input line 927.
+Package pdftex.def Info: ./fig/alpha_beta.png  used on input line 937.
 (pdftex.def)             Requested size: 442.26689pt x 262.8999pt.
- [28 <./fig/speed1A.png> <./fig/idiq1A.png>]
-<./fig/napiecie_fazowe.pdf, id=235, 602.25pt x 361.35pt>
+<./fig/napiecie_fazowe.pdf, id=236, 602.25pt x 361.35pt>
 File: ./fig/napiecie_fazowe.pdf Graphic file (type pdf)
 <use ./fig/napiecie_fazowe.pdf>
-Package pdftex.def Info: ./fig/napiecie_fazowe.pdf  used on input line 935.
+Package pdftex.def Info: ./fig/napiecie_fazowe.pdf  used on input line 945.
 (pdftex.def)             Requested size: 361.35278pt x 216.81168pt.
-<./fig/napiecie_miedzyfazowe.pdf, id=236, 602.25pt x 361.35pt>
+ [29 <./fig/idiq1A.png> <./fig/alpha_beta.png>]
+<./fig/napiecie_miedzyfazowe.pdf, id=242, 602.25pt x 361.35pt>
 File: ./fig/napiecie_miedzyfazowe.pdf Graphic file (type pdf)
 <use ./fig/napiecie_miedzyfazowe.pdf>
-Package pdftex.def Info: ./fig/napiecie_miedzyfazowe.pdf  used on input line 94
+Package pdftex.def Info: ./fig/napiecie_miedzyfazowe.pdf  used on input line 95
 3.
 (pdftex.def)             Requested size: 361.35278pt x 216.81168pt.
- [29 <./fig/alpha_beta.png> <./fig/napiecie_fazowe.pdf>]
-Overfull \hbox (2.4782pt too wide) in paragraph at lines 956--959
+ [30 <./fig/napiecie_fazowe.pdf> <./fig/napiecie_miedzyfazowe.pdf
+
+pdfTeX warning: pdflatex (file ./fig/napiecie_miedzyfazowe.pdf): PDF inclusion:
+ multiple pdfs with page group included in a single page
+>]
+Overfull \hbox (2.4782pt too wide) in paragraph at lines 976--979
 []\T1/lmr/m/n/10 Pomiary prze-bie-gów pr¦d-ko-±ci ob-ro-to-wej zo-staªy do-ko-n
 ane dla pr¦d-ko-±ci ob-ro-to-wych 3500,1500,500,200
  []
 
-<./fig/speed3500_1A.png, id=244, 971.88094pt x 684.30656pt>
+<./fig/speed3500_1A.png, id=253, 971.88094pt x 684.30656pt>
 File: ./fig/speed3500_1A.png Graphic file (type png)
 <use ./fig/speed3500_1A.png>
-Package pdftex.def Info: ./fig/speed3500_1A.png  used on input line 962.
+Package pdftex.def Info: ./fig/speed3500_1A.png  used on input line 982.
 (pdftex.def)             Requested size: 388.74548pt x 273.71777pt.
-<./fig/speed1500_1A.png, id=245, 980.16188pt x 685.05937pt>
+<./fig/speed1500_1A.png, id=254, 980.16188pt x 685.05937pt>
 File: ./fig/speed1500_1A.png Graphic file (type png)
 <use ./fig/speed1500_1A.png>
-Package pdftex.def Info: ./fig/speed1500_1A.png  used on input line 970.
+Package pdftex.def Info: ./fig/speed1500_1A.png  used on input line 990.
 (pdftex.def)             Requested size: 392.05782pt x 274.01889pt.
-[30 <./fig/napiecie_miedzyfazowe.pdf> <./fig/speed3500_1A.png>]
-<./fig/speed500_1A.png, id=254, 977.90344pt x 685.8122pt>
+[31 <./fig/speed3500_1A.png>]
+<./fig/speed500_1A.png, id=260, 977.90344pt x 685.8122pt>
 File: ./fig/speed500_1A.png Graphic file (type png)
 <use ./fig/speed500_1A.png>
-Package pdftex.def Info: ./fig/speed500_1A.png  used on input line 978.
+Package pdftex.def Info: ./fig/speed500_1A.png  used on input line 998.
 (pdftex.def)             Requested size: 391.15445pt x 274.32002pt.
-<./fig/speed200_1A.png, id=255, 959.83594pt x 682.80093pt>
+<./fig/speed200_1A.png, id=261, 959.83594pt x 682.80093pt>
 File: ./fig/speed200_1A.png Graphic file (type png)
 <use ./fig/speed200_1A.png>
-Package pdftex.def Info: ./fig/speed200_1A.png  used on input line 986.
+Package pdftex.def Info: ./fig/speed200_1A.png  used on input line 1006.
 (pdftex.def)             Requested size: 383.92758pt x 273.11552pt.
- [31 <./fig/speed1500_1A.png> <./fig/speed500_1A.png>]
-
-LaTeX Warning: Reference `fig:46' on page 32 undefined on input line 999.
-
-
-LaTeX Warning: Reference `fig:47' on page 32 undefined on input line 999.
-
-
-LaTeX Warning: Reference `fig:48' on page 32 undefined on input line 999.
-
-<./fig/angle2000.png, id=262, 968.86969pt x 684.30656pt>
+ [32 <./fig/speed1500_1A.png> <./fig/speed500_1A.png>]
+<./fig/angle2000.png, id=267, 968.86969pt x 684.30656pt>
 File: ./fig/angle2000.png Graphic file (type png)
 <use ./fig/angle2000.png>
-Package pdftex.def Info: ./fig/angle2000.png  used on input line 1003.
+Package pdftex.def Info: ./fig/angle2000.png  used on input line 1023.
 (pdftex.def)             Requested size: 387.54102pt x 273.71777pt.
-<./fig/angle1000.png, id=263, 968.11688pt x 685.8122pt>
+ [33 <./fig/speed200_1A.png>]
+<./fig/angle1000.png, id=272, 968.11688pt x 685.8122pt>
 File: ./fig/angle1000.png Graphic file (type png)
 <use ./fig/angle1000.png>
-Package pdftex.def Info: ./fig/angle1000.png  used on input line 1011.
+Package pdftex.def Info: ./fig/angle1000.png  used on input line 1031.
 (pdftex.def)             Requested size: 387.23988pt x 274.32002pt.
-[32 <./fig/speed200_1A.png> <./fig/angle2000.png>]
-<./fig/angle200.png, id=269, 967.36406pt x 682.04813pt>
+<./fig/angle200.png, id=273, 967.36406pt x 682.04813pt>
 File: ./fig/angle200.png Graphic file (type png)
 <use ./fig/angle200.png>
-Package pdftex.def Info: ./fig/angle200.png  used on input line 1019.
+Package pdftex.def Info: ./fig/angle200.png  used on input line 1039.
 (pdftex.def)             Requested size: 386.93877pt x 272.8144pt.
- (praca_inz.lof [33 <./fig/angle1000.png> <./fig/angle200.png>])
+ [34 <./fig/angle2000.png> <./fig/angle1000.png>] (praca_inz.lof [35 <./fig/ang
+le200.png>])
 \tf@lof=\write4
 \openout4 = `praca_inz.lof'.
 
@@ -794,20 +787,17 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 6
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [34]) [35]
+) [36]) [37]
 (praca_inz.aux)
 
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 5037 strings out of 492483
- 72118 string characters out of 3131034
- 179523 words of memory out of 3000000
- 9192 multiletter control sequences out of 15000+200000
+ 5044 strings out of 492483
+ 72247 string characters out of 3131034
+ 179524 words of memory out of 3000000
+ 9198 multiletter control sequences out of 15000+200000
  57262 words of font info for 56 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  32i,8n,44p,1303b,367s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -826,9 +816,9 @@ Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
 lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.pfb><C:/
 Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
-Output written on praca_inz.pdf (35 pages, 21360587 bytes).
+Output written on praca_inz.pdf (37 pages, 21936005 bytes).
 PDF statistics:
- 333 PDF objects out of 1000 (max. 8388607)
+ 344 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 246 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 251 words of extra memory for PDF output out of 10000 (max. 10000000)
 
