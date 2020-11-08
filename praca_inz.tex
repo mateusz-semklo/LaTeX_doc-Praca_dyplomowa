@@ -102,9 +102,10 @@ uk³adu sterowania dla silnika BLDC. Zaimplementowanie Sterowania Zorientowanego 
 \item{Analiza mo¿liwoœci wykonania procedury automatycznego strojenia uk³adu napêdowego}
 \end{itemize}
 
+
 Silnik BLDC (ang. Burshless Direct Current) nale¿y do rodziny silników z magnesami trwa³ymi. Charakteryzuje siê sta³ym momentem elektromagnetycznym w szerokim zakresie prêdkoœci obrotowej. Brak komutatora zapewnia wiêksz¹ sprawnoœæ i ¿ywotnoœæ silnika. Z powodu wielu zalet czêsto wykorzystywane  w automatyce i robotyce.
 
-Silnik  ze wzglêdu na konstrukcje wymaga bardziej z³o¿onego sposobu sterowania w porównaniu z silnikiem pr¹du sta³ego. W tym celu wykorzystana zosta³a metoda sterowania FOC (ang. Field-orient control). Jest to jedna z powszechnie stosowanych technik w uk³adach regulacji trójfazowych silników synchronicznych z magnesami trwa³ymi. Pozwala ona sprowadziæ wartoœci pr¹dów fazowych stojana z trójwymiarowego uk³ad wspó³rzêdnych do wiruj¹cego uk³adu o dwóch wspó³rzêdnych biegn¹cego synchronicznie  z wektorem strumienia wirnika. Uzyskujemy w ten sposób dostêp do dwóch wartoœci sta³ych - pr¹du i strumienia magnetycznego, które mo¿na umieœciæ bezpoœrednio w pêtlach regulatorów PID i uzyskaæ mo¿liwoœæ regulacji pr¹dem, wzbudzeniem, prêdkoœci¹ i po³o¿eniem.
+Silnik  ze wzglêdu na konstrukcje wymaga bardziej z³o¿onego sposobu sterowania w porównaniu z silnikiem pr¹du sta³ego. W tym celu wykorzystana zosta³a metoda sterowania wektorowego FOC (ang. Field-orient control). Jest to jedna z powszechnie stosowanych technik w uk³adach regulacji trójfazowych silników synchronicznych z magnesami trwa³ymi. Pozwala ona sprowadziæ wartoœci pr¹dów fazowych stojana z trójwymiarowego uk³ad wspó³rzêdnych do wiruj¹cego uk³adu o dwóch wspó³rzêdnych biegn¹cego synchronicznie  z wektorem strumienia wirnika. Uzyskujemy w ten sposób dostêp do dwóch wartoœci sta³ych - pr¹du i strumienia magnetycznego, które mo¿na umieœciæ bezpoœrednio w pêtlach regulatorów PID i uzyskaæ mo¿liwoœæ regulacji pr¹dem, wzbudzeniem, prêdkoœci¹ i po³o¿eniem.
 
  Do modulacji szerokoœci impulsów wykorzystano metodê SVPWM (ang. Space Vector Pulse Width Modulation). W porównaniu z alternatywn¹ modulacj¹ SPWM (ang. Sine Pulse Width Modulation) cechujê siê mniejszymi zniekszta³ceniami sygna³u spowodowanych przez wy¿sze harmoniczne i wykorzystujê wiêkszy przedzia³ napiêcia zasilania. W wyniku modulacji SVPWM generowane s¹ wektory, które przyjmuj¹ kszta³t szeœciok¹ta i dziel¹ przestrzeñ na szeœæ sektorów. Wektor referencyjny jest generowany w wyniku aktywowania dwóch s¹siaduj¹cych wektorów z przestrzeni stanu w okreœlonej sekwencji i czasie. W wyniku tych operacji formowane s¹ trzy sygna³y PWM dla trzech par tranzystorów przekszta³tnika energoelektronicznego. 
  
@@ -118,7 +119,7 @@ Przy pomocy oscyloskopu i oprogramowania STMStudio do podgl¹du zmiennych program
 
      
 
-\newpage
+
 
 
 \section{Silnik BLDC}
@@ -837,6 +838,7 @@ Uk³ad zosta³ przetestowany dla nastaw regulatorów dobranych doœwiadczalnie i opi
 \vspace{0.4cm}
 
 \subsubsection{Regulacja pr¹du}
+\label{chapter:current}
 
 W celu sprawdzenia poprawnoœci dzia³ania regulatorów wykonano pomiary dla trzech wartoœci amplitud sk³adowej pr¹du Iq: 0.3A, 0.5A, 1A dla przypadku gdzie wirnik nie zosta³ obci¹¿ony i dla przypadku dzia³ania zewnêtrznego momentu oporowego. Wartoœæ zadana prêdkoœci obrotowej wynosi 2500 obr/min. Przebiegi przedstawione s¹ rysunkach od \ref{fig:29} do \ref{fig:41}. Aby dokonaæ pomiaru pr¹du przy pomocy oscyloskopu do wyprowadzeñ uzwojeñ silnika zosta³y pod³¹czone rezystory o wartoœci 1 $\Omega$  dziêki czemu spadek napiêcia o wartoœci 1V odpowiada pr¹dowi o wartoœci 1A. 
 
@@ -968,11 +970,12 @@ ustalonej prêdkoœci zadanej 2500 obr/min wynosi kolejno:
 \begin{itemize}
 \item 0.3 A - 0.5 sekundy
 \item 0.5 A - 0.22 sekundy
-\item 1 A - 0.06 sekundy
+\item 1 A - 0.09 sekundy
 \end{itemize} 
 
 
 \subsubsection{Regulacja prêdkoœci obrotowej}
+\label{chapter:speed}
 Pomiary przebiegów prêdkoœci obrotowej zosta³y dokonane dla prêdkoœci obrotowych
 3500,1500,500,200 obr/min przy amplitudzie pr¹du ograniczonej do 0.8A.
 Przebiegi przedstawione na rysunkach \ref{fig:42}, \ref{fig:43}, \ref{fig:44} i \ref{fig:45}.
@@ -1042,6 +1045,11 @@ W celu sprawdzenia jakoœci dzia³ania regulatora po³o¿enia wa³u silnika pomiary w
 \end{figure} 
 \vspace{0.4cm}
 
+Podczas monta¿u nie uda³o siê osi¹gn¹æ dok³adnej liniowoœci wa³u silnika i enkodera.
+Z tego powodu wykorzystano sprzêg³o sprê¿ynowe, które powoduje, ¿e silnik jest obci¹¿ony dodatkowym momentem oporowym o niesta³ej wartoœci w zakresie jednego obrotu. Zjawisko to 
+wp³ywa oscylacje po³o¿enia wirnika wzglêdem wartoœci zadanej. 
+
+
 \section{Podsumowanie}
 
 Do sprzêtowej konfiguracji napêdu wykorzystano zestaw rozwojowy
@@ -1052,8 +1060,21 @@ jest odpowiedzialny zestaw rozwojowy STM32 Nucleo F746ZG, który posiada wbudowan
 zosta³ zaprogramowany w jêzyku Python za pomoc¹ oprogramowania Spyder w œrodowisku Anaconda. Umo¿liwia wprowadzanie wartoœci zadanych pr¹du, prêdkoœci, po³o¿enia wirnika i
 nastaw dla regulatorów PID. Wyœwietla aktualne parametry silnika w czasie rzeczywistym
 w postaci tekstowej i wykresów. Uk³ad napêdowy zosta³ zaimplementowany na p³ycie STM32 B-G431-ESC1 w postaci sterowania wektorowego FOC i modulacji wektorowej SVPWM. Do stworzenia oprogramowania napêdu wykorzystano œrodowisko programistyczne STM32CubeIDE. Za pomoc¹ oscyloskopu UNI-T UTD2102CEX i aplikacji STMStudio, która umo¿liwia podgl¹d do zmiennych w czasie rzeczywistym, dokonano pomiarów przebiegów pr¹du, prêdkoœci obrotowej, po³o¿enia 
-wirnika dla ró¿nych wartoœci zadanych przy okreœlonych nastawach regulatorów PID dobranych doœwiadczalnie.     
+wirnika dla ró¿nych wartoœci zadanych przy okreœlonych nastawach regulatorów PID dobranych doœwiadczalnie.
 
+Zgodnie z wynikami przebiegów przedstawionymi w podrozdziale \ref{chapter:current}, zaprojektowany napêd silnika BLDC reguluje wartoœci¹ pr¹du, który jest odpowiedzialny za moment elektromagnetyczny i dynamikê uk³adu.      
+Regulacja odbywa siê w sposób prawid³owy, poniewa¿ dla przy³o¿onego momentu oporowego, przebieg pr¹du przyjmuje kszta³t sinusoidy o amplitudzie wartoœæ zadanej pr¹du Iq. Im wiêksza wartoœæ zadana pr¹du tym czas na rozpêdzenie siê wirnika do ustalonej prêdkoœci  obrotowej jest krótszy. Jednym z za³o¿eñ uk³adu napêdowego ze sterowaniem wektorowym stanowi mo¿liwoœæ p³ynnej regulacji prêdkoœci w ca³ym zakresie. Podrozdzia³ \ref{chapter:speed}, gdzie 
+pokazano przebieg prêdkoœci obrotowej wirnika dla ró¿nych wartoœci zadanych, udowodnia
+¿e cel ten zosta³ zrealizowany. Oscylacje na wykresach prêdkoœci i po³o¿enia wynikaj¹ z faktu, ¿e nie uda³o siê dok³adnie wycentrowaæ wirnika z wa³em enkodera. Z tego powodu wykorzystano sprzêg³o sprê¿ynowe, które powoduje, ¿e silnik jest obci¹¿ony dodatkowym momentem oporowym o niesta³ej wartoœci w zakresie jednego obrotu.
+
+Du¿ym wyzwaniem okaza³o siê zaprojektowanie bezawaryjnego i efektywnego sposobu komunikacji miêdzy sterownikiem B-G431-ESC1, p³yt¹ Nucleo F746Zg i aplikacj¹ u¿ytkownika. Po wielu próbach i konfiguracjach najbardziej niezawodny okaza³ siê sposób, w którym sterownik
+B-G431-ESC1 za pomoc¹ poru szeregowego otrzymuje tylko informacje o ustawieniach i parametrach napêdu, natomiast do zestawu Nucleo F746ZG  pod³¹czony zostaje przetwornik obrotowo-impulsowy i czujniki pr¹du. Dziêki temu rozwi¹zaniu uk³ady pracuj¹ w sposób bardziej niezale¿ny, mniej awaryjny i w maksymalny sposób ograniczone wykorzystanie 
+portu szeregowego, który powodowa³ najwiêcej problemów z uzyskaniem synchronizacji 
+miêdzy elementami uk³adu i aplikacj¹ u¿ytkownika.     
+
+W przysz³oœci, do zaprojektowanego uk³adu napêdowego mo¿na dodaæ serwer WWW i napisaæ dodatkow¹ aplikacje dla urz¹dzeñ mobilnych. Interfejs u¿ytkownika, który jest napisany w jêzyku Python mo¿na rozszerzyæ o procedurê automatycznego sterowania napêdu silnika.
+
+ 
 
 \addcontentsline{toc}{section}{Wykaz ilustracji}
 \listoffigures

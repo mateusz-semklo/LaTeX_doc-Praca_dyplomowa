@@ -1,25 +1,26 @@
 \babel@toc {polish}{}
 \contentsline {section}{\numberline {1}Wst\k ep}{3}%
-\contentsline {section}{\numberline {2}Silnik BLDC}{5}%
-\contentsline {subsection}{\numberline {2.1}Budowa}{5}%
+\contentsline {section}{\numberline {2}Silnik BLDC}{4}%
+\contentsline {subsection}{\numberline {2.1}Budowa}{4}%
 \contentsline {subsection}{\numberline {2.2}Zasada dzia\IeC {\l }ania}{5}%
-\contentsline {subsection}{\numberline {2.3}Sposoby sterowania}{6}%
-\contentsline {subsection}{\numberline {2.4}Model matematyczny}{6}%
-\contentsline {subsection}{\numberline {2.5}Charakterystyka silnika - wady, zalety}{8}%
-\contentsline {section}{\numberline {3}Sterowanie Zorientowane Polowo}{9}%
-\contentsline {section}{\numberline {4}Modulacja wektorowa - SVPWM}{10}%
-\contentsline {section}{\numberline {5}Realizacja uk\IeC {\l }adu nap\k edowego z silnikiem BLDC}{13}%
-\contentsline {subsection}{\numberline {5.1}Realizacja sprz\k etowa}{13}%
-\contentsline {subsection}{\numberline {5.2}Spis urz\k adze\'n}{13}%
-\contentsline {subsection}{\numberline {5.3}Schemat elektryczny}{14}%
-\contentsline {subsection}{\numberline {5.4}Opis i dane techniczne urz\k adze\'n}{14}%
-\contentsline {subsection}{\numberline {5.5}Implementacja uk\IeC {\l }adu regulacji}{17}%
-\contentsline {subsection}{\numberline {5.6}Komunikacja}{20}%
-\contentsline {subsection}{\numberline {5.7}Interfejs u\.zytkownika}{21}%
-\contentsline {section}{\numberline {6}Testowanie uk\IeC {\l }adu nap\k edowego}{22}%
-\contentsline {subsection}{\numberline {6.1}Sprawdzenie poprawno\'sci dzia\IeC {\l }ania funkcji SVPWM}{22}%
-\contentsline {subsection}{\numberline {6.2}Testowanie uk\IeC {\l }adu regulacji}{23}%
-\contentsline {subsubsection}{\numberline {6.2.1}Regulacja pr\k adu}{23}%
-\contentsline {subsubsection}{\numberline {6.2.2}Regulacja pr\k edko\'sci obrotowej}{31}%
-\contentsline {subsubsection}{\numberline {6.2.3}Regulacja po\IeC {\l }o\.zenia wirnika}{33}%
+\contentsline {subsection}{\numberline {2.3}Sposoby sterowania}{5}%
+\contentsline {subsection}{\numberline {2.4}Model matematyczny}{5}%
+\contentsline {subsection}{\numberline {2.5}Charakterystyka silnika - wady, zalety}{7}%
+\contentsline {section}{\numberline {3}Sterowanie Zorientowane Polowo}{8}%
+\contentsline {section}{\numberline {4}Modulacja wektorowa - SVPWM}{9}%
+\contentsline {section}{\numberline {5}Realizacja uk\IeC {\l }adu nap\k edowego z silnikiem BLDC}{12}%
+\contentsline {subsection}{\numberline {5.1}Realizacja sprz\k etowa}{12}%
+\contentsline {subsection}{\numberline {5.2}Spis urz\k adze\'n}{12}%
+\contentsline {subsection}{\numberline {5.3}Schemat elektryczny}{13}%
+\contentsline {subsection}{\numberline {5.4}Opis i dane techniczne urz\k adze\'n}{13}%
+\contentsline {subsection}{\numberline {5.5}Implementacja uk\IeC {\l }adu regulacji}{16}%
+\contentsline {subsection}{\numberline {5.6}Komunikacja}{19}%
+\contentsline {subsection}{\numberline {5.7}Interfejs u\.zytkownika}{20}%
+\contentsline {section}{\numberline {6}Testowanie uk\IeC {\l }adu nap\k edowego}{21}%
+\contentsline {subsection}{\numberline {6.1}Sprawdzenie poprawno\'sci dzia\IeC {\l }ania funkcji SVPWM}{21}%
+\contentsline {subsection}{\numberline {6.2}Testowanie uk\IeC {\l }adu regulacji}{22}%
+\contentsline {subsubsection}{\numberline {6.2.1}Regulacja pr\k adu}{22}%
+\contentsline {subsubsection}{\numberline {6.2.2}Regulacja pr\k edko\'sci obrotowej}{30}%
+\contentsline {subsubsection}{\numberline {6.2.3}Regulacja po\IeC {\l }o\.zenia wirnika}{32}%
+\contentsline {section}{\numberline {7}Podsumowanie}{34}%
 \contentsline {section}{Wykaz ilustracji}{35}%
