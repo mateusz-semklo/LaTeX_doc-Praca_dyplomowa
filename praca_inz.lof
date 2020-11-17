@@ -16,34 +16,38 @@
 \contentsline {figure}{\numberline {15}{\ignorespaces Silnik BLDC}}{14}%
 \contentsline {figure}{\numberline {16}{\ignorespaces Zestaw rozwojowy STM32 B-G431-ESC1 \cite {B-G431}}}{15}%
 \contentsline {figure}{\numberline {17}{\ignorespaces Zestaw rozwojowy STM32 Nucleo F746ZG \cite {nucleo}}}{16}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Pomiar pr\k adu \cite {stspin32}}}{16}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Wzmacnianie mierzonego sygna\IeC {\l }u \cite {stspin32}}}{17}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Schemat regulatora PID biblioteki CMSIS-DSP \cite {cmsis}}}{17}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Synchronizacja sygan\IeC {\l }u PWM z wyzwalaniem przerwania od przetwornika ADC}}{18}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Model nap\k edu silnika BLDC}}{19}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Schemat uk\IeC {\l }adu komunikacji}}{19}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Interfejs u\.zytkownika}}{20}%
-\contentsline {figure}{\numberline {25}{\ignorespaces Interfejs u\.zytkownika}}{21}%
-\contentsline {figure}{\numberline {26}{\ignorespaces Przebiegi generowanych sygna\IeC {\l }\'ow za pomoc\k a SVPWM na podstawie trzech wej\'sciowych sygna\IeC {\l }\'ow sinusoidalnych}}{22}%
-\contentsline {figure}{\numberline {27}{\ignorespaces Nastawy regulator\'ow PID}}{22}%
-\contentsline {figure}{\numberline {28}{\ignorespaces Przebieg pr\k adu dla warto\'sci zadanej amplitudy 0.3A bez obci\k a\.zenia zewn\k etrznym momentem oporowym}}{23}%
-\contentsline {figure}{\numberline {29}{\ignorespaces Przebieg pr\k adu dla warto\'sci zadanej amplitudy 0.3A z obci\k a\.zeniem zewn\k etrznym}}{23}%
-\contentsline {figure}{\numberline {30}{\ignorespaces Przebieg pr\k edko\'sci obrotowej dla warto\'sci zadanej 2500 obr/min i pr\k adu 0.3A}}{24}%
-\contentsline {figure}{\numberline {31}{\ignorespaces Przebieg pr\k adu dla warto\'sci zadanej amplitudy 0.5A bez obci\k a\.zenia zewn\k etrznym momentem oporowym}}{24}%
-\contentsline {figure}{\numberline {32}{\ignorespaces Przebieg pr\k adu dla warto\'sci zadanej amplitudy 0.5A z obci\k a\.zeniem zewn\k etrznym}}{25}%
-\contentsline {figure}{\numberline {33}{\ignorespaces Przebieg pr\k edko\'sci obrotowej dla warto\'sci zadanej 2500 obr/min i pr\k adu 0.5A}}{25}%
-\contentsline {figure}{\numberline {34}{\ignorespaces Przebieg pr\k adu dla warto\'sci zadanej amplitudy 1A bez obci\k a\.zenia zewn\k etrznym momentem oporowym}}{26}%
-\contentsline {figure}{\numberline {35}{\ignorespaces Przebieg pr\k adu dla warto\'sci zadanej amplitudy 1A z obci\k a\.zeniem zewn\k etrznym}}{26}%
-\contentsline {figure}{\numberline {36}{\ignorespaces Przebieg pr\k edko\'sci obrotowej dla warto\'sci zadanej 2500 obr/min i pr\k adu 1A}}{27}%
-\contentsline {figure}{\numberline {37}{\ignorespaces Przebieg sk\IeC {\l }adowej Id, Iq dla warto\'sci zadanej amplitudy pr\k adu 1A bez obci\k a\.zenia zewn\k etrznym momentem oporowym}}{27}%
-\contentsline {figure}{\numberline {38}{\ignorespaces Przebieg sk\IeC {\l }adowej Id, Iq dla warto\'sci zadanej amplitudy pr\k adu 1A z obci\k a\.zeniem zewn\k etrznym momentem oporowym}}{28}%
-\contentsline {figure}{\numberline {39}{\ignorespaces Hodograf pr\k adu w uk\IeC {\l }adzie wsp\'o\IeC {\l }rz\k ednych alfa, beta dla warto\'sci zadanej 1A}}{28}%
-\contentsline {figure}{\numberline {40}{\ignorespaces Przebieg napi\k ecia fazowego}}{29}%
-\contentsline {figure}{\numberline {41}{\ignorespaces Przebieg napi\k ecia mi\k edzyfazowego}}{29}%
-\contentsline {figure}{\numberline {42}{\ignorespaces Przebieg pr\k edko\'sci obrotowej o warto\'sci zadanej 3500 obr/min}}{30}%
-\contentsline {figure}{\numberline {43}{\ignorespaces Przebieg pr\k edko\'sci obrotowej o warto\'sci zadanej 1500 obr/min}}{31}%
-\contentsline {figure}{\numberline {44}{\ignorespaces Przebieg pr\k edko\'sci obrotowej o warto\'sci zadanej 500 obr/min}}{31}%
-\contentsline {figure}{\numberline {45}{\ignorespaces Przebieg pr\k edko\'sci obrotowej o warto\'sci zadanej 200 obr/min}}{32}%
-\contentsline {figure}{\numberline {46}{\ignorespaces Przebieg po\IeC {\l }o\.zenia wa\IeC {\l }u silnika dla warto\'sci zadanej 2000 stopni}}{33}%
-\contentsline {figure}{\numberline {47}{\ignorespaces Przebieg po\IeC {\l }o\.zenia wa\IeC {\l }u silnika dla warto\'sci zadanej 1000 stopni}}{33}%
-\contentsline {figure}{\numberline {48}{\ignorespaces Przebieg po\IeC {\l }o\.zenia wa\IeC {\l }u silnika dla warto\'sci zadanej 200 stopni}}{34}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Konfiguracja mikrokontrolera STM32G431}}{17}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Konfiguracja zegara i cz\k estotliwo\'sci taktowania peryferii STM32G431}}{17}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Konfiguracja mikrokontrolera STM32F746ZG}}{19}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Konfiguracja zegara i cz\k estotliwo\'sci taktowania peryferii STM32F746ZG}}{20}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Pomiar pr\k adu \cite {stspin32}}}{20}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Wzmacnianie mierzonego sygna\IeC {\l }u \cite {stspin32}}}{21}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Schemat regulatora PID biblioteki CMSIS-DSP \cite {cmsis}}}{21}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Synchronizacja sygan\IeC {\l }u PWM z wyzwalaniem przerwania od przetwornika ADC}}{22}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Model nap\k edu silnika BLDC}}{23}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Schemat uk\IeC {\l }adu komunikacji}}{23}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Interfejs u\.zytkownika}}{24}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Interfejs u\.zytkownika}}{25}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Przebiegi generowanych sygna\IeC {\l }\'ow za pomoc\k a SVPWM na podstawie trzech wej\'sciowych sygna\IeC {\l }\'ow sinusoidalnych}}{26}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Nastawy regulator\'ow PID}}{26}%
+\contentsline {figure}{\numberline {32}{\ignorespaces Przebieg pr\k adu dla warto\'sci zadanej amplitudy 0.3A bez obci\k a\.zenia zewn\k etrznym momentem oporowym}}{27}%
+\contentsline {figure}{\numberline {33}{\ignorespaces Przebieg pr\k adu dla warto\'sci zadanej amplitudy 0.3A z obci\k a\.zeniem zewn\k etrznym}}{27}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Przebieg pr\k edko\'sci obrotowej dla warto\'sci zadanej 2500 obr/min i pr\k adu 0.3A}}{28}%
+\contentsline {figure}{\numberline {35}{\ignorespaces Przebieg pr\k adu dla warto\'sci zadanej amplitudy 0.5A bez obci\k a\.zenia zewn\k etrznym momentem oporowym}}{28}%
+\contentsline {figure}{\numberline {36}{\ignorespaces Przebieg pr\k adu dla warto\'sci zadanej amplitudy 0.5A z obci\k a\.zeniem zewn\k etrznym}}{29}%
+\contentsline {figure}{\numberline {37}{\ignorespaces Przebieg pr\k edko\'sci obrotowej dla warto\'sci zadanej 2500 obr/min i pr\k adu 0.5A}}{29}%
+\contentsline {figure}{\numberline {38}{\ignorespaces Przebieg pr\k adu dla warto\'sci zadanej amplitudy 1A bez obci\k a\.zenia zewn\k etrznym momentem oporowym}}{30}%
+\contentsline {figure}{\numberline {39}{\ignorespaces Przebieg pr\k adu dla warto\'sci zadanej amplitudy 1A z obci\k a\.zeniem zewn\k etrznym}}{30}%
+\contentsline {figure}{\numberline {40}{\ignorespaces Przebieg pr\k edko\'sci obrotowej dla warto\'sci zadanej 2500 obr/min i pr\k adu 1A}}{31}%
+\contentsline {figure}{\numberline {41}{\ignorespaces Przebieg sk\IeC {\l }adowej Id, Iq dla warto\'sci zadanej amplitudy pr\k adu 1A bez obci\k a\.zenia zewn\k etrznym momentem oporowym}}{31}%
+\contentsline {figure}{\numberline {42}{\ignorespaces Przebieg sk\IeC {\l }adowej Id, Iq dla warto\'sci zadanej amplitudy pr\k adu 1A z obci\k a\.zeniem zewn\k etrznym momentem oporowym}}{32}%
+\contentsline {figure}{\numberline {43}{\ignorespaces Hodograf pr\k adu w uk\IeC {\l }adzie wsp\'o\IeC {\l }rz\k ednych alfa, beta dla warto\'sci zadanej 1A}}{32}%
+\contentsline {figure}{\numberline {44}{\ignorespaces Przebieg napi\k ecia fazowego}}{33}%
+\contentsline {figure}{\numberline {45}{\ignorespaces Przebieg napi\k ecia mi\k edzyfazowego}}{33}%
+\contentsline {figure}{\numberline {46}{\ignorespaces Przebieg pr\k edko\'sci obrotowej o warto\'sci zadanej 3500 obr/min}}{34}%
+\contentsline {figure}{\numberline {47}{\ignorespaces Przebieg pr\k edko\'sci obrotowej o warto\'sci zadanej 1500 obr/min}}{35}%
+\contentsline {figure}{\numberline {48}{\ignorespaces Przebieg pr\k edko\'sci obrotowej o warto\'sci zadanej 500 obr/min}}{35}%
+\contentsline {figure}{\numberline {49}{\ignorespaces Przebieg pr\k edko\'sci obrotowej o warto\'sci zadanej 200 obr/min}}{36}%
+\contentsline {figure}{\numberline {50}{\ignorespaces Przebieg po\IeC {\l }o\.zenia wa\IeC {\l }u silnika dla warto\'sci zadanej 2000 stopni}}{37}%
+\contentsline {figure}{\numberline {51}{\ignorespaces Przebieg po\IeC {\l }o\.zenia wa\IeC {\l }u silnika dla warto\'sci zadanej 1000 stopni}}{37}%
+\contentsline {figure}{\numberline {52}{\ignorespaces Przebieg po\IeC {\l }o\.zenia wa\IeC {\l }u silnika dla warto\'sci zadanej 200 stopni}}{38}%

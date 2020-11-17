@@ -14,6 +14,7 @@
 \usepackage{enumerate}
 \usepackage{indentfirst}
 \usepackage{url}
+\usepackage{listings}
 
 
 
@@ -96,10 +97,10 @@ uk³adu sterowania dla silnika BLDC. Zaimplementowanie Sterowania Zorientowanego 
 
  Zakres pracy obejmuje:
 \begin{itemize}
-\item{Dobór i uruchomienie mikroprocesorowej p³yty rozwojowej STM32 dla wybranego uk³adu napêdowego z silnikiem BLDC}
-\item{Dobór parametrów regulatorów PID. Wykorzystanie regulatorów dostêpnych w bibliotece CMSIS-DSP}
-\item{Opracowanie interfejsu u¿ytkownika pozwalaj¹cego na parametryzacjê i monitoring pracy napêdu w czasie rzeczywistym}
-\item{Analiza mo¿liwoœci wykonania procedury automatycznego strojenia uk³adu napêdowego}
+\item{dobór i uruchomienie mikroprocesorowej p³yty rozwojowej STM32 dla wybranego uk³adu napêdowego z silnikiem BLDC,}
+\item{dobór parametrów regulatorów PID. Wykorzystanie regulatorów dostêpnych w bibliotece CMSIS-DSP,}
+\item{opracowanie interfejsu u¿ytkownika pozwalaj¹cego na parametryzacjê i monitoring pracy napêdu w czasie rzeczywistym,}
+\item{analiza mo¿liwoœci wykonania procedury automatycznego strojenia uk³adu napêdowego.}
 \end{itemize}
 
 
@@ -172,9 +173,9 @@ Na rysunku \ref{fig:4} pokazano uproszczony schemat uk³adu sterowania i zasilani
 
 Silnik bezszczotkowy  nie posiada konwencjonalnego komutatora , wiêc stale nale¿y kontrolowaæ po³o¿enie wirnika oraz zastosowaæ odpowiedni sposób za³¹czania uzwojeñ. Istniej¹ trzy podstawowe strategie komutacji \cite{krykowski}:
 \begin{itemize}
-\item komutacja trapezoidalna – prze³¹czanie uzwojeñ odbywa siê w sposób dyskretny wiêc nie jest potrzebny ci¹g³y pomiar k¹ta obrotu wa³u. Najczêœciej wykorzystujê siê czujniki Halla, które s¹ rozmieszczone w odstêpach 120 stopni lub bezczujnikowe obliczanie po³o¿enia wirnika. Zmiana stanu jednego z czujników inicjujê rozpoczêcie zmiany zasilania uzwojeñ stojana. Zasilane s¹ jednoczeœnie tylko dwa uzwojenia.
-\item komutacja sinusoidalna – prze³¹czanie uzwojeñ odbywa siê w sposób quasi-ci¹g³y. Pr¹dy fazowe i si³y elektromotoryczne powinny byæ sinusoidalne. Przekszta³tnik energoelektroniczny pe³ni funkcje falownika. Do pomiaru po³o¿enia wykorzystuje siê przetwornik impulsowo-obrotowy lub algorytm do bezczujnikowego obliczania k¹ta obrotu wirnika.  Zasilane s¹ jednoczeœnie  trzy  uzwojenia. 
-\item zastosowanie algorytmu FOC (ang. Field Orient Control).\\
+\item Komutacja trapezoidalna – prze³¹czanie uzwojeñ odbywa siê w sposób dyskretny wiêc nie jest potrzebny ci¹g³y pomiar k¹ta obrotu wa³u. Najczêœciej wykorzystujê siê czujniki Halla, które s¹ rozmieszczone w odstêpach 120 stopni lub bezczujnikowe obliczanie po³o¿enia wirnika. Zmiana stanu jednego z czujników inicjujê rozpoczêcie zmiany zasilania uzwojeñ stojana. Zasilane s¹ jednoczeœnie tylko dwa uzwojenia.
+\item Komutacja sinusoidalna – prze³¹czanie uzwojeñ odbywa siê w sposób quasi-ci¹g³y. Pr¹dy fazowe i si³y elektromotoryczne powinny byæ sinusoidalne. Przekszta³tnik energoelektroniczny pe³ni funkcje falownika. Do pomiaru po³o¿enia wykorzystuje siê przetwornik impulsowo-obrotowy lub algorytm do bezczujnikowego obliczania k¹ta obrotu wirnika.  Zasilane s¹ jednoczeœnie  trzy  uzwojenia. 
+\item Zastosowanie algorytmu FOC (ang. Field Orient Control).\\
  Metoda ta zosta³a wykorzystana w niniejszej pracy i opisana w rozdziale \ref{chapter:1}.
 \end{itemize}
 
@@ -692,9 +693,93 @@ Parametry techniczne mikrokontrolera STM32F746Z \cite{stm32f7}:
 
 \end{enumerate}
 
+\subsection{Konfiguracja ustawieñ mikrokontrolerów}
+Do konfiguracji ustawieñ mikrokontrolerów w uk³adach rozwojowych STM32 B-G431-ESC1 i Nucleo F746ZG wykorzystano aplikacje STM32CubeMX. Umo¿liwia ona w sposób wizualny dokonaæ 
+dowolnych zmian w mikroprocesorze i w peryferiach. Po zachowaniu ustawieñ zostaje wygenerowany plik w jêzyku C, który implementuje wszystkie dokonane modyfikacje. 
+
+\subsubsection{STM32G431CB}
+
+Zestaw prototypowy B-G431-ESC1 wyposa¿ony jest w mikrokontroler STM32G431CB. Rysunek
+\ref{fig:50}, \ref{fig:52} przedstawia konfiguracjê, opis wykorzystanych pinów i ustawienia 
+czêstotliwoœci taktowania poszczególnych peryferii za pomoc¹ aplikacji STM32CubeMX. 
+Dokonane ustawienia:
+
+\begin{itemize}
+\item {PA8, PA9, PA10, PA12, PC13, PB15 s¹ wyjœciami kana³ów licznika 1, które generuj¹ 
+trzy sygna³y PWM dla bramek tranzystorów MOSFET przetwornika energoelektronicznego}
+\item {PA11 jest wyjœciem kana³u licznika 1 do wyzwalania konwersji 
+przetworników ADC oraz synchronizacji pomiarów czujników z uk³adem Nucleo F746ZG} 
+\item {PB4, PB3 - port szeregowy UART o przepustowoœci 115200 Bits/s}
+\item {PB8 jest wejœciem licznika 8 dla jednego z kana³ów przetwornika obrotowo-impulsowego s³u¿¹cego do pomiaru prêdkoœci. Licznik jest ustawiony w trybie Reset Mode co oznacza ¿e ka¿de zbocze narastaj¹ce resetuje jego wartoœæ, dziêki czemu mo¿na wyznaczyæ okres miêdzy impulsami}
+\item {PB7, PB6 s¹ wejœciami licznika 4 dla kana³ów przetwornika obrotowo-impulsowego.
+Licznik jest ustawiony w trybie Encoder Mode, który pozwala na dodawanie i odejmowanie
+zliczonych impulsów z przetwornika w zale¿noœci od kierunku obrotu.}
+\item {piny oznaczone jako OPAMPx\_VOUT ADCx\_INx s¹ wyjœciami wzmacniacza operacyjnego, 
+który zosta³ wewnêtrznie pod³¹czony do przetwornika ADC w celu pomiaru pr¹dów fazowych - patrz rozdzia³ \ref{chapter:OPAMP}}
+\item {piny oznaczone jako OPAMPx\_VINP oraz OPAMPx\_VINM s¹ wejœciami wzmacniacza operacyjnego}
+\item {przetwornik ADC inicjuje wywo³anie funkcji obs³ugi zdarzenia po zakoñczeniu wszystkich pomiarów}
+\item {PC10 jest pinem przypisanym do przycisku, który realizuje funkcje uruchomienia i 
+zatrzymania napêdu}
+\end{itemize}
+
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.65]{CubeMx_driver.png}   
+\caption{Konfiguracja mikrokontrolera STM32G431}
+\label{fig:50}
+\end{figure} 
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{clock_sterownik.png}   
+\caption{Konfiguracja zegara i czêstotliwoœci taktowania peryferii STM32G431}
+\label{fig:52}
+\end{figure} 
+
+\subsubsection{STM32F746ZG}
+
+Zestaw prototypowy STM32 Nucleo F746ZG wyposa¿ony jest w mikrokontroler STM32F746ZG. Rysunek \ref{fig:51}, \ref{fig:53} przedstawia konfiguracjê, opis wykorzystanych pinów i
+ustawienia czêstotliwoœci taktowania poszczególnych peryferii za pomoc¹ aplikacji STM32CubeMX. 
+Dokonane ustawienia:
+
+\begin{itemize}
+\item{PC1, PA1, PA2, PA7, PC4, PC5, PB13, PG11, PG13 tworz¹ interfejs Ethernet w trybie RMII}
+\item{PA4, PA6, PB1 s¹ kana³ami przetowrników ADC do pomiarów pr¹dów fazowych}
+\item {PE9 jest wejœciem kana³u licznika 1 do wyzwolenia konwersji 
+przetworników ADC oraz synchronizacji pomiarów czujników ze sterownikiem B-G431-ESC1} 
+\item {PD5, PA3 - port szeregowy UART o przepustowoœci 115200 Bits/s}
+\item {PC6 jest wejœciem licznika 8 dla jednego z kana³ów przetwornika obrotowo-impulsowego s³u¿¹cego do pomiaru prêdkoœci. Licznik jest ustawiony w trybie Reset Mode co oznacza ¿e ka¿de zbocze narastaj¹ce resetuje jego wartoœæ, dziêki czemu mo¿na wyznaczyæ okres miêdzy impulsami}
+\item {PD12, PD13 s¹ wejœciami licznika 4 dla kana³ów przetwornika obrotowo-impulsowego.
+Licznik jest ustawiony w trybie Encoder Mode, który pozwala na dodawanie i odejmowanie
+zliczonych impulsów z przetwornika w zale¿noœci od kierunku obrotu.}
+\end{itemize}
+
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.68]{CubeMx_Nucleo.png}   
+\caption{Konfiguracja mikrokontrolera STM32F746ZG}
+\label{fig:51}
+\end{figure} 
+
+ \begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{clock_nucleo.png}   
+\caption{Konfiguracja zegara i czêstotliwoœci taktowania peryferii STM32F746ZG}
+\label{fig:53}
+\end{figure} 
+    
+\subsubsection{Przedstawienie g³ównych funkcji w kodzie Ÿród³owym}
+
+Kod programu zosta³ napisany za pomoc¹ aplikacji STM32CubeIDE w jêzyku C.
+Listing \ref{listing:1} przedstawia wybrane funkcje i ich opis w postaci komentarzy.
+
+\label{listing:1}
 
 
 \subsection{Implementacja uk³adu regulacji}
+\label{chapter:OPAMP}
 
 W zestawie rozwojowym B-G431-ESC zosta³ zaimplementowany uk³ad regulacji pr¹du, prêdkoœci i po³o¿enia dla napêdu z silnikiem BLDC przy wykorzystaniu metod FOC i SVPWM.
  
@@ -714,6 +799,8 @@ Do mierzenia pr¹dów fazowych zosta³y wykorzystane wbudowane, dedykowane uk³ady. 
 \label{fig:20}
 \end{figure} 
 
+
+\label{chapter:OPAMP}
 
 Pomiar prêdkoœci  odbywa siê za pomoc¹ enkodera. Licznik skonfigurowany w trybie Mode Reset resetuje siê w momencie podania stanu wysokiego na jeden z kana³ów, do którego pod³¹czony jest enkoder. Znaj¹c czêstotliwoœæ  zliczania i okres miêdzy wyst¹pieniem dwóch stanów wysokich mo¿na w ³atwy sposób obliczyæ aktualn¹ prêdkoœæ.
 
