@@ -17,6 +17,11 @@
 \usepackage{listings}
 
 
+\definecolor{darkred}{rgb}{0.9,0,0}
+\definecolor{grey}{rgb}{0.4,0.4,0.4}
+\definecolor{orange}{rgb}{1,0.6,0.05}
+\definecolor{darkgreen}{rgb}{0.2,0.5,0.05}
+
 
 %-------------------------------------------
 
@@ -30,8 +35,19 @@
 \topmargin -1.25cm
 \footskip 1.4cm
 \graphicspath{ {./fig/} }
-
-
+%\lstset{language=C++, commentstyle=\color{blue},breaklines=true, basicstyle=\small, }
+\lstset{language=C++,
+basicstyle=\sffamily\scriptsize,
+keywordstyle=\color{darkgreen}\sffamily\bfseries\scriptsize,
+stringstyle=\color{darkgreen}\sffamily\scriptsize,
+commentstyle=\color{grey}\sffamily\scriptsize,
+numbers=left,
+breaklines=true,
+numberstyle=\color{grey}\sffamily\scriptsize,
+identifierstyle=\color{blue}\sffamily\scriptsize,
+showstringspaces=false,
+morekeywords={
+}}
 
 \title{POLITECHNIKA POZNAÑSKA
 \vspace{0.2cm}
@@ -565,14 +581,14 @@ Realizacja praktyczna uk³adu napêdowego jest przedstawiona na rysunku \ref{fig:1
 \subsection{Spis urz¹dzeñ}
 
 \begin{enumerate}
-\item Silnik bezszczotkowy FXD57BL 24 VDC
-\item Przetwornik obrotowo-impulsowy N38G6-720-BM-8-30FG2
-\item Zestaw rozwojowy STM32 B-G431B-ESC1
-\item Zestaw rozwojowy STM32 Nucleo F746ZG
-\item  Czujnik pr¹du Pololu 1185 ACS714 -5A : +5A
-\item  Czujnik pr¹du Pololu 1185 ACS714 -5A : +5A
-\item  Czujnik pr¹du Pololu 1185 ACS714 -5A : +5A
-\item  Zasilacz laboratoryjny KORAD 0-30V, 0-5A
+\item Silnik bezszczotkowy FXD57BL 24 VDC.
+\item Przetwornik obrotowo-impulsowy N38G6-720-BM-8-30FG2.
+\item Zestaw rozwojowy STM32 B-G431B-ESC1.
+\item Zestaw rozwojowy STM32 Nucleo F746ZG.
+\item  Czujnik pr¹du Pololu 1185 ACS714 -5A : +5A.
+\item  Czujnik pr¹du Pololu 1185 ACS714 -5A : +5A.
+\item  Czujnik pr¹du Pololu 1185 ACS714 -5A : +5A.
+\item  Zasilacz laboratoryjny KORAD 0-30V, 0-5A.
 \end{enumerate}
 
 
@@ -594,13 +610,13 @@ Silnik wykorzystany do budowy napêdu pokazany na rysunku \ref{fig:16}
  
 Parametry techniczne:
 \begin{itemize}
-\item Moc: 60W
-\item Napiêcie zasilania: 24 V
-\item Pr¹d znamionowy: 3.3 A
-\item Maksymalna prêdkoœæ obrotowa: 3000 obr/min
-\item Moment znamionowy: 0,18 Nm
-\item Wirnik dwupolowy 
-\item D³ugoœæ silnika: 55 mm
+\item moc: 60W,
+\item napiêcie zasilania: 24 V,
+\item pr¹d znamionowy: 3.3 A,
+\item maksymalna prêdkoœæ obrotowa: 3000 obr/min,
+\item moment znamionowy: 0,18 Nm,
+\item wirnik dwupolowy, 
+\item d³ugoœæ silnika: 55 mm.
 \end{itemize}
 
  \begin{figure}[H]
@@ -617,14 +633,15 @@ Parametry techniczne:
 Przetwornik obrotowo-impulsowy inaczej enkoder jest czujnikiem mierz¹cym ruch. Przekszta³ca ruch obrotowy 
 w sygna³ elektryczny o przebiegu prostok¹tnym. Enkoder inkrementalny nie generuje informacji o po³o¿eniu bezwzglêdnym.
 
+Parametry techniczne:
 \begin{itemize}
-\item rozdzielczoœæ: 720 impulsów/obrót
-\item napiêcie zasilania: 5 - 30 VDC
-\item rodzaj wyjœcia: PUSH - PULL
-\item maksymalny pobór pr¹du: 150 mA
-\item maksymalne obci¹¿enie pr¹dowe:	30 mA
-\item maksymalna czêstotliwoœæ:	150 kHz
-\item znamionowa prêdkoœæ pracy:	5000 obr/min
+\item rozdzielczoœæ: 720 impulsów/obrót,
+\item napiêcie zasilania: 5 - 30 VDC,
+\item rodzaj wyjœcia: PUSH - PULL,
+\item maksymalny pobór pr¹du: 150 mA,
+\item maksymalne obci¹¿enie pr¹dowe:	30 mA,
+\item maksymalna czêstotliwoœæ:	150 kHz,
+\item znamionowa prêdkoœæ pracy:	5000 obr/min.
 \end{itemize}
 
 
@@ -638,21 +655,21 @@ Zestaw rozwojowy B-G431B-ESC1 firmy STMicroelectronics  oparty na mikrokontroler
 
 Parametry techniczne B-G431B-ESC1 \cite{B-G431}:
 \begin{itemize}
-\item napiêcie znamionowe 60 V
-\item maksymalny pr¹d szczytowy (z uk³adem ch³odzenia): 40 A
+\item napiêcie znamionowe 60 V,
+\item maksymalny pr¹d szczytowy (z uk³adem ch³odzenia): 40 A.
 \end{itemize}
 
 Parametry techniczne STM32G431CB \cite{B-G431}:
 \begin{itemize}
-\item procesor: ARM Cortex M4 32-bity DSP
-\item czêstotliwoœæ taktowania procesora: 170 MHz
-\item Pamiêæ Flash: 128 KB
-\item Pamiêæ SRAM: 32 KB
-\item Przetwornik analogowo-cyfrowy 12-bitowy: 2
-\item Komparatory: 4
-\item Wbudowane wzmacniacze operacyjne: 3
-\item Kontroler DMA
-\item Interfejsy: UART, PWM, CAN
+\item procesor: ARM Cortex M4 32-bity DSP,
+\item czêstotliwoœæ taktowania procesora: 170 MHz,
+\item pamiêæ Flash: 128 KB,
+\item pamiêæ SRAM: 32 KB,
+\item przetwornik analogowo-cyfrowy 12-bitowy: 2,
+\item komparatory: 4,
+\item wbudowane wzmacniacze operacyjne: 3,
+\item kontroler DMA,
+\item interfejsy: UART, PWM, CAN.
 \end{itemize}
 
 
@@ -669,17 +686,16 @@ Nucleo F746ZG jest zestawem rozwojowym opartym na mikrokontrolerze STM32F746Z. D
 Nucleo F746ZG.
 
 Parametry techniczne mikrokontrolera STM32F746Z \cite{stm32f7}:
-
 \begin{itemize}
-\item procesor: ARM Cortex M7 32-bity FPU, DSP
-\item czêstotliwoœæ taktowania procesora: 216 MHz
-\item Pamiêæ Flash: 1 MB
-\item Pamiêæ SRAM: 320 KB
-\item przetwornik analogowo-cyfrowy 12-bitowy: 3
-\item Liczniki: 18
-\item przetwornik cyfrowo-analogowe 12-bitowy: 2
-\item Interfejsy: UART,USART, $I^2 C$, SPI, CAN, SAIs, HDMI, USB
-\item Kontroler DMA
+\item procesor: ARM Cortex M7 32-bity FPU, DSP,
+\item czêstotliwoœæ taktowania procesora: 216 MHz,
+\item pamiêæ Flash: 1 MB,
+\item pamiêæ SRAM: 320 KB,
+\item przetwornik analogowo-cyfrowy 12-bitowy: 3,
+\item liczniki: 18,
+\item przetwornik cyfrowo-analogowe 12-bitowy: 2,
+\item interfejsy: UART,USART, $I^2 C$, SPI, CAN, SAIs, HDMI, USB,
+\item kontroler DMA.
 \end{itemize}
 
 \begin{figure}[H]
@@ -702,24 +718,24 @@ dowolnych zmian w mikroprocesorze i w peryferiach. Po zachowaniu ustawieñ zostaj
 Zestaw prototypowy B-G431-ESC1 wyposa¿ony jest w mikrokontroler STM32G431CB. Rysunek
 \ref{fig:50}, \ref{fig:52} przedstawia konfiguracjê, opis wykorzystanych pinów i ustawienia 
 czêstotliwoœci taktowania poszczególnych peryferii za pomoc¹ aplikacji STM32CubeMX. 
-Dokonane ustawienia:
 
+Dokonane ustawienia:
 \begin{itemize}
 \item {PA8, PA9, PA10, PA12, PC13, PB15 s¹ wyjœciami kana³ów licznika 1, które generuj¹ 
-trzy sygna³y PWM dla bramek tranzystorów MOSFET przetwornika energoelektronicznego}
+trzy sygna³y PWM dla bramek tranzystorów MOSFET przetwornika energoelektronicznego,}
 \item {PA11 jest wyjœciem kana³u licznika 1 do wyzwalania konwersji 
-przetworników ADC oraz synchronizacji pomiarów czujników z uk³adem Nucleo F746ZG} 
-\item {PB4, PB3 - port szeregowy UART o przepustowoœci 115200 Bits/s}
-\item {PB8 jest wejœciem licznika 8 dla jednego z kana³ów przetwornika obrotowo-impulsowego s³u¿¹cego do pomiaru prêdkoœci. Licznik jest ustawiony w trybie Reset Mode co oznacza ¿e ka¿de zbocze narastaj¹ce resetuje jego wartoœæ, dziêki czemu mo¿na wyznaczyæ okres miêdzy impulsami}
+przetworników ADC oraz synchronizacji pomiarów czujników z uk³adem Nucleo F746ZG,} 
+\item {PB4, PB3 - port szeregowy UART o przepustowoœci 115200 Bits/s,}
+\item {PB8 jest wejœciem licznika 8 dla jednego z kana³ów przetwornika obrotowo-impulsowego s³u¿¹cego do pomiaru prêdkoœci. Licznik jest ustawiony w trybie Reset Mode co oznacza ¿e ka¿de zbocze narastaj¹ce resetuje jego wartoœæ, dziêki czemu mo¿na wyznaczyæ okres miêdzy impulsami.}
 \item {PB7, PB6 s¹ wejœciami licznika 4 dla kana³ów przetwornika obrotowo-impulsowego.
 Licznik jest ustawiony w trybie Encoder Mode, który pozwala na dodawanie i odejmowanie
 zliczonych impulsów z przetwornika w zale¿noœci od kierunku obrotu.}
-\item {piny oznaczone jako OPAMPx\_VOUT ADCx\_INx s¹ wyjœciami wzmacniacza operacyjnego, 
-który zosta³ wewnêtrznie pod³¹czony do przetwornika ADC w celu pomiaru pr¹dów fazowych - patrz rozdzia³ \ref{chapter:OPAMP}}
-\item {piny oznaczone jako OPAMPx\_VINP oraz OPAMPx\_VINM s¹ wejœciami wzmacniacza operacyjnego}
-\item {przetwornik ADC inicjuje wywo³anie funkcji obs³ugi zdarzenia po zakoñczeniu wszystkich pomiarów}
+\item {Piny oznaczone jako OPAMPx\_VOUT ADCx\_INx s¹ wyjœciami wzmacniacza operacyjnego, 
+który zosta³ wewnêtrznie pod³¹czony do przetwornika ADC w celu pomiaru pr¹dów fazowych - patrz rozdzia³ \ref{chapter:OPAMP},}
+\item {piny oznaczone jako OPAMPx\_VINP oraz OPAMPx\_VINM s¹ wejœciami wzmacniacza operacyjnego,}
+\item {przetwornik ADC inicjuje wywo³anie funkcji obs³ugi zdarzenia po zakoñczeniu wszystkich pomiarów,}
 \item {PC10 jest pinem przypisanym do przycisku, który realizuje funkcje uruchomienia i 
-zatrzymania napêdu}
+zatrzymania napêdu.}
 \end{itemize}
 
 
@@ -741,15 +757,15 @@ zatrzymania napêdu}
 
 Zestaw prototypowy STM32 Nucleo F746ZG wyposa¿ony jest w mikrokontroler STM32F746ZG. Rysunek \ref{fig:51}, \ref{fig:53} przedstawia konfiguracjê, opis wykorzystanych pinów i
 ustawienia czêstotliwoœci taktowania poszczególnych peryferii za pomoc¹ aplikacji STM32CubeMX. 
-Dokonane ustawienia:
 
+Dokonane ustawienia:
 \begin{itemize}
-\item{PC1, PA1, PA2, PA7, PC4, PC5, PB13, PG11, PG13 tworz¹ interfejs Ethernet w trybie RMII}
-\item{PA4, PA6, PB1 s¹ kana³ami przetowrników ADC do pomiarów pr¹dów fazowych}
+\item{PC1, PA1, PA2, PA7, PC4, PC5, PB13, PG11, PG13 tworz¹ interfejs Ethernet w trybie RMII,}
+\item{PA4, PA6, PB1 s¹ kana³ami przetowrników ADC do pomiarów pr¹dów fazowych,}
 \item {PE9 jest wejœciem kana³u licznika 1 do wyzwolenia konwersji 
-przetworników ADC oraz synchronizacji pomiarów czujników ze sterownikiem B-G431-ESC1} 
-\item {PD5, PA3 - port szeregowy UART o przepustowoœci 115200 Bits/s}
-\item {PC6 jest wejœciem licznika 8 dla jednego z kana³ów przetwornika obrotowo-impulsowego s³u¿¹cego do pomiaru prêdkoœci. Licznik jest ustawiony w trybie Reset Mode co oznacza ¿e ka¿de zbocze narastaj¹ce resetuje jego wartoœæ, dziêki czemu mo¿na wyznaczyæ okres miêdzy impulsami}
+przetworników ADC oraz synchronizacji pomiarów czujników ze sterownikiem B-G431-ESC1,} 
+\item {PD5, PA3 - port szeregowy UART o przepustowoœci 115200 Bits/s,}
+\item {PC6 jest wejœciem licznika 8 dla jednego z kana³ów przetwornika obrotowo-impulsowego s³u¿¹cego do pomiaru prêdkoœci. Licznik jest ustawiony w trybie Reset Mode co oznacza ¿e ka¿de zbocze narastaj¹ce resetuje jego wartoœæ, dziêki czemu mo¿na wyznaczyæ okres miêdzy impulsami.}
 \item {PD12, PD13 s¹ wejœciami licznika 4 dla kana³ów przetwornika obrotowo-impulsowego.
 Licznik jest ustawiony w trybie Encoder Mode, który pozwala na dodawanie i odejmowanie
 zliczonych impulsów z przetwornika w zale¿noœci od kierunku obrotu.}
@@ -775,7 +791,417 @@ zliczonych impulsów z przetwornika w zale¿noœci od kierunku obrotu.}
 Kod programu zosta³ napisany za pomoc¹ aplikacji STM32CubeIDE w jêzyku C.
 Listing \ref{listing:1} przedstawia wybrane funkcje i ich opis w postaci komentarzy.
 
-\label{listing:1}
+ \begin{lstlisting}[label=etykieta, caption={\label{listing:1}}, language=C++]
+//funkcja inicjalizuj¹ca - uruchamiana przy starcie programu 
+//przypisana do przycisku WYŒLIJ USTAWIENIA przy pierwszym uruchomieniu (interfejs u¿ytkownika)
+//wyzerowanie po³o¿enia wirnika, uruchamia liczniki, przetworniki ADC 
+//inicjalizuje struktury regulatorów PID  
+void start_up(void)
+{
+	if(HAL_OK== ((HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED)) && (HAL_ADCEx_Calibration_Start(&hadc2, ADC_SINGLE_ENDED))) )
+	{
+		if(HAL_OK== (HAL_OPAMPEx_SelfCalibrateAll(&hopamp1, &hopamp2, &hopamp3)))
+		{
+		//linia 10 - 45 algorytm wyzerowania po³o¿enia wirnika
+		
+			//ustawienie licznika TIM1 odpowiedzialnego za generowanie sygna³ów PWM
+			TIM1->ARR= TIM1_ARR;
+			TIM1->PSC= TIM1_PSC;
+
+			TIM1->CCR1=(TIM1->ARR/10);
+			TIM1->CCR2=0;
+			TIM1->CCR3=0;
+			TIM1->CCR4=TIM1_CCR4;
+
+			HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+			HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
+			HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+			HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
+			HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+			HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
+			//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
+
+			HAL_Delay(800);
+
+			//uruchomienie licznika do wyznaczenia k¹ta po³o¿enia wirnika
+			TIM4->ARR= TIM4_ARR;
+			TIM4->PSC= TIM4_PSC;
+			HAL_TIM_Base_Start_IT(&htim4);
+			HAL_TIM_Encoder_Start_IT(&htim4, TIM_CHANNEL_1);
+			HAL_TIM_Encoder_Start_IT(&htim4, TIM_CHANNEL_2);
+
+			HAL_Delay(400);
+
+			TIM1->CCR1=0;
+			TIM1->CCR2=0;
+			TIM1->CCR3=0;
+
+			HAL_Delay(200);
+
+			//uruchomienie licznika do wyznaczenia prêdkoœci obrotowej wirnika
+			TIM8->ARR= TIM8_ARR;
+			TIM8->PSC= TIM8_PSC;
+			HAL_TIM_IC_Start(&htim8, TIM_CHANNEL_2);
+
+
+			//uruchomienie wzmacniaczy operacyjnych dla przetowrników ADC
+			HAL_OPAMP_Start(&hopamp1);
+			HAL_OPAMP_Start(&hopamp2);
+			HAL_OPAMP_Start(&hopamp3);
+			
+			//uruchomienie przetworników ADC z obs³ug¹ zdarzeñ
+			HAL_ADCEx_InjectedStart_IT(&hadc1);
+			HAL_ADCEx_InjectedStart_IT(&hadc2);
+
+			//inicjalizacja struktur regulatorów PID
+			set_d=0;
+			pid_d.Kp=1;
+			pid_d.Ki=1;
+			pid_d.Kd=0;
+			arm_pid_init_f32(&pid_d, 1);
+
+			//regulator pr¹du Id
+			set_q=0.7;
+			pid_q.Kp=4;
+			pid_q.Ki=1;
+			pid_q.Kd=0;
+			arm_pid_init_f32(&pid_q, 1);
+
+			//regulator pr¹du Iq
+			set_speed=2200;
+			pid_iq_speed.Kp=5;
+			pid_iq_speed.Ki=5;
+			pid_iq_speed.Kd=0;
+			arm_pid_init_f32(&pid_iq_speed, 1);
+
+			//regulator prêdkoœci
+			set_angle=20000;
+			pid_angle.Kp=5;
+			pid_angle.Ki=5;
+			pid_angle.Kd=0;
+			arm_pid_init_f32(&pid_angle, 1);
+		}
+	}
+
+}
+
+// funkcja odpowiedzialna za uruchomienie generowania sygna³ów PWM
+// przypisana do przycisku START(interfejs u¿ytkownika), uruchamia napêd 
+void start1(void)
+{
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+	HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+	HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+	HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
+}
+
+// funkcja odpowiedzialna za zatrzymanie generowania sygna³ów PWM
+// przypisana do przycisku STOP(interfejs u¿ytkownika), zatrzymujê napêd
+void stop(void)
+{
+
+	TIM1->CCR1=0;
+	TIM1->CCR2=0;
+	TIM1->CCR3=0;
+
+	HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
+	HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);
+	HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_2);
+	HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_3);
+	HAL_TIMEx_PWMN_Stop(&htim1, TIM_CHANNEL_3);
+	HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_4);
+
+	arm_pid_reset_f32(&pid_d);
+	arm_pid_reset_f32(&pid_q);
+	arm_pid_reset_f32(&pid_iq_speed);
+	arm_pid_reset_f32(&pid_angle);
+
+}
+
+
+// funkcja pobiera wspó³rzêdne wektora [alpha, beta] i oblicza modu³ oraz k¹t 
+void AlphaBeta_To_Angle_Vref(float32_t alpha,float32_t beta,float32_t *angle_current_rad,float32_t *Vref)
+{
+	*angle_current_rad = atan2f(beta,alpha);
+	arm_sqrt_f32( ((alpha*alpha)+(beta*beta)), Vref);
+
+	 if(*Vref>=sv_Vdc_limit)  // saturacja Vref
+	    	*Vref=sv_Vdc_limit;
+}
+
+// funkcja pobiera k¹t wektora [rad] i oblicza w którym sektorze znajdujê siê ten wektor
+void Angle_To_Sector(float32_t angle_current_rad,uint8_t *sector)
+{
+
+	if((angle_current_rad>0) && (angle_current_rad<=1.047197)) // pi/3
+		*sector=1;
+	else if((angle_current_rad>1.047197) && (angle_current_rad<=2.094395)) //2/3*pi
+		*sector=2;
+	else if((angle_current_rad>2.094395) && (angle_current_rad<=3.141593))
+		*sector=3;
+	else if((angle_current_rad>-3.141593) && (angle_current_rad<=-2.094395))
+		*sector=4;
+	else if((angle_current_rad>-2.094395) && (angle_current_rad<=-1.047197))
+		*sector=5;
+	else if ((angle_current_rad>-1.047197) && (angle_current_rad<=0))
+		*sector=6;
+	else{}
+
+}
+
+// funkcja pobiera k¹t, modu³ wektora i numer sektora w którym wektor siê znajdujê
+// na podstawie tych informacji oblicza szerokoœæ
+// wype³nienia impulsów dla trzech sygna³ów PWM
+void SVPWM(uint8_t sector,float32_t angle_current_rad,float32_t Vref, float32_t T[], float32_t T_gate[], float32_t *S1,float32_t *S2,float32_t *S3)
+{
+
+	T[1]= (1.7320508 * (( Vref * sv_Tz)/Vdc)) * arm_sin_f32((sector * 1.047197) - (angle_current_rad)); /// pi/3 = 1,0472  sqrt(3)=1.7320508
+	T[2]= (1.7320508 * (( Vref * sv_Tz)/Vdc)) * arm_sin_f32((-(sector-1) * 1.047197) +  angle_current_rad) ;
+	T[0]=sv_Tz-T[1]-T[2];
+
+	t1=T[1];
+	t2=T[2];
+	t3=T[0];
+
+	T_gate[0]= (T[0]/2);
+	T_gate[1]= T[1]+(T_gate[0]);
+	T_gate[2]= T[2]+(T_gate[0]);
+	T_gate[3]= T[1]+T[2]+(T_gate[0]);
+
+
+	if(sector == 1)
+	{
+		*S1=T_gate[3];
+		*S2=T_gate[2];
+		*S3=T_gate[0];
+	}
+	else if(sector == 2)
+	{
+		*S1=T_gate[1];
+		*S2=T_gate[3];
+		*S3=T_gate[0];
+	}
+	else if(sector == 3)
+	{
+		*S1=T_gate[0];
+		*S2=T_gate[3];
+		*S3=T_gate[2];
+	}
+	else if(sector == 4)
+	{
+		*S1=T_gate[0];
+		*S2=T_gate[1];
+		*S3=T_gate[3];
+	}
+	else if(sector == 5)
+	{
+		*S1=T_gate[2];
+		*S2=T_gate[0];
+		*S3=T_gate[3];
+	}
+	else if(sector == 6)
+	{
+		*S1=T_gate[3];
+		*S2=T_gate[0];
+		*S3=T_gate[1];
+	}
+	else{}
+
+}
+
+// funkcja obs³ugi zdarzenia wywo³ywana po zakoñczeniu konwersji ADC
+// g³ówna funkcja odpowiedzialna za dokonywanie obliczeñ uk³adów regulacji
+void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
+{
+	// obliczanie prêdkoœci obrotowej wirnika
+	capture_tim8_ccr2= TIM8->CCR2;
+	speed=revolution_per_min/capture_tim8_ccr2;
+	
+	// sprawdzenie kierunku obrotu 
+	//do zmiennej direction jest przypisany bit z rejestru CR1 licznika
+    // który zawiera informacje o tym czy licznik jest inkrementowany czy dekrementowany 
+	if(direction!=0)  
+	speed=-speed;
+	
+    // odczytanie wartoœci pr¹dóW z przetowrników ADC
+	adc_Ia= HAL_ADCEx_InjectedGetValue(&hadc1, ADC_INJECTED_RANK_1);
+    while((hadc1.Instance->ISR &= (0x1<<5))!=0){}
+    adc_Ic =HAL_ADCEx_InjectedGetValue(&hadc1, ADC_INJECTED_RANK_2);
+	while((hadc1.Instance->ISR &= (0x1<<5))!=0){}
+	adc_Ib =HAL_ADCEx_InjectedGetValue(&hadc2, ADC_INJECTED_RANK_1);
+	while((hadc2.Instance->ISR &= (0x1<<5))!=0){}
+
+	// wyznaczenie offsetu dla przetwornika ADC
+	if(index_event_adc<300)
+	{
+		Ia=0;
+		Ib=0;
+		Ic=0;
+		index_event_adc++;
+
+
+	}
+	else if(index_event_adc == 300)
+	{
+	    offset1=adc_Ia;
+		offset2=adc_Ib;
+		offset3=adc_Ic;
+		index_event_adc++;
+	}
+	else
+	{
+
+	    adc_Ia=(adc_Ia-offset1);
+	    adc_Ib=(adc_Ib-offset2);
+	    adc_Ic=(adc_Ic-offset3);
+	    
+		// konwersja wartosci ADC na wartoœc wyra¿on¹ w amperach [A]
+	    Ia=-adc_Ia/33.0;
+	    Ib=-adc_Ib/33.0;
+	    Ic=-adc_Ic/33.0;
+	    	    
+		// transformacja clark'a
+	    arm_clarke_f32(Ia, Ib, &Ialpha, &Ibeta);
+	    
+	    angle_rotor_deg=TIM4->CCR1;
+	    arm_sin_cos_f32(angle_rotor_deg, &pSinVal, &pCosVal);
+	    
+	    // transformacja park'a
+	    arm_park_f32(Ialpha, Ibeta, &Id, &Iq, pSinVal, pCosVal);
+
+	    // obliczanie po³o¿enia wirnika [stopnie]
+	    if(counter_angle>=0)
+	    	angle=angle_rotor_deg + (counter_angle * 360);
+	    else
+	    	angle=-angle_rotor_deg + (counter_angle * 360);
+
+		// w³¹czenie/wy³¹cznie regulatora po³o¿enia (interfejs u¿ytkownika)
+	    if(allow_angle[0]=='y')
+	    {
+	    	//mo¿liwoœæ zmniejszenia czêstotliwoœci obliczania pêtli regulacji po³o¿enia
+		    // domyœlnie obliczenia s¹ wykonywane za ka¿dym uruchomieniem 
+		    //funkcji obs³ugi przerwania ADC
+	    	index_angle_loop++;
+	    	if(index_angle_loop==1)
+	    	{
+	    		//uchyb po³o¿enia
+	    		e_angle=set_angle-angle;	    		
+	    		//zachowanie zmiennej z poprzedniego cyklu na potrzeby anti-windup
+	    		angle_prev=pid_angle.state[2];
+	    		// obliczenie wartoœci wyjœcia regulatora PID
+	    		angle_speed=arm_pid_f32(&pid_angle, e_angle);
+				//saturcja i anti-windup
+	    	    if(angle_speed>=set_speed)
+	    		{
+	    		    pid_angle.state[2]=angle_prev;
+	    		    angle_speed=set_speed;
+	    	    }
+
+	    		if(angle_speed<=(-set_speed))
+	    		{
+	    		    pid_angle.state[2]=angle_prev;
+	    		    angle_speed=(-set_speed);
+	    		}	    		
+	    		set_sp= angle_speed;
+	    	}
+	        if(index_angle_loop==1)
+	    		index_angle_loop=0;
+
+	    }
+	    else
+	    {
+	    	index_angle_loop=0;
+	        set_sp=set_speed;
+	    }
+
+	    //mo¿liwoœæ zmniejszenia czêstotliwoœci obliczania pêtli regulacji prêdkoœci
+		// domyœlnie obliczenia s¹ wykonywane za ka¿dym uruchomieniem 
+		//funkcji obs³ugi przerwania ADC
+	    index_speed_loop++;
+	   	if(index_speed_loop==1)
+	    {
+	    	//uchyb prêdkoœci obrotowej
+	        e_speed=set_sp-speed;
+	        //zachowanie zmiennej z poprzedniego cyklu na potrzeby anti-windup
+	    	iq_speed_prev=pid_iq_speed.state[2];
+	    	// obliczenie wartoœci wyjœcia regulatora PID
+	    	iq_speed=arm_pid_f32(&pid_iq_speed, e_speed);
+	    	// saturacja i anty-wind-up
+	    	if(iq_speed>=current_limit_max_iq)
+	    	{
+	    		pid_iq_speed.state[2]=iq_speed_prev;
+	    		iq_speed=current_limit_max_iq;
+	    	}
+	    	if(iq_speed<=(-current_limit_max_iq))
+	    	{
+	    		pid_iq_speed.state[2]=iq_speed_prev;
+	    		iq_speed=(-current_limit_max_iq);
+	    	}
+	   	}
+	   	if(index_speed_loop==1)
+	   		index_speed_loop=0;
+	   		
+		//obliczenie uchybu pr¹du Id
+	    ed=set_d-Id;
+	    //zachowanie zmiennej z poprzedniego cyklu na potrzeby anti-windup
+	    Vd_prev=pid_d.state[2];
+	    // obliczenie wartoœci wyjœcia regulatora PID
+	    Vd=arm_pid_f32(&pid_d, ed);
+	    // saturacja i anti-wind-up
+	    if(Vd>=sv_Vdc_limit)
+	    {
+	    	pid_d.state[2]=Vd_prev;
+	    	Vd=sv_Vdc_limit;
+	    }
+
+	    if(Vd<=(-sv_Vdc_limit))
+	    {
+	    	pid_d.state[2]=Vd_prev;
+	        Vd=(-sv_Vdc_limit);
+	    }
+
+		//obliczenie uchybu pr¹du Iq
+	    eq=iq_speed-Iq;
+	    //zachowanie zmiennej z poprzedniego cyklu na potrzeby anti-windup
+	    Vq_prev=pid_q.state[2];
+	    // obliczenie wartoœci wyjœcia regulatora PID
+	    Vq=arm_pid_f32(&pid_q, eq);
+	    // saturacja i anti-wind-up
+	    if(Vq>=sv_Vdc_limit)
+	    {
+	    	pid_q.state[2]=Vq_prev;
+	    	Vq=sv_Vdc_limit;
+	    }
+
+	    if(Vq<=(-sv_Vdc_limit))
+	    {
+	    	pid_q.state[2]=Vq_prev;
+	    	Vq=(-sv_Vdc_limit);
+	    }
+
+		//odwrotna transformacja park'a
+	    arm_inv_park_f32(Vd, Vq, &Valpha, &Vbeta, pSinVal, pCosVal);
+		//obliczenie modu³u wektora i k¹ta
+	    AlphaBeta_To_Angle_Vref(Valpha, Vbeta, &angle_current_rad, &Vref);
+	    //wyznaczenie w którym sektorze jest wektor pr¹du
+	    Angle_To_Sector(angle_current_rad, &sector);
+	    //wyznaczenie szerokoœci impulsów i przypisanie ich do rejestrów 
+	    //kana³ów licznika, które steruj¹ bramkami przetwornika
+	    SVPWM(sector, angle_current_rad , Vref, sv_T, sv_T_gate, &sv_S1, &sv_S2, &sv_S3);
+	    TIM1->CCR1 = sv_S1;
+	    TIM1->CCR2 = sv_S2;
+	    TIM1->CCR3 = sv_S3;
+	}
+	//ponowne uruchomienie przetwornika ADC w tryb nas³uchu
+	 HAL_ADCEx_InjectedStart_IT(&hadc1);
+	 HAL_ADCEx_InjectedStart_IT(&hadc2);
+}
+\end{lstlisting}
+
 
 
 \subsection{Implementacja uk³adu regulacji}
@@ -1055,9 +1481,9 @@ Z przebiegów prêdkoœci obrotowej dla wartoœci zadanej 2500 obr/min dla nastaw
 wartoœci pr¹du 0.3A, 0.5A, 1A, które zosta³y przedstawione na rysunkach \ref{fig:31}, \ref{fig:34} i \ref{fig:37} wynika, ¿e wartoœæ zadana pr¹du Iq bezpoœrednio wp³ywa na moment obrotowy i dynamikê uk³adu. Wraz ze wzrostem wartoœci pr¹du Iq wzrasta przyspieszenie silnika. Czas potrzebny do osi¹gniêcia 
 ustalonej prêdkoœci zadanej 2500 obr/min wynosi kolejno: 
 \begin{itemize}
-\item 0.3 A - 0.5 sekundy
-\item 0.5 A - 0.22 sekundy
-\item 1 A - 0.09 sekundy
+\item 0.3 A - 0.5 sekundy,
+\item 0.5 A - 0.22 sekundy,
+\item 1 A - 0.09 sekundy.
 \end{itemize} 
 
 
@@ -1161,7 +1587,9 @@ miêdzy elementami uk³adu i aplikacj¹ u¿ytkownika.
 
 W przysz³oœci, do zaprojektowanego uk³adu napêdowego mo¿na dodaæ serwer WWW i napisaæ dodatkow¹ aplikacje dla urz¹dzeñ mobilnych. Interfejs u¿ytkownika, który jest napisany w jêzyku Python mo¿na rozszerzyæ o procedurê automatycznego sterowania napêdu silnika.
 
- 
+
+
+
 
 \addcontentsline{toc}{section}{Wykaz ilustracji}
 \listoffigures

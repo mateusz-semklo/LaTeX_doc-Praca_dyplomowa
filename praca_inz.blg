@@ -1,6 +1,51 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: praca_inz.aux
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: praca_inz.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: plain.bst
+Reallocating 'name_of_file' (item size: 1) to 5 items.
 Database file #1: bibl.bib
 Warning--to sort, need author or key in cmsis
 Warning--there's a number but no volume in goryca2012metody
+You've used 15 entries,
+            2118 wiz_defined-function locations,
+            578 strings with 6160 characters,
+and the built_in function-call counts, 3477 in all, are:
+= -- 358
+> -- 104
+< -- 1
++ -- 45
+- -- 30
+* -- 191
+:= -- 583
+add.period$ -- 42
+call.type$ -- 15
+change.case$ -- 59
+chr.to.int$ -- 0
+cite$ -- 17
+duplicate$ -- 155
+empty$ -- 315
+format.name$ -- 30
+if$ -- 741
+int.to.chr$ -- 0
+int.to.str$ -- 15
+missing$ -- 11
+newline$ -- 74
+num.names$ -- 20
+pop$ -- 58
+preamble$ -- 1
+purify$ -- 49
+quote$ -- 0
+skip$ -- 107
+stack$ -- 0
+substring$ -- 172
+swap$ -- 23
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 58
+warning$ -- 2
+while$ -- 29
+width$ -- 17
+write$ -- 154
 (There were 2 warnings)

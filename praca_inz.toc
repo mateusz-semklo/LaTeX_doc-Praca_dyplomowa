@@ -1,30 +1,30 @@
 \babel@toc {polish}{}
-\contentsline {section}{\numberline {1}Wst\k ep}{3}%
-\contentsline {section}{\numberline {2}Silnik BLDC}{4}%
-\contentsline {subsection}{\numberline {2.1}Budowa}{4}%
-\contentsline {subsection}{\numberline {2.2}Zasada dzia\IeC {\l }ania}{5}%
-\contentsline {subsection}{\numberline {2.3}Sposoby sterowania}{5}%
-\contentsline {subsection}{\numberline {2.4}Model matematyczny}{5}%
-\contentsline {subsection}{\numberline {2.5}Charakterystyka silnika - wady, zalety}{7}%
-\contentsline {section}{\numberline {3}Sterowanie Zorientowane Polowo}{8}%
-\contentsline {section}{\numberline {4}Modulacja wektorowa - SVPWM}{9}%
-\contentsline {section}{\numberline {5}Realizacja uk\IeC {\l }adu nap\k edowego z silnikiem BLDC}{12}%
-\contentsline {subsection}{\numberline {5.1}Realizacja sprz\k etowa}{12}%
-\contentsline {subsection}{\numberline {5.2}Spis urz\k adze\'n}{12}%
-\contentsline {subsection}{\numberline {5.3}Schemat elektryczny}{13}%
-\contentsline {subsection}{\numberline {5.4}Opis i dane techniczne urz\k adze\'n}{13}%
-\contentsline {subsection}{\numberline {5.5}Konfiguracja ustawie\'n mikrokontroler\'ow}{16}%
-\contentsline {subsubsection}{\numberline {5.5.1}STM32G431CB}{16}%
-\contentsline {subsubsection}{\numberline {5.5.2}STM32F746ZG}{18}%
-\contentsline {subsubsection}{\numberline {5.5.3}Przedstawienie g\IeC {\l }\'ownych funkcji w kodzie \'zr\'od\IeC {\l }owym}{20}%
-\contentsline {subsection}{\numberline {5.6}Implementacja uk\IeC {\l }adu regulacji}{20}%
-\contentsline {subsection}{\numberline {5.7}Komunikacja}{23}%
-\contentsline {subsection}{\numberline {5.8}Interfejs u\.zytkownika}{24}%
-\contentsline {section}{\numberline {6}Testowanie uk\IeC {\l }adu nap\k edowego}{25}%
-\contentsline {subsection}{\numberline {6.1}Sprawdzenie poprawno\'sci dzia\IeC {\l }ania funkcji SVPWM}{25}%
-\contentsline {subsection}{\numberline {6.2}Testowanie uk\IeC {\l }adu regulacji}{26}%
-\contentsline {subsubsection}{\numberline {6.2.1}Regulacja pr\k adu}{26}%
-\contentsline {subsubsection}{\numberline {6.2.2}Regulacja pr\k edko\'sci obrotowej}{34}%
-\contentsline {subsubsection}{\numberline {6.2.3}Regulacja po\IeC {\l }o\.zenia wirnika}{36}%
-\contentsline {section}{\numberline {7}Podsumowanie}{38}%
-\contentsline {section}{Wykaz ilustracji}{39}%
+\contentsline {section}{\numberline {1}Wst\k ep}{3}{}%
+\contentsline {section}{\numberline {2}Silnik BLDC}{4}{}%
+\contentsline {subsection}{\numberline {2.1}Budowa}{4}{}%
+\contentsline {subsection}{\numberline {2.2}Zasada dzia\IeC {\l }ania}{5}{}%
+\contentsline {subsection}{\numberline {2.3}Sposoby sterowania}{5}{}%
+\contentsline {subsection}{\numberline {2.4}Model matematyczny}{5}{}%
+\contentsline {subsection}{\numberline {2.5}Charakterystyka silnika - wady, zalety}{7}{}%
+\contentsline {section}{\numberline {3}Sterowanie Zorientowane Polowo}{8}{}%
+\contentsline {section}{\numberline {4}Modulacja wektorowa - SVPWM}{9}{}%
+\contentsline {section}{\numberline {5}Realizacja uk\IeC {\l }adu nap\k edowego z silnikiem BLDC}{12}{}%
+\contentsline {subsection}{\numberline {5.1}Realizacja sprz\k etowa}{12}{}%
+\contentsline {subsection}{\numberline {5.2}Spis urz\k adze\'n}{12}{}%
+\contentsline {subsection}{\numberline {5.3}Schemat elektryczny}{13}{}%
+\contentsline {subsection}{\numberline {5.4}Opis i dane techniczne urz\k adze\'n}{13}{}%
+\contentsline {subsection}{\numberline {5.5}Konfiguracja ustawie\'n mikrokontroler\'ow}{16}{}%
+\contentsline {subsubsection}{\numberline {5.5.1}STM32G431CB}{16}{}%
+\contentsline {subsubsection}{\numberline {5.5.2}STM32F746ZG}{18}{}%
+\contentsline {subsubsection}{\numberline {5.5.3}Przedstawienie g\IeC {\l }\'ownych funkcji w kodzie \'zr\'od\IeC {\l }owym}{20}{}%
+\contentsline {subsection}{\numberline {5.6}Implementacja uk\IeC {\l }adu regulacji}{25}{}%
+\contentsline {subsection}{\numberline {5.7}Komunikacja}{28}{}%
+\contentsline {subsection}{\numberline {5.8}Interfejs u\.zytkownika}{29}{}%
+\contentsline {section}{\numberline {6}Testowanie uk\IeC {\l }adu nap\k edowego}{30}{}%
+\contentsline {subsection}{\numberline {6.1}Sprawdzenie poprawno\'sci dzia\IeC {\l }ania funkcji SVPWM}{30}{}%
+\contentsline {subsection}{\numberline {6.2}Testowanie uk\IeC {\l }adu regulacji}{31}{}%
+\contentsline {subsubsection}{\numberline {6.2.1}Regulacja pr\k adu}{31}{}%
+\contentsline {subsubsection}{\numberline {6.2.2}Regulacja pr\k edko\'sci obrotowej}{39}{}%
+\contentsline {subsubsection}{\numberline {6.2.3}Regulacja po\IeC {\l }o\.zenia wirnika}{41}{}%
+\contentsline {section}{\numberline {7}Podsumowanie}{43}{}%
+\contentsline {section}{Wykaz ilustracji}{44}{}%
