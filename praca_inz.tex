@@ -108,8 +108,7 @@ SILNIKIEM BLDC
 
 Tematem pracy in¿ynierskiej jest\textit{Mikroprocesorowy kaskadowy uk³ad regulacji pr¹du, prêdkoœci i po³o¿enia dla napêdu z silnikiem BLDC}. Zainteresowanie i zdobyta wiedza z zakresu automatyki, mikroprocesorów i maszyn elektrycznych  spowodowa³a chêæ stworzenia  uk³adu napêdowego dla silnika BLDC przy wykorzystaniu mo¿liwoœci mikrokontrolerów i stawieniu czo³a trudnoœciom przy jego praktycznej realizacji.  
 
-Celem jest pokazanie mo¿liwoœci wykorzystania mikroprocesora z rodziny ARM Cortex wbudowanego w mikrokontroler firmy STM32 jako jednego ze sposobów na sprzêtow¹ realizacje
-uk³adu sterowania dla silnika BLDC. Zaimplementowanie Sterowania Zorientowanego Polowo (ang. Field Orient Cotrol) tworz¹cego formê uk³adu napêdowego i konfiguracji w kaskadowy uk³ad regulacji pr¹du, prêdkoœci i po³o¿enia. Pokazania funkcjonalnoœci i zalet wykorzystania napêdu wektorowego.
+Celem jest pokazanie mo¿liwoœci wykorzystania mikroprocesora z rodziny ARM Cortex wbudowanego w mikrokontroler firmy STM32 jako jednego ze sposobów na sprzêtow¹ realizacje uk³adu sterowania dla silnika BLDC. Zaimplementowanie Sterowania Zorientowanego Polowo (ang. Field Orient Cotrol) z kaskadow¹ konfiguracj¹ uk³adów regulacji pr¹du, prêdkoœci, po³o¿enia oraz wykorzystanie wektorowej modulacji szerokoœci impulsów SVPWM (ang. Space Vector Pulse Width Modulation).
 
  Zakres pracy obejmuje:
 \begin{itemize}
@@ -195,6 +194,7 @@ Silnik bezszczotkowy  nie posiada konwencjonalnego komutatora , wiêc stale nale¿
  Metoda ta zosta³a wykorzystana w niniejszej pracy i opisana w rozdziale \ref{chapter:1}.
 \end{itemize}
 
+\newpage
 
 \subsection{Model matematyczny}
 Wartoœæ momentu elektromagnetycznego wytworzonego dla p³askiego fragmentu si³y elektromotorycznej przez pr¹d p³yn¹cy w jednym uzwojeniu fazowym \cite{krykowski}:
@@ -487,6 +487,8 @@ Zastosowanie odwrotnych transformat pozwala na sprowadzenie sk³adowych sta³ych d
 \caption{Transformacje w algorytmie FOC \cite{Frick2018BLDC}}
 \label{fig:9}
 \end{figure}  
+
+\newpage
 
 \section{Modulacja wektorowa - SVPWM}
  \label{chapter:2}
@@ -1199,6 +1201,98 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef *hadc)
 	//ponowne uruchomienie przetwornika ADC w tryb nas³uchu
 	 HAL_ADCEx_InjectedStart_IT(&hadc1);
 	 HAL_ADCEx_InjectedStart_IT(&hadc2);
+}
+
+// funkcja obs³ugi przerwania dla portu szeregowego
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+	//sprawdzenie czy w³aœciwy port szeregowy wywo³a³ zdarzenie obs³ugi przerwania
+	if(huart->Instance==USART2)
+	{
+		//funkcja konfiguracyjna start_up() 
+		//wywo³ywana tylko przy pierwszym uruchomieniu
+		if(config==0)
+		{
+			config=1;
+			start_up();
+		}
+		//pobranie ³añcucha znaków z portu szeregowego i konwersja do obiektu JSON
+		cJSON * root = cJSON_Parse((char *)jstring);
+		cJSON * set = cJSON_GetObjectItemCaseSensitive(root, "set");
+		settings =  atoi(cJSON_GetStringValue(set));
+		//sprawdzenie czy s¹ to dane konfiguracyjne 
+		//czy komenda o starcie/zatrzymaniu pracy napêdu
+		if(settings==0)
+		{
+			 cJSON * start_stop = cJSON_GetObjectItemCaseSensitive(root, "start_stop");
+			 startstop =  atoi(cJSON_GetStringValue(start_stop));
+
+			 if(startstop==1)
+				 start1();
+			 else
+				 stop();
+		 }
+		 else
+		 {
+			 cJSON * speed = cJSON_GetObjectItemCaseSensitive(root, "speed");
+			 set_speed =  atoi(cJSON_GetStringValue(speed));
+
+			 cJSON * current = cJSON_GetObjectItemCaseSensitive(root, "current");
+			 sscanf(cJSON_GetStringValue(current),"%f",&current_limit_max_iq);
+
+			 cJSON * iq_Kp = cJSON_GetObjectItemCaseSensitive(root, "iq_Kp");
+			 pid_q.Kp =  atoi(cJSON_GetStringValue(iq_Kp));
+
+			 cJSON * iq_Ki = cJSON_GetObjectItemCaseSensitive(root, "iq_Ki");
+			 pid_q.Ki =  atoi(cJSON_GetStringValue(iq_Ki));
+
+			 cJSON * iq_Kd = cJSON_GetObjectItemCaseSensitive(root, "iq_Kd");
+			 pid_q.Kd =  atoi(cJSON_GetStringValue(iq_Kd));
+
+			 cJSON * id_Kp = cJSON_GetObjectItemCaseSensitive(root, "id_Kp");
+			 pid_d.Kp =  atoi(cJSON_GetStringValue(id_Kp));
+
+			 cJSON * id_Ki = cJSON_GetObjectItemCaseSensitive(root, "id_Ki");
+			 pid_d.Ki =  atoi(cJSON_GetStringValue(id_Ki));
+
+			 cJSON * id_Kd = cJSON_GetObjectItemCaseSensitive(root, "id_Kd");
+			 pid_d.Kd =  atoi(cJSON_GetStringValue(id_Kd));
+
+			 cJSON * speed_Kp = cJSON_GetObjectItemCaseSensitive(root, "speed_Kp");
+			 pid_iq_speed.Kp =  atoi(cJSON_GetStringValue(speed_Kp));
+
+			 cJSON * speed_Ki = cJSON_GetObjectItemCaseSensitive(root, "speed_Ki");
+			 pid_iq_speed.Ki =  atoi(cJSON_GetStringValue(speed_Ki));
+
+			 cJSON * speed_Kd = cJSON_GetObjectItemCaseSensitive(root, "speed_Kd");
+			 pid_iq_speed.Kd =  atoi(cJSON_GetStringValue(speed_Kd));
+
+			 cJSON * a_set = cJSON_GetObjectItemCaseSensitive(root, "a_set");
+			 sprintf(allow_angle, "%s",(char *)(cJSON_GetStringValue(a_set)));
+
+			 cJSON * angle = cJSON_GetObjectItemCaseSensitive(root, "angle");
+			 set_angle =  atoi(cJSON_GetStringValue(angle));
+
+
+			 cJSON * a_Kp = cJSON_GetObjectItemCaseSensitive(root, "a_Kp");
+			 pid_angle.Kp =  atoi(cJSON_GetStringValue(a_Kp));
+
+			 cJSON * a_Ki = cJSON_GetObjectItemCaseSensitive(root, "a_Ki");
+			 pid_angle.Ki =  atoi(cJSON_GetStringValue(a_Ki));
+
+			 cJSON * a_Kd = cJSON_GetObjectItemCaseSensitive(root, "a_Kd");
+			 pid_angle.Kd =  atoi(cJSON_GetStringValue(a_Kd));
+			 //usuniêcie obiektu JSON
+			 cJSON_Delete(root);
+			 //inicjalizacja struktur regulatorów PID nowymi parametrami
+			 arm_pid_init_f32(&pid_d, 1);
+			 arm_pid_init_f32(&pid_q, 1);
+			 arm_pid_init_f32(&pid_iq_speed, 1);
+			 arm_pid_init_f32(&pid_angle, 1);
+		 }
+		//ponowne uruchomienie nas³uchiwania portu szeregowego
+		HAL_UART_Receive_IT(&huart2, jstring ,size_uart_tab);
+	}
 }
 \end{lstlisting}
 
